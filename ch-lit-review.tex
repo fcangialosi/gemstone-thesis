@@ -78,8 +78,6 @@ The mat can deliver between 5 and 50W, making it a very effective charging tool,
 
 \subsection{Medium Range}
 
-\subsubsection{WiTricity}
-
 \subsubsection{WattUp}
 Our next mid-range WPT company is named WattUp. The central idea of this company’s method is to use bluetooth to transfer RF signals about the receiver’s location relative to the transmitter so that the transmitter may focus energy on the receiver. Once it has locked in a signal, it may boost the output power from mW RF signals to multiple W RF signals such that the receiver can charge. WattUp highlights two main features to its technology: (1) the range over which \numrange{1}{4}~W may be quickly and safely transmitted and (2) the relatively large number of devices that may be powered at once (currently 12, with 24 being available in the future).
 
@@ -97,9 +95,22 @@ uBeam uses a phased array transmitter with thousands of antennas that result in 
 
 The main benefits that uBeam possesses include its moderate range, quick lock on time, and ability to power moving devices. Still, the main problem that uBeam does not cite is the overall efficiency of the power transfer. Using \numrange{145}{155}~dB is an extremely high power output from the transmitter. A reasonable output at the receiver is on the order of \numrange{1}{10}~s of watts. This disparity raises doubts that uBeam could be feasible WPT technology given the power input needed to produce such high dB levels is on the order of hundreds of watts. Using NLTR as a method of WPT possesses all the benefits of uBeam without the potentially small transfer efficiency.
 
-\section{Long Range}
+\subsubsection{WiTricity}
 
-Two technologies drastically exceed their counterparts in range: Cota and Wi-Charge.
+Boston-based company WiTricity\textregistered~has expanded traditional magnetic induction using a method they call highly resonant magnetic coupling (HRMC). Whereas traditional magnetic induction operates at the range of centimeters, HRMC is applicable on the scale of meters. WiTricity\textregistered~reports 50\% efficiency at two meters, followed by 10\% efficiency at four meters~\cite{kesler_highly_2013,tucker_contribution_2013}. HRMC have charged multiple devices without seemingly sacrificing overall efficiency~\cite{kesler_highly_2013}. The public demonstrations by WiTricity\textregistered~show that HRMC can transmit power ranging from milliwatts to kilowatts, significantly more than was practical with traditional induction~\cite{kesler_highly_2013}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/witricity-schematic}
+    \caption[WiTricity schematic]{Schematic of WiTricity’s HRMC System~\cite{kesler_highly_2013}}
+    \label{fig:lit-review-witricity-schematic}
+\end{figure}
+
+HRMC uses magnetic induction to transmit energy between two coupled antennas. HRMC continually adjusts the coupling of transmitter and receiver antennas to keep both at a mutual resonant frequency. This technique, impedance matching, minimizes the amount of wave reflection inside the transmitter and receiver circuits, maximizing the energy passed to the load component. This process requires a constant proprietary feedback mechanism to optimize the receiver for the given distance from the transmitter.
+
+WiTricity has demonstrated that the range of HRMC can be increased through the use of coupled relays. These relays can be coupled with the transmitter, allowing the effective range of the transmitter to increase with minimal additional loss~\cite{butler_tour_2013}.
+
+\subsection{Long Range}
 
 \subsubsection{Cota}
 
@@ -144,21 +155,6 @@ Thus, if one the mirrors is attached to the device and the other is attached to 
 
 Wi-Charge is a long range wireless power solution that can deliver up to 10~W of power~\cite{wicharge-businesswire}. It can latch onto targets almost instantaneously and cease beaming equally quickly, intrinsically. It can also power multiple devices. However, the feature that enables all of its strongest points is also its seemingly irreparable flaw: line-of-sight. While this system may work beautifully in a sparsely populated environment, in any thriving business or locale, such as the busy coffee shop or airport in which Wi-Charge envisions its products, there will be too many obstructions disrupting its line of sight. Thus, this fatal flaw renders Wi-Charge an impractical solution to the problem of WPT.
 
-\subsubsection{WiTricity}
-
-Boston-based company WiTricity\textregistered~has expanded traditional magnetic induction using a method they call highly resonant magnetic coupling (HRMC). Whereas traditional magnetic induction operates at the range of centimeters, HRMC is applicable on the scale of meters. WiTricity\textregistered~reports 50\% efficiency at two meters, followed by 10\% efficiency at four meters~\cite{kesler_highly_2013,tucker_contribution_2013}. HRMC have charged multiple devices without seemingly sacrificing overall efficiency~\cite{kesler_highly_2013}. The public demonstrations by WiTricity\textregistered~show that HRMC can transmit power ranging from milliwatts to kilowatts, significantly more than was practical with traditional induction~\cite{kesler_highly_2013}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.85\textwidth]{lit-review/witricity-schematic}
-    \caption[WiTricity schematic]{Schematic of WiTricity’s HRMC System~\cite{kesler_highly_2013}}
-    \label{fig:lit-review-witricity-schematic}
-\end{figure}
-
-HRMC uses magnetic induction to transmit energy between two coupled antennas. HRMC continually adjusts the coupling of transmitter and receiver antennas to keep both at a mutual resonant frequency. This technique, impedance matching, minimizes the amount of wave reflection inside the transmitter and receiver circuits, maximizing the energy passed to the load component. This process requires a constant proprietary feedback mechanism to optimize the receiver for the given distance from the transmitter.
-
-WiTricity has demonstrated that the range of HRMC can be increased through the use of coupled relays. These relays can be coupled with the transmitter, allowing the effective range of the transmitter to increase with minimal additional loss~\cite{butler_tour_2013}.
-
 \section{Time Reversal}
 \label{lit-review-tr}
 
@@ -168,9 +164,25 @@ The lossless wave equation is time-reversal invariant: for any normally propagat
 
 A system that performs TR is called a time reversal mirror (TRM), sometimes simply shortened to mirror. A TRM consists of one or more transmitters to introduce waves into a chamber and one or more receivers to record the echoes from it. The transmitters and receivers may (but do not have to be) the same device. TR is most effective in echoic chambers that allow waves to reflect off of its interior geometry and return to the transmitters. Here we refer to such a chamber as ``reverberant''.
 
-\todo{figure of gaussian and sona}
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{lit-review/example-sona}
+        \caption[Example sona]{Example sona}
+         \label{fig:lit-review-example-sona}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{lit-review/example-recon}
+        \caption[Example reconstruction]{Example reconstruction}
+         \label{fig:lit-review-example-recon}
+    \end{subfigure}
+    \caption{Recorded sona and reconstruction from a typical TRM experiment}
+    \label{fig:lit-review-example}
+\end{figure}
 
-A TRM works by broadcasting a waveform into the reverberant chamber and recording the resultant echo. This echo will consist of many time-shifted overlays of the original waveform. This echo will be called a ``sona'' in this thesis. The sona is time reversed and rebroadcast, which will cause the waves to trace their paths in reverse and return to their source in a semi-coherent ``reconstruction'' of the original broadcast. Since it involves waves from many scattered paths all suddenly arriving at the same point, this phenomenon is also known as ``collapse''.
+A TRM works by broadcasting a waveform into the reverberant chamber and recording the resultant echo. This echo will consist of many time-shifted overlays of the original waveform. This echo will be called a ``sona'' in this thesis. An example sona is shown in Figure~\ref{fig:lit-review-example-sona}. The sona is time reversed and rebroadcast, which will cause the waves to trace their paths in reverse and return to their source in a semi-coherent ``reconstruction'' of the original broadcast. An example reconstruction is shown in Figure~\ref{fig:lit-review-example-recon}. Since it involves waves from many scattered paths all suddenly arriving at the same point, this phenomenon is also known as ``collapse''.
 
 TR is relatively versatile. If the technique is iterated exactly as described, the broadcasts will collapse more and more exactly on the strongest scatterer in the chamber~\cite{fink_time-reversed_1999}. Many other methods can be used to select targets more discriminately, and the generic TRM itself can be modified as well - for example, by recording directly from a target position, it is possible to create a secure channel between that point and the transmitter~\cite{nltr-wave-chaotic}.
 
