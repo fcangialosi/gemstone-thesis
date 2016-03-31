@@ -1,12 +1,20 @@
 \chapter{Literature Review}
 \label{ch:lit-review}
 
+Commercial wireless power transfer technologies have developed as a response to both the ubiquity of mobile devices and limitations in traditional wired power. These technologies differ in range, efficacy, and method, but suggest an overall attempt to shift away from traditional charging mechanisms. This literature review will focus on the distinct methods that make up the current state-of-the-art of wireless power. These methods and companies are not meant to be exhaustive, but should be recognized as a bird’s-eye-view toward these liminal technologies. \todo{Is the previous sentence too long-winded?}This review will additionally explore WPT technologies based on their applicable ranges.
+
+At the conclusion of this state-of-the-art overview, we will discuss both the general operation of time reversal and the historical developments of the TR field. This will include the acoustical roots of TR by Claire Prada and Matthias Fink, later communication accomplishments by Steven Anlage, and TESLA’s modern WPT application. \todo{Too flashy? Maybe remove}
+
+\section{Wireless Power Transfer Technologies}
+
+Several groups have already made practical WPT technologies. In this paper Powermat, WiTricity, Wattup, uBeam, Cota, and Wicharge will be considered as the state of the art WPT methods. These technologies will be compared using several different metrics, defined here. The capabilities of these technologies under these metrics are summarized in Table~\ref{tab:lit-review-company-compare}, and discussed in detail. \todo{Why are we considering these in detail?}
+
 \def\arraystretch{2}
 \begin{table}[t]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Company} & \cellstack{\textbf{Method of}\\\textbf{Power Transfer}} & \cellstack{\textbf{Max Power}\\\textbf{Delivered (W)}} & \textbf{Approx. Range (ft.)} \\ \hline
+\textbf{Company} & \cellstack{\textbf{Method of}\\\textbf{Power Transfer}} & \cellstack{\textbf{Max Power}\\\textbf{Delivered (W)}\todo{cite}} & \textbf{Approx. Range (ft.)} \\ \hline
 Cota & \cellstack{Concentrated Microwaves} & 1 & 30 \\ \hline
 Powermat & Inductive Coupling & 5 to 50 & Touching \\ \hline
 uBeam & Ultrasound & \cellstack{Unknown\\(minimum 1.5)} & 3 to 13 \\ \hline
@@ -19,100 +27,161 @@ WiTricity & \cellstack{Inductive\\Coupling} & \cellstack{Scalable, on the\\order
 \end{table}
 \footnotetext{Some companies are still in their early stages and thus have not released full details about their technology yet. The information in this table reflects all known publicly disclosed information at the time of writing.}
 
-
-%%%%%%%%%%
-
-In consideration of a solution to any problem, it is useful to consider the work that has already been done with regard to that problem. This step allows scientists to identify gaps in the current body of knowledge, build upon previous research, and generate questions for future investigation. By studying the efforts of their predecessors, researchers can gain a great deal of information about both the direction that their explorations should take and how to proceed in probing topics further. A review of current literature further serves to ensure that time is spent judiciously, and resources are not spent in answering the same question multiple times.
-
-In this chapter, the efforts of several groups who have investigated the ability to send energy to electronic devices wirelessly will be considered. The idea of wireless power transmission is not new, with history as far back as Nikola Tesla’s research more than a century ago \cite{nikolatesla1914}.Investigation into this topic has increased significantly recently and much progress has been made in establishing WPT as a technology in everyday use. Several techniques for accomplishing this have been established as dominant.
-
-A review of the current state of the technology is desired, so the primary focus will be upon technologies that have already been introduced as commercial products, or are well along in the process of commercialization. There are many groups who are researching this problem, but only a few are considered here. It is the aim of this chapter to introduce the few dominant technologies and to provide examples of their use in a public setting. To investigate all current research efforts that are underway would be neither feasible nor worthwhile; a brief examination of major contending technologies is sufficient to get an idea of the current thinking on the problem of WPT.
-
-Mention companies that we are looking at
-Several groups have already made enough progress to commercialize WPT technologies. These entities have taken scientific research and taken advantage of certain aspects of those technologies to apply them to specific applications. This chapter will consider six such companies and discuss each one in detail. Powermat, Witricity, Wattup, uBeam, Cota, and Wicharge are the technologies under review, which will be compared according to several different metrics.
-
-Specify gaps in the current technology
-Although the current body of knowledge has produced several techniques that are being pursued, there are limitations to those techniques that manifest as drawbacks.
-
-Introduce time reversal
-Connect time reversal to gaps in technology
-
-\section{Characteristics of Importance}
-\label{sec:lit-review-chars}
-
-\subsection{Why characteristics need to be defined}
-
-Different WPT technologies vary wildly in both their methods of operation and their intended application.  Further, certain measures of characterizing performance are poorly defined in the field.  For this reason, we will specify the working definitions of several performance parameters important to comparing different wireless power methods.
-
-\subsection{Range}
-
-This is simply the distance at which a WPT method can successfully transfer any measurable level of power. It is important to note that this does not mandate any level of efficiency. Thus, the maximum range at which a given technology is capable of transferring some level of power will be larger than its actual operating range at which it can transfer a sufficient amount of power. For this thesis, we will specifically be referring to operating range. However, this does not do much to narrow down the definition, and makes directly comparing two technologies very difficult, because each company requires a different level of power at their receiver. Wavelength isn’t used to characterize the range of different techniques, because different techniques work under a wide range frequencies.  In this thesis, techniques will be grouped under three ranges, which are defined in Table~\ref{tab:lit-review-ranges}.
-
-\def\arraystretch{2}
-\begin{table}[t]
-\centering
-\begin{tabular}{|c|c|}
-\hline
-\textbf{Class} & \textbf{Range} \\ \hline
-Short & Within 1cm of transmitting antenna \\ \hline
-Medium & [RANGE HERE] \\ \hline
-Long & [RANGE HERE] \\ \hline
-\end{tabular}
-\caption[Definition of transfer ranges]{This table defines three classes of transfer ranges for the purpose of consistency. There does not currently exist any standard definition of ranges.}
-\label{tab:lit-review-ranges}
-\end{table}
+As can be seen, the different WPT technologies vary wildly in both their methods of operation and their intended application. Comparing different WPT technologies is difficult because the measures of characterizing performance used in Table~\ref{tab:lit-review-company-compare} are poorly defined. Metrics for operation are defined separately by individual companies, when they are defined at all. The desire by companies to protect their IP encourages this confusion. We will specify our own definitions of performance metrics important to this paper.\todo{clean this up a bit}
 
 \subsection{Efficiency}
 
-Efficiency in particular is difficult to quantify, as there does not currently exist a standardized definition used by all parties. Each company defines it slightly differently, and some have cited numbers without defining it at all. Efficiency of transfer can include the amount of power drawn by the transmitter compared by the amount of energy delivered to the target.  It can also be defined as the transfer between antennas within a setup, with other losses (such as those due to rectifiers after transmission) being ignored. Where possible, we will specify which definition is being used.
+Efficiency in particular is difficult to quantify, as there does not currently exist a standardized definition used by all parties. In the literature, efficiency of transfer has included:
+the amount of power drawn by the transmitter compared by the amount of energy delivered to the target.
+the transfer between antennas within a setup, with other losses (such as those due to rectifiers after transmission) being ignored.
+
+Here, the team will define efficiency as \todo{BLANKITY BLANKITY BLANK}.
+
+\subsection{Range}
+
+Range is defined here as the maximum distance that a given amount of power can be transmitted.\\
+\todo{NEED TO ADD A TABLE HERE OF WHAT THE RANGES ARE: <5ft, <15ft, <30?s}
 
 \subsection{Maximum Power}
 
-The maximum amount of power that can be transmitted to a target.  This factor will limit the types of devices that can be powered by the technique. While high power transmission is not important for all devices, a larger range of power improves the flexibility of the technology.
+The maximum amount of power that can be transmitted to a target using a given technology.
 
-\subsection{Number of Devices}
-
-The scalability of the technique as a function of number of powered targets.  Additional targets can impact other characteristics of transmission, such as maximum power or efficiency.  Some technologies may perform better or worse as more targets are considered.
+Maximum power limits the devices that can be powered by a given technology. While high power transmission is not important for all devices, a larger range of power improves the flexibility of the technology.
 
 \subsection{Active or Passive Transmission}
 
-\todo{...}
+One characterization of WPT technologies can be made from considering whether or not the receiver requires power. WPT technologies that requires power to complete the process can be described as an active transmission system. A passive technique is one in which the receiver does not require power.
 
 \subsection{Size and Weight of Transmitting and Receiving Units}
 
-\todo{...}
+With the use of WPT technologies, the viability of the technologies towards particular applications needs to be examined. Some example criteria for examining this viability are size and weight constraints of the application. These criteria are emphasized in the application of WPT for mobile devices, where WPT technologies with smaller and lighter receivers are better suited.
 
 \subsection{Health Concerns}
 
-\todo{...}
+\todo{Scott’s Colloquium discussion}
 
 \section{Technologies}
 \label{sec:lit-review-tech}
 
-\subsection{Magnetic Induction}
-Of these, magnetic induction is perhaps most common, as it is used for electric toothbrushes, shavers and charging mats. When current is passed through a metallic coil, a magnetic field is created in the environment around it in accordance with Faraday's Law ~\cite{smith_waves_2010}. If another coil is positioned within this field such that the magnetic flow passes through it, the field induces a current in the second coil. The induced current can then be used directly or stored by the rest of the circuit ~\cite{smith_waves_2010}. This type of power transfer is simple to implement, but is constrained by its limited range and its need for precise coil alignment. The magnetic field must be as strong as possible to maximize the induced current. Unfortunately, the strength of such fields decreases is inversely proportional to their distance from the source. Furthermore, if the second coil is even slightly misaligned with the parallel of the magnetic flow lines, little to no current is induced in the wire ~\cite{griffiths_david_introduction_1999}.
-[FIGURE]
+\todo{NOTE: NEED TO MAKE SURE THAT TONE RE: OTHER COMPANIES IS OBJECTIVE.}\\
+\todo{WE NEED AN INTRO TO THIS}\\
+\todo{We need a delineation of the ranges}\\
 
-In practical application, the range is limited to only a few centimeters with the maximum angle of misalignment being a few degrees ~\cite{butler_tour_2013}. These properties make magnetic induction an economical choice when a device can be simply positioned in direct contact with a charging device, as with electric toothbrushes and certain cell phones. Magnetic induction, then, while useful and simple, is best suited towards applications where extreme range limitations are acceptable. The technique cannot be generalized to work at longer ranges due to sharp decreases in efficiency, a drawback that WPT attempts to ameliorate.
+\subsection{Very Short Range}
+\subsubsection{Powermat}
+The most restrictive technology in terms of range is that of Powermat. Devices are charged by being placed on the charging mat. Harnessing inductive coupling, the same method used to charge electric toothbrushes, Powermat has virtually no charging range, as the device and the charger must be in full contact. The technology is capable of charging multiple devices, and it has created compatibility devices for those devices which are not sold pre-Powermat-enabled.
 
-\subsection{Microwave Beaming}
+As the charging mat is wired, its range is still restricted to the length of a power cord. What Powermat saves is the burden of two to three more wires and the motion of plugging the charging cord into a device--if that. If the device is not compliant with the Powermat standard, then it must be plugged into a compatibility device anyway.
+The mat can deliver between 5 and 50W, making it a very effective charging tool, but it reaps virtually none of the potential benefits of wireless charging.
 
-Fortunately, there are viable solutions to circumvent the practical pitfalls of magnetic induction. For example, microwave beaming is a WPT technique with perhaps the longest range of existing technology. Microwave beaming involves sending collimated microwave-frequency (1 GHz - 300 GHz) signals from transmitter to receiver ~\cite{goldstein_polarized_2003}. These maser beams, when collected, are converted back into usable electricity by  rectifying antennas ~\cite{zhai_practical_2010}. Theoretically, beaming masers is extremely efficient because microwaves will self-propagate indefinitely in a vacuum, with no loss of energy. The presence of air means that some energy is always lost to dispersion<cite|check?>, though the practical range of the technique is still on the order of kilometers as opposed to centimeters. Unfortunately, serious challenges are still present to using microwave beaming as a feasible means of WPT. The first is that it requires high precision: if the beam does not strike the receiver, all of its energy is lost to the environment. Given the extreme ranges when microwave beaming would be considered, a small misalignment in transmission angle would result in the beam missing its target completely. Another concern is that the maser will be completely disrupted if anything, including the environment itself, blocks the path of the beam between the transmitter and receiver. This concern is compounded with the possibility that organisms and tissue could suffer damage from missed or blocked microwaves. Thus, microwave beaming only has applications in well-controlled or isolated environments such as laboratories, which can achieve extreme precision with minimal interference.
+\subsection{Medium Range}
+
+\subsubsection{WiTricity}
+
+\subsubsection{WattUp}
+Our next mid-range WPT company is named WattUp. The central idea of this company’s method is to use bluetooth to transfer RF signals about the receiver’s location relative to the transmitter so that the transmitter may focus energy on the receiver. Once it has locked in a signal, it may boost the output power from mW RF signals to multiple W RF signals such that the receiver can charge. WattUp highlights two main features to its technology: (1) the range over which \numrange{1}{4}~W may be quickly and safely transmitted and (2) the relatively large number of devices that may be powered at once (currently 12, with 24 being available in the future).
+
+As is the case with the other investigated WPT companies, the primary feasibility concern is the range and power that the technology offers. WattUp cites that they may deliver up to 4W to a 4 devices simultaneously within 0-5 feet of the transmitter, 2W to 4 devices simultaneously within \numrange{5}{10}~feet, and 1~W within \numrange{10}{15}~feet. This linear decrease in power with increasing range is similar to the trend seen with WiTricity, as previously discussed. These numbers only represent the current model and demonstration version of the technology. WattUp boasts that for ranges <5 feet, the device will charge as if it were plugged into a wall outlet, for 5-10 feet, the device will resemble USB port charging from a computer, and for \numrange{10}{15}~feet users can still slower charge rates, Based on the aforementioned values provided by WattUp, the overall max range is \~15~feet with a max output power of \~10~W, although these two conditions may not be met at the same time.
+
+The technology itself uses two separate RF frequencies to perform wireless charging, representing both the Bluetooth communication (2.4~GHz) and power transfer frequency (5.7~GHz). Both of these frequencies are allowed unlicensed frequency bands that are known to be used for wireless communication. We believe that WattUp chose to use separate frequencies in order to more easily differentiate the signals used for either targeting or power transfer. As the targeting algorithm is proprietary, we are unable to comment on their exact methodology for targeting the receiver.
+
+In terms of feasibility for commercialization, the transmitter is simply a 12-in x 12-in antenna array, resembling an oversized router. The receiver is much smaller, being only 1.5-in x 1.5-in that may easily be either embedded in a device or made into a small case or add-on to the device. Given the small size of the transmitter and receiver, the technology is still able to lock onto a device within a matter of seconds. The technology has been deemed safe by the FCC, and WattUp states that ``based on our preliminary calculations, the SAR at our receiver should be well below that of a typical cellular signal''. The combination of these two aspects coupled with the notable range, transmittable power, and allowed number of devices to charge causes WattUp to be a very viable commercial technology for the future. The major setback with this technology is that it requires a constant feedback loop of information from the Bluetooth connection. This implies that if a device is powered off, then it may not receive any power. Our process of NLTR would circumvent this problem; whereby, a the nonlinear element inside the device would allow WPT to occur even in a device has a power level of 0\%.
+
+\subsubsection{uBeam}
+The other primary medium range WPT titled uBeam uses an entirely unique method compared to other companies/methods, relying on ultrasonic waves rather than electromagnetic waves. One can imagine their system as an extremely high power microphone and speaker combination that specifically sends the sound to a device location. Although uBeam is unique in its approach, it boasts comparable range and power levels when discussed next to other WPT companies.
+
+The first difficulty to using sound waves as opposed  to electromagnetic waves is the inherent dissipative nature of air as a medium. Due to this characteristic, uBeam uses output sound levels of \numrange{145}{155}~dB (316 - 3000~$\frac{W}{m^2}$), comparable to the sound produced by a jet engine or shotgun blast. In order for this level of sound to be used safely, uBeam a transmission frequencies of \numrange{45}{75}~kHz, as this is far above the audible range of both humans and animals. As an extra safety measure, uBeam cites that ``if a person were to be exposed to the uBeam ultrasound source, 99.9\% of the emitted ultrasound will bounce off the skin''. These considerations have allowed uBeam to stay well within the FDA safety regulations.
+uBeam uses a phased array transmitter with thousands of antennas that result in a power range of \numrange{1}{4}~m. Although the tracking and targeting algorithm is proprietary in nature, uBeam boasts the ability to maintain power transfer while the receiver is moving, although uBeam does not cite specific speeds. One significant drawback to uBeam is that it requires line of sight in order to work due to the nature of sound as a mechanical oscillation. For example, if a cell phone is in a user’s pocket, then it will not be able to be powered as the user’s clothing will block or extremely dampen the ultrasonic waves.
+
+The main benefits that uBeam possesses include its moderate range, quick lock on time, and ability to power moving devices. Still, the main problem that uBeam does not cite is the overall efficiency of the power transfer. Using \numrange{145}{155}~dB is an extremely high power output from the transmitter. A reasonable output at the receiver is on the order of \numrange{1}{10}~s of watts. This disparity raises doubts that uBeam could be feasible WPT technology given the power input needed to produce such high dB levels is on the order of hundreds of watts. Using NLTR as a method of WPT possesses all the benefits of uBeam without the potentially small transfer efficiency.
+
+\section{Long Range}
+
+Two technologies drastically exceed their counterparts in range: Cota and Wi-Charge.
+
+\subsubsection{Cota}
+
+Cota uses concentrated microwaves to create ``pockets of energy'' at precise locations. The power-seeking device sends out pulses regularly, which, when picked up by a Cota system, trigger the system to send out a high energy pulse targeted specifically to the device’s location.
+
+The Cota system consists of two parts: a charger and a receiver. The Cota receivers built into devices and batteries regularly send out omnidirectional beacon signals. Once the Cota charger receives these beacons, it returns thousands of targeted signals that build hotspots of energy at only the precise locations of the beacons' origins. The charger uses 20,000 antennas to determine the exact direction the signal came from. This pinpoint precision targeting of energy safely and efficiently powers all Cota-equipped devices and batteries within its effective radius, even as they move around the room.
+
+The technology has achieved a 30~ft range and a max power delivery of about 1W, offering a comfortable operating radius and charging speed at about one-third the charging time via regular USB cable. It also cites the capability to charge as many devices as desired. However, it uses Bluetooth to link the charger to the receiver(s), which is an overhead that encumbers the simplicity and speed of microwave concentration. Furthermore, utilizing the Bluetooth protocol requires that the power-seeking device constantly pulse, requesting power. This means that charging the device is contingent on the device already having enough power to send that request.
+
+\subsubsection{Wi-Charge}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/wicharge-1}
+    \caption{\todo{I NEED A CAPTION}}
+    \label{fig:lit-review-wicharge-1}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/wicharge-2}
+    \caption{\todo{I NEED A CAPTION}}
+    \label{fig:lit-review-wicharge-2}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/wicharge-3}
+    \caption{\todo{I NEED A CAPTION}}
+    \label{fig:lit-review-wicharge-3}
+\end{figure}
+
+Also capable of a 30 ft operating radius, Wi-Charge uses lasers to create robust power transfer systems. To understand the system, it is necessary to discuss how a laser works. Consider Figure~\ref{fig:lit-review-wicharge-1}, which depicts two mirrors and an amplifier between them. Simply put, one photon, an energetic light particle, enters the amplifier and two come out. When the photons hit the mirror, they bounce back through amplifier in the opposite direction and two photons become four. This process repeats with each ricochet against a mirror, and the energy amplifies within the system. This process of recirculating light in a positive feedback loop with an amplifier creates a resonator.
+
+When that resonator has one mirror that is very slightly transparent, as in Figure~\ref{fig:lit-review-wicharge-1}, then a focused, high powered beam is generated. This beam is a laser.
+
+Any particles that do not travel along the axis between the two mirrors will hit the mirror at an odd angle and bounce out of the resonator. This is why only the photons that are traveling in the direction of the axis between the two mirrors will continue to amplify.
+
+Wi-Charge took this traditional definition of a laser, and made a few clever modifications to better suit their purposes, shown in Figure~\ref{fig:lit-review-wicharge-2}.
+
+First, they kept the components--two mirrors with an amplifier between them--but modified their arrangement. Second, they made the mirrors retro-reflectors which, unlike regular mirrors, reflect light back to their sources. The result is that the two mirrors spontaneously form a resonator when placed within each other’s line of sight, and that the resonator is stalled immediately when the line of sight is broken.
+
+Thus, if one the mirrors is attached to the device and the other is attached to the transmitter, then an inherent, yet safe amplification system is created. Thus, the first mirror and the amplifier are grouped together as the transmitter, and the second mirror and a photovoltaic cell are grouped together as the receiver. This is shown in Figure~\ref{fig:lit-review-wicharge-3}.
+
+Wi-Charge is a long range wireless power solution that can deliver up to 10W of power~\cite{wicharge-businseswire}. It can latch onto targets almost instantaneously and cease beaming equally quickly, intrinsically. It can also power multiple devices. However, the feature that enables all of its strongest points is also its seemingly irreparable flaw: line-of-sight. While this system may work beautifully in a sparsely populated environment, in any thriving business or locale, such as the busy coffee shop or airport in which Wi-Charge envisions its products, there will be too many obstructions disrupting its line of sight. Thus, this fatal flaw renders Wi-Charge an impractical solution to the problem of WPT.
+
+\todo{cite ?? above: http://www.businesswire.com/news/home/20150310006473/en/Wi-Charge-Ushers-Era-Wireless-Device-Charging}
 
 \subsection{WiTricity}
 
-Whereas microwave beaming operates on the scale of kilometers and magnetic induction operates at the range of centimeters, highly resonant magnetic coupling (HRMC) by the Boston-based company WiTricity\textregistered is applicable on the scale of meters. This new method of WPT appears promising: WiTricity\textregistered  self-reported 50\% efficiency at two meters, followed by 10\% efficiency at four meters ~\cite{kesler_highly_2013,tucker_contribution_2013}. Demonstrations of HRMC have charged multiple devices without seemingly sacrificing overall efficiency ~\cite{kesler_highly_2013}: A 2009 study? showing powered relatively small devices - a phone and a television– at a distance of about three or four feet ~\cite{giler_demo_2009}, while a later 2012 study? showing powered electric vehicles. The public demonstrations by WiTricity\textregistered that HRMC can transmit power ranging from milliwatts to kilowatts, significantly more than was practical with traditional induction ~\cite{kesler_highly_2013}.
-Though much is not explicitly known about the exact methods used by WiTricity\textregistered, there are a few indications about the underlying system. First, it is known that HRMC tunes both the transmitter and receiver circuits to the same resonant frequency, a concept analogous to tuning two instruments to the same pitch, to generate a greater voltage at the receiver when compared with traditional induction. The power entering the transmitter generates a broadly distributed magnetic field, which radiates outwardly enough to encompass multiple receivers. Second, this property of HRMC can additionally be used to increase working range through relays, devices with a strong mutual inductance, which can recreate the magnetic field with minimal loss. ~\cite{butler_tour_2013}. Finally, an additional technique used to actively adjust the resonance and impedance of the networks so that transmission remains optimal ~\cite{kesler_highly_2013}. This technique, impedance matching, minimizes the amount of wave reflection inside the transmitter and receiver circuits, ensuring that most of the energy is actually passed to the load component. This process requires a constant proprietary feedback mechanism to optimize the receiver for the given distance from the transmitter.
-Though their methods are complex and burdensome, WiTricity\textregistered has achieved impressive results. While HRMC looks very promising in the coming years for commercial applications, the method is not without its drawbacks: it is likely to be prohibitively expensive for residential use and the range is still reasonably limited to only a few meters. Thus, there is still no safe wireless charging method which can efficiently transmit energy over a distance greater than four meters.
+Boston-based company WiTricity\textregistered has expanded traditional magnetic induction using a method they call highly resonant magnetic coupling (HRMC). Whereas traditional magnetic induction operates at the range of centimeters, HRMC is applicable on the scale of meters. WiTricity\textregistered reports 50\% efficiency at two meters, followed by 10\% efficiency at four meters~\cite{kesler_highly_2013,tucker_contribution_2013}. HRMC have charged multiple devices without seemingly sacrificing overall efficiency~\cite{kesler_highly_2013}. The public demonstrations by WiTricity\textregistered show that HRMC can transmit power ranging from milliwatts to kilowatts, significantly more than was practical with traditional induction~\cite{kesler_highly_2013}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/witricity-schematic}
+    \caption[WiTricity schematic]{Schematic of WiTricity’s HRMC System~\cite{kesler_highly_2013}}
+    \label{fig:lit-review-witricity-schematic}
+\end{figure}
+
+HRMC uses magnetic induction to transmit energy between two coupled antennas. HRMC continually adjusts the coupling of transmitter and receiver antennas to keep both at a mutual resonant frequency. This technique, impedance matching, minimizes the amount of wave reflection inside the transmitter and receiver circuits, maximizing the energy passed to the load component. This process requires a constant proprietary feedback mechanism to optimize the receiver for the given distance from the transmitter.
+
+WiTricity has demonstrated that the range of HRMC can be increased through the use of coupled relays. These relays can be coupled with the transmitter, allowing the effective range of the transmitter to increase with minimal additional loss~\cite{butler_tour_2013}.
 
 \section{Time Reversal}
 \label{lit-review-tr}
 
-Team TESLA's project hopes to overcome some of these limitations through a novel method: the use of electromagnetic time reversal (TR). TR is a proven technique in signal processing, with applications in acoustics as well as electromagnetics. Though its publicity is limited, there is a wealth of available literature regarding TR in certain specialized areas. Here we briefly describe the development and historical applications of the technique to illustrate where TESLA's project will expand this literature.
-Time reversal as a technique was first developed in the 1990s. Some of the earliest and most influential work was conducted through teams led by Mathias Fink and Claire Prada of the University of Paris. These researchers used the technique to focus sound waves on “scatterers”, objects that reflect the pulses ~\cite{prada_iterative_1991}. An array of transducers would fire a sonic pulse into some propagation medium and listen for the echo. The recording of that echo was reversed in the time domain and transmitted back into the medium. They repeated (iterated) this process, causing the acoustic signature of the strongest scatterer to appear more prominently each time. In this way, the team was able to iteratively focus on the scatterers without needing prior knowledge of their location. Prada and her team submitted this DORT (French acronym, English: Decomposition of the Time Reversal Operator) method as a process for finding cracks or faults in structural members ~\cite{prada_iterative_1991}. More importantly, Prada et al. went on to demonstrate that the method could always resolve the brightest scatterer if given enough iterations, that it worked better in a heterogeneous medium than a homogenous one, and that it was both experimentally and mathematically possible to resolve multiple targets at once ~\cite{prada_decomposition_1996}. These discoveries generated significant interest in a subset of the acoustics research community.
-Others in the field of acoustics went on to refine the DORT method as an imaging technique, and as the field gathered attention, further explored formalizing the problem in general. An excellent example of the latter is the theoretical work by D. H. Chamber in his 2007 examination of TR for target detection and characterization ~\cite{chambers_target_2007}. In 2010, Nguyen and Gan developed a way to extract much more information from an anisotropic (directionally distinct) scatterer, including its rough shape, density, and radius. In doing so, they developed a faster mathematical approach to locating their scatterers that relied on several good approximations instead of one exhaustive computation ~\cite{nguyen_dort_2010}. Also in 2010, Barbieri and Meo made a large contribution to the field by bringing together the DORT method, which works in linear environments, and another similar method for working in nonlinear environments. This allowed them to resolve and distinguish between linear scatterers such as holes and nonlinear scatterers such as cracks ~\cite{barbieri_time_2010}.
-Imaging is not the only application for a focusing method, however, and others adapted the existing body of TR research to new problems. The reciprocity of the wave function that Fink and Prada relied on to develop the technique holds for all waves it can be used to model – this means that the time reversal operation works much the same way with electromagnetic waves as it does with sound waves ~\cite{chambers_target_2007}. This was explored as early as 1999, but was largely concerned with the same imaging problems occupying those in acoustics until at least 2007 ~\cite{chambers_target_2007}. However, that gradually began to change. In 2011, a team including graduate students from the University of Maryland posited that time reversal was an ideal mechanism for wireless communication ~\cite{giler_demo_2009}. In the same way that a sound wave could be made to collapse on a scatterer, they showed that an information packet could be made to collapse on a receiver. The team submitted this as a “green” or eco-friendly communication method, because information could be tightly concentrated at a single point rather than beamed wastefully in all directions ~\cite{giler_demo_2009}. Later, this same property was examined for its security benefits instead of its environmental ones. In February of 2013, a team of researchers at the University of Maryland, including Matthew Frazier and Steven Anlage, published a study discussing TR as a method to selectively send information in a chaotic wave environment ~\cite{nltr-wave-chaotic} ~\cite{taddese_sensing_2010}. Essentially, the team was able to create an exclusive communication link to a certain object, without needing to know its location, and without interfering with nearby objects. In their experiment, they were able to transmit data (in the form of images) exclusively to a desired  port, while the other port received only nonsense.
-Beyond its practical applications, in the process, Frazier and his team used nonlinear elements to extend TR in new and exciting ways. Recall that in traditional TR many iterations are required to pinpoint the target. The addition of a significantly nonlinear element greatly simplifies the pinpointing process. When a wave strikes the element, harmonic frequencies are produced at integer multiples of the original frequency. These harmonics can be quickly located in the echo's frequency domain and filtered to select them exclusively. The important distinction is that since the harmonics originated directly from the target, all subsequent broadcasts of the TR signal will collapse there exactly without the need for iteration ~\cite{nltr-wave-chaotic}. Frazier and the others put forth several exciting directions to pursue with this concept: the aforementioned secure communication channels, hyperthermic treatment of tumors, and a long range WPT system that eschews traditional high power beams. It is this last area that TESLA intends to explore.
+\subsection{Conceptual of Time Reversal}
 
-\todo{WPT history and state of art}
-\todo{TR history and state of art}
+The lossless wave equation is time-reversal invariant: for any normally propagating wave taken to be a time-forward solution, there is a corresponding time-reversed solution representing that wave traveling in the opposite direction. The technique known as time reversal (TR) exploits this property of waves focus a signal onto the point of origin of another previous signal. TR can locate objects without prior knowledge of their position or their surrounding geometry.
+
+A system that performs TR is called a time reversal mirror (TRM), sometimes simply shortened to mirror. A TRM consists of one or more transmitters to introduce waves into a chamber and one or more receivers to record the echoes from it. The transmitters and receivers may (but do not have to be) the same device. TR is most effective in echoic chambers that allow waves to reflect off of its interior geometry and return to the transmitters. Here we refer to such a chamber as ``reverberant''.
+
+\todo{figure of gaussian and sona}
+
+A TRM works by broadcasting a waveform into the reverberant chamber and recording the resultant echo. This echo will consist of many time-shifted overlays of the original waveform. This echo will be called a ``sona'' in this thesis. The sona is time reversed and rebroadcast, which will cause the waves to trace their paths in reverse and return to their source in a semi-coherent ``reconstruction'' of the original broadcast. Since it involves waves from many scattered paths all suddenly arriving at the same point, this phenomenon is also known as ``collapse''.
+
+TR is relatively versatile. If the technique is iterated exactly as described, the broadcasts will collapse more and more exactly on the strongest scatterer in the chamber~\cite{fink_time-reversed_1999}. Many other methods can be used to select targets more discriminately, and the generic TRM itself can be modified as well - for example, by recording directly from a target position, it is possible to create a secure channel between that point and the transmitter~\cite{nltr-wave-chaotic}.
+
+\subsection{History of Time Reversal Research}
+
+Team TESLA’s project hopes to overcome some of these limitations through a novel method: the use of electromagnetic time reversal (TR). TR is a proven technique in signal processing, with applications in acoustics as well as electromagnetics. Though its publicity is limited, there is a wealth of available literature regarding TR in certain specialized areas. Here we briefly describe the development and historical applications of the technique to illustrate where TESLA’s project will expand this literature.
+
+Time reversal as a technique was first developed in the 1990s. Some of the earliest and most influential work was conducted through teams led by Mathias Fink and Claire Prada of the University of Paris. These researchers used the technique to focus sound waves on ``scatterers'', objects that reflect the pulses~\cite{prada_iterative_1991}. An array of transducers would fire a sonic pulse into some propagation medium and listen for the echo. The recording of that echo was reversed in the time domain and transmitted back into the medium. They repeated (iterated) this process, causing the acoustic signature of the strongest scatterer to appear more prominently each time. In this way, the team was able to iteratively focus on the scatterers without needing prior knowledge of their location. Prada and her team submitted this DORT (French acronym, English: Decomposition of the Time Reversal Operator) method as a process for finding cracks or faults in structural members~\cite{prada_iterative_1991}. More importantly, Prada et al. went on to demonstrate that the method could always resolve the brightest scatterer if given enough iterations, that it worked better in a heterogeneous medium than a homogenous one, and that it was both experimentally and mathematically possible to resolve multiple targets at once~\cite{prada_decomposition_1996}. These discoveries generated significant interest in a subset of the acoustics research community.
+
+Others in the field of acoustics went on to refine the DORT method as an imaging technique, and as the field gathered attention, further explored formalizing the problem in general. An excellent example of the latter is the theoretical work by D. H. Chamber in his 2007 examination of TR for target detection and characterization~\cite{chambers_target_2007}. In 2010, Nguyen and Gan developed a way to extract much more information from an anisotropic (directionally distinct) scatterer, including its rough shape, density, and radius. In doing so, they developed a faster mathematical approach to locating their scatterers that relied on several good approximations instead of one exhaustive computation~\cite{nguyen_dort_2010}. Also in 2010, Barbieri and Meo made a large contribution to the field by bringing together the DORT method, which works in linear environments, and another similar method for working in nonlinear environments. This allowed them to resolve and distinguish between linear scatterers such as holes and nonlinear scatterers such as cracks~\cite{barbieri_time_2010}.
+
+Imaging is not the only application for a focusing method, however, and others adapted the existing body of TR research to new problems. The reciprocity of the wave function that Fink and Prada relied on to develop the technique holds for all waves it can be used to model--this means that the time reversal operation works much the same way with electromagnetic waves as it does with sound waves~\cite{chambers_target_2007}. This was explored as early as 1999, but was largely concerned with the same imaging problems occupying those in acoustics until at least 2007~\cite{chambers_target_2007}. However, that gradually began to change. In 2011, a team including graduate students from the University of Maryland posited that time reversal was an ideal mechanism for wireless communication~\cite{wang_green_2011}. In the same way that a sound wave could be made to collapse on a scatterer, they showed that an information packet could be made to collapse on a receiver. The team submitted this as a ``green'' or eco-friendly communication method, because information transfer could be accomplished using less energy~\cite{wang_green_2011}. Later, this same property was examined for its security benefits instead of its environmental ones. In February of 2013, a team of researchers at the University of Maryland, including Matthew Frazier and Steven Anlage, published a study discussing TR as a method to selectively send information in a chaotic wave environment~\cite{nltr-wave-chaotic}~\cite{taddese_sensing_2010}. Essentially, the team was able to create an exclusive communication link to a certain object, without needing to know its location, and without interfering with nearby objects. In their experiment, they were able to transmit data (in the form of images) exclusively to a desired port, while the other port received only nonsense.
+
+Beyond its practical applications, in the process, Frazier and his team used nonlinear elements to extend TR in new and exciting ways. Recall that in traditional TR many iterations are required to pinpoint the target. The addition of a significantly nonlinear element greatly simplifies the pinpointing process. When a wave strikes the element, harmonic frequencies are produced at integer multiples of the original frequency. These harmonics can be quickly located in the echo’s frequency domain and filtered to select them exclusively. The important distinction is that since the harmonics originated directly from the target antenna, all subsequent broadcasts of the TR signal will collapse on the antenna without the need for iteration~\cite{nltr-wave-chaotic}. Frazier and the others put forth several exciting directions to pursue with this concept: the aforementioned secure communication channels, hyperthermic treatment of tumors, and a long range WPT system that eschews traditional high power beams. It is this last area that TESLA intends to explore.
