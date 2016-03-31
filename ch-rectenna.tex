@@ -105,7 +105,14 @@ To determine the overall rectification efficiency, a second antenna was used to 
 
 Rectification was most pronounced in the 3-5~GHz frequency band. Rectified voltage is highest at 3.4~GHz and 4.6~GHz, with DC voltage levels of 66.5~mV and 59.0~mV respectively. Unfortunately, DC voltage results of higher frequencies were unreliable and erratic given the measurement techniques, and accurate data could not be taken.
 
-Given the resistive load of 330~$\Omega$, rectified DC power can be calculated from the voltage above. A plot of this is shown in Figure~\ref{fig:rectenna-test-1-power}.
+Given the resistive load of 330~$\Omega$, rectified DC power can be calculated from the voltage above. Using DC voltage ($V$) and load resistance ($R$), the DC power ($P_{dc}$) was calculated using Equation ~\ref{eq:dc_power}:
+
+\begin{equation}
+P_{dc} = \frac{V^2}{R}
+\label{eq:dc_power}
+\end{equation}
+
+A plot of this is shown in Figure~\ref{fig:rectenna-test-1-power}.
 
 \begin{figure}[h!]
 \centering
@@ -119,7 +126,16 @@ Considering the input power of 17~dBm (around 50.12~mW), the wall-to-load effici
 
 To establish rectification efficiency, AC power tests were conducted on a bare dipole antenna with no diode, resistor, or capacitor. The results of this test establish the overall power accepted by the rectenna, and is directly comparable to the previous DC power results.
 
-The setup of the AC power experiment was similar to the DC power experiment, with the exception of two key differences: the voltmeter was replaced by a \texttt{DSO91304A} oscilloscope, and the rectenna was replaced by the bare dipole antenna. In the absence of the 330~$\Omega$ load resistor on the rectenna, the 50~$\Omega$ input impedance of the oscilloscope~\cite{DSO91304A-manual} was used as the load. The setup and results of the test are shown below in Figures~\ref{fig:rectenna-test-2-setup}~and~\ref{fig:rectenna-test-2-power}, respectively.
+The setup of the AC power experiment was similar to the DC power experiment, with the exception of two key differences: the voltmeter was replaced by a \texttt{DSO91304A} oscilloscope, and the rectenna was replaced by the bare dipole antenna. In the absence of the 330~$\Omega$ load resistor on the rectenna, the 50~$\Omega$ input impedance of the oscilloscope~\cite{DSO91304A-manual} was used as the load. 
+
+Using AC voltage amplitude ($V_{max}$) and load resistance ($R$), the accepted AC power ($P_{ac}$) was calculated using Equation ~\ref{eq:ac_power}:
+
+\begin{equation}
+P_{ac} = \frac{V_{max}^2}{2R}
+\label{eq:ac_power}
+\end{equation}
+
+The setup and results of the test are shown below in Figures~\ref{fig:rectenna-test-2-setup}~and~\ref{fig:rectenna-test-2-power}, respectively.
 
 \begin{figure}[h!]
     \centering
@@ -138,7 +154,14 @@ The setup of the AC power experiment was similar to the DC power experiment, wit
     \label{fig:rectenna-test-2}
 \end{figure}
 
-Assuming that the transfer function between the antennas doesn't change between the AC and DC tests, these results allow the rectification efficiency to be calculated. The efficiency in this case is the ratio of the rectified DC power to the non-rectified AC power. Figure~\ref{fig:rectenna-efficiency} shows the efficiency calculated this way, across the range of frequencies tested.
+Assuming that the transfer function between the antennas doesn't change between the AC and DC tests, these results allow the rectification efficiency to be calculated. The efficiency ($E$) in this case is the ratio of the rectified DC power ($P_{dc}$) to the total accepted AC power ($P_{dc}$), as in Equation ~\ref{eq:rec_eff}:
+
+\begin{equation}
+E = \frac{P_{dc}}{P_{ac}}
+\label{eq:rec_eff}
+\end{equation}
+
+Figure~\ref{fig:rectenna-efficiency} shows the efficiency calculated this way, across the range of frequencies tested.
 
 \begin{figure}[h!]
 \centering
