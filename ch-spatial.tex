@@ -1,3 +1,39 @@
 \chapter{Spatial Profiling}
+\label{ch:spatial-profile}
+\section{Purpose}
+\label{sec:spatial-profile-purpose}
 
-\todo{...}
+A major concern with the practical application of TR to WPT is the ability of WPT to safely and consistently converge on its target.  An ideal TR WPT system will focus large amounts of energy on a very small space.  However, the question remains: how small of a space is it focused in?
+
+The answer to this question will have major repercussions on the ability of TR to be used in a WPT context.  If the area of reconstruction is large, additional energy may be directed to the area around the target.  The increased energy density in this region will make losses due to absorption much higher than in other parts of the chamber.  More importantly however, this absorbed energy may damage circuitry or biological matter near the TR receiver.
+
+Clearly, the spatial profile of a reconstruction should be as small as possible.  For TR WPT to be used on small electronic devices, the profile should be small enough not to damage circuits or biological matter within a centimeter or so of the device.  An experiment was done to characterize this behavior, as it exists in our setup.
+
+\section{Methodology}
+\label{sec:spatial-profile-meth}
+
+Characterization of the spatial profile was done in the same aluminum cavity used in the linear and nonlinear time reversal tests, listed above.
+
+The basic time reversal process in this environment proceeds as follows: First, a 50 ns Gaussian pulse (with a carrier frequency of 5 GHz) is injected into the cavity through the transmitting antenna. That sona is measured at the receiving antenna (Fig. 1b). The sona is then time reversed and injected into the transmitting antenna. The result is a reconstruction of the initial pulse back at the receiving antenna (Fig. 1c). This process makes use of another robust symmetry, namely the spatial reciprocity of the wave equation.
+Two monopole antennas inject and extract electromagnetic signals from different points in the enclosure. A transmitting antenna is attached to the cavity wall opposite the receiving antenna. The receiving antenna is attached to a panel that can move vertically with a total range of 70 millimeters. Motion of the receiving antenna is achieved using an externally-mounted PI MikroMove M-415.DG translation stage and the enclosure remains sealed during the translation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix AWG7052 arbitrary waveform generator feeding an Agilent E8267D Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent DSO91304A) is used to record waveforms of interest. MATLAB is used for signal processing and instrument control and coordination.
+
+The first experiment measures the spatial profile of a reconstruction, with the goal of characterizing reconstruction size as a function of carrier signal wavelength. A reconstruction is focused on the receiving antenna, in the middle of its movement range. Without changing the time reversed sona being broadcast, the receiving antenna is systematically translated through its entire range of movement. Samples are taken every 0.2 mm across the entire 70 mm range, and the maximum peak-to-peak voltage of the corresponding reconstruction is recorded at each step. We repeated this experiment for carrier frequencies in the range 4-9 GHz and display these results in Fig. 2.
+
+{Figure 2 of Spatial WPTC paper}
+{Figure 3 of Spatial WPTC paper}
+
+\section{Results}
+\label{sec:spatial-profile-results}
+
+\todo{Do we actually even need a results section here if it wasn’t in the paper? Isn’t it kind of already in the section above..?}
+
+\section{Discussion}
+\label{sec:spatial-profile-discussion}
+
+The reconstruction peak-to-peak voltage profile is expected to take the form of a sinc(x) function about the antenna [11]. Thus, the following equation is proposed to predict V(x), the maximum peak-to-peak voltage from a given reconstruction, as a function of x, the distance between the reconstruction focal point and the receiver:
+
+INSERT EQUATION HERE
+
+where $a$ is the maximum peak-to-peak reconstruction amplitude, $b$ is the wavelength of the signal divided by 2, $c$ is the location of the antenna along the x-axis, and $d$ is the noise level
+offset voltage. Since $b$ is proportional to the wavelength (and inversely proportional
+to frequency), as the carrier frequency is increased, 1 $b$ also increases, causing the “bubble” of the sinc function in Fig. 2 to get smaller. This relationship is shown explicitly in the inset of Fig. 2. Fig. 3 shows 1 fit to the 5 GHz curve from Fig. 2, including error bars. The fit is good, but has a reduced 2 of 234 due in part to the rather large background noise level. The error bars are primarily systematic, introduced by the oscilloscope internal voltage multiplier used in scaling.
