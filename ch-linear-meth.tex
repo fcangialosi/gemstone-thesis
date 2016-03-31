@@ -1,5 +1,5 @@
 \section{Experimental Work}
-The following sections detail the research that TESLA has done in the field of TR WPT.  These experiments are meant to accomplish several goals:
+The following sections detail the research that TESLA has done in the field of TR WPT. These experiments are meant to accomplish several goals:
 
 \begin{itemize}
     \item Characterize the behaviors of TR relevant to WPT applications
@@ -16,7 +16,7 @@ The majority of our experiments take place within an enclosed, reflective cavity
 
 Our TRM consists of three pieces of microwave processing equipment and a desktop workstation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix \texttt{AWG7052} arbitrary waveform generator feeding an Agilent \texttt{E8267D} Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent \texttt{DSO91304A}) is used to record waveforms of interest. MATLAB is used for signal processing and instrument control and coordination.
 
-In many experiments, it is necessary to be able to “read” and “write” signals from the same port. Manually switching coaxial cables from the PSG to the DSO is slow and can destroy reconstructions, so we use four HP 8762C coaxial switches to reroute signals as required.
+In many experiments, it is necessary to be able to ``read'' and ``write'' signals from the same port. Manually switching coaxial cables from the PSG to the DSO is slow and can destroy reconstructions, so we use four HP 8762C coaxial switches to reroute signals as required.
 
 This hardware is laid out in Figure~\ref{fig:linear-gigabox}.
 
@@ -27,7 +27,7 @@ This hardware is laid out in Figure~\ref{fig:linear-gigabox}.
     \label{fig:linear-gigabox}
 \end{figure}
 
-Our TR experiments fall into two main categories, which we refer to as linear and nonlinear. Nonlinear TR (or NLTR) makes use of harmonic reflections from the target to isolate it via Fourier transform after the sona is collected, a process similar to how we would envision a TR based WPT system to work. Linear TR or LTR refers to any experiment that locates the target another way, which in our case usually means taking a sona directly from the target’s location. It is experimentally much easier to get clean, strong reconstructions with LTR than with NLTR, so we use it for experiments investigating the behavior of the waves rather than the behavior of the target.
+Our TR experiments fall into two main categories, which we refer to as linear and nonlinear. Nonlinear TR (or NLTR) makes use of harmonic reflections from the target to isolate it via Fourier transform after the sona is collected, a process similar to how we would envision a TR based WPT system to work. Linear TR or LTR refers to any experiment that locates the target another way, which in our case usually means taking a sona directly from the target's location. It is experimentally much easier to get clean, strong reconstructions with LTR than with NLTR, so we use it for experiments investigating the behavior of the waves rather than the behavior of the target.
 
 This section concerns LTR experiments. Conceptually, our general process for LTR in the Gigabox is as follows: we broadcast a Gaussian pulse from one port serving as a transmitter and collect a sona from another serving as a receiver. That sona is time reversed and rebroadcast from the transmitting port, which will cause a slightly distorted version of the original Gaussian pulse to reconstruct at the receiver. This process is illustrated in Figure~\ref{fig:linear-ltr}.
 
