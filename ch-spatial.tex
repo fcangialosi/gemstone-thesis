@@ -30,10 +30,10 @@ The first experiment measures the spatial profile of a reconstruction, with the 
 \section{Discussion}
 \label{sec:spatial-profile-discussion}
 
-The reconstruction peak-to-peak voltage profile is expected to take the form of a sinc(x) function about the antenna [11]. Thus, the following equation is proposed to predict V(x), the maximum peak-to-peak voltage from a given reconstruction, as a function of x, the distance between the reconstruction focal point and the receiver:
+The reconstruction peak-to-peak voltage profile is expected to take the form of a $sinc(x)$ function about the antenna [11]. Thus, the following equation is proposed to predict $V(x)$, the maximum peak-to-peak voltage from a given reconstruction, as a function of $x$, the distance between the reconstruction focal point and the receiver:
 
-INSERT EQUATION HERE
+$$V(x) = a\cdot sinc\left(\frac{x+c}{b}\right) + d$$
 
 where $a$ is the maximum peak-to-peak reconstruction amplitude, $b$ is the wavelength of the signal divided by 2, $c$ is the location of the antenna along the x-axis, and $d$ is the noise level
 offset voltage. Since $b$ is proportional to the wavelength (and inversely proportional
-to frequency), as the carrier frequency is increased, 1 $b$ also increases, causing the “bubble” of the sinc function in Fig. 2 to get smaller. This relationship is shown explicitly in the inset of Fig. 2. Fig. 3 shows 1 fit to the 5 GHz curve from Fig. 2, including error bars. The fit is good, but has a reduced 2 of 234 due in part to the rather large background noise level. The error bars are primarily systematic, introduced by the oscilloscope internal voltage multiplier used in scaling.
+to frequency), as the carrier frequency is increased,  $\frac{1}{b}$ also increases, causing the “bubble” of the sinc function in Fig. 2 to get smaller. This relationship is shown explicitly in the inset of Fig. 2. Fig. 3 shows 1 fit to the 5 GHz curve from Fig. 2, including error bars. The fit is good, but has a reduced $\chi^2$ of 234 due in part to the rather large background noise level. The error bars are primarily systematic, introduced by the oscilloscope internal voltage multiplier used in scaling.
