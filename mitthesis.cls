@@ -479,8 +479,7 @@ by \\
 \def\baselinestretch{1}\@normalsize
 Submitted to the Gemstone Program, \Umd \\
 on \@thesisdate, in partial fulfillment of the \\
-requirements for the \@degreeword\ of \\
-\@degree
+requirements of the \@degree, \Umd, 2016
 \end{center}
 \par
 \begin{abstract}}
