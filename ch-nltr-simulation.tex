@@ -38,7 +38,7 @@ To start any simulation, we first generated a Gaussian pulse signal in MatLab. F
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/input-wave}
+\includegraphics[width=\textwidth]{numerical/input-wave}
 \caption[Example of inverted and non-inverted interrogation signals]{This shows our input waveform with a 4.4GHz center frequency and 1.0GHz bandwidth. The blue signal is the non-inverted input and the red signal is the inverted input. A singular, non-inverted waveform is shown in the inset.}
 \label{fig:numerical-input-wave}
 \end{figure}
@@ -73,7 +73,7 @@ I_{d} = G_{s}V_{d}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/cst-diode}
+\includegraphics[width=\textwidth]{numerical/cst-diode}
 \caption[CST circuit model of a diode]{CST circuit model of a diode.}
 \label{fig:numerical-cst-diode}
 \end{figure}
@@ -82,7 +82,7 @@ To obtain idealized results, we set $C$ and $G_s$ to $0$, as these values reduce
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/iv-curves}
+\includegraphics[width=\textwidth]{numerical/iv-curves}
 \caption[I-V curves of diodes with different voltage knees]{Different I-V curves that can be modeled in CST. It should be noted that the ``Temperature'' of the diode only changes its mathematical definition of the I-V curve}
 \label{fig:numerical-iv-curves}
 \end{figure}
@@ -110,7 +110,7 @@ Using a cavity of height 0.76 cm resulted in a cutoff frequency of 20 GHz, well 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/cst-box}
+\includegraphics[width=\textwidth]{numerical/cst-box}
 \caption[The Cut Box Model]{The Cut Box simulation geometry used in CST. (a) shows the location of the 2 ports (A and B), 2 diodes ($V_k^{high}, V_k^{low}$), length scale, and the lower inset shows the initial interrogation pulse. (b) shows the electric field at a point in the simulation, illustrating the limited excited mode density.}
 \label{fig:numerical-cst-box}
 \end{figure}
@@ -121,12 +121,10 @@ The specific frequency and bandwidth was chosen for this geometry to minimize in
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/s11-spectrum}
+\includegraphics[width=\textwidth]{numerical/s11-spectrum}
 \caption[$S_{11}$ spectrum of the Cut Box Model]{The $S_{11}$ spectrum for the Cut Box Model. We wanted to minimize $S_{11}$ for our simulation while maintaining a large bandwidth. This led to choosing a 4GHz center frequency with a 1GHz bandwidth.}
 \label{fig:numerical-s11-spectrum}
 \end{figure}
-
-
 
 Using this input pulse and the pulse inversion method of sona extraction, we were able to perform NLTR in the Cut Box Model. By measuring the observed voltage and corresponding current during the time-reversed step, we measured the quasi-power over time in each diode. As shown in Figure~\ref{fig:numerical-sim-recon}, the reconstruction waveform on each diode matches the expected results for a 1-diode experiment~\cite{taddese_sensing_2010,barbieri_time_2010}.
 \begin{figure}[t]
@@ -135,8 +133,6 @@ Using this input pulse and the pulse inversion method of sona extraction, we wer
 \caption[Simultaneous reconstructions on two diodes]{The time-reversed reconstruction on two diodes simultaneously performed inside the Cut Box geometry.}
 \label{fig:numerical-sim-recon}
 \end{figure}
-
-
 
 \subsection{Discussion of Simultaneous Nonlinear Reconstructions}
 
@@ -168,7 +164,7 @@ To perform this selective targeting, we once again used the Cut Box Model. In th
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/selective-recon-low}
+\includegraphics[width=\textwidth]{numerical/selective-recon-low}
 \caption[Selective reconstruction on a $V_{k}^{low}$ diode]{Time-reversed reconstructions on the two diodes while targeting $V_{k}^{low}$. Very little signal is seen on the $V_{k}^{high}$ diode. The insert shows the details of the reconstructions between 22 and 30 ns.}
 \label{fig:numerical-selective-recon-low}
 \end{figure}
@@ -177,7 +173,7 @@ The more difficult scenario was to selectively target a high $V_k$ diode at the 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/selective-recon-high}
+\includegraphics[width=\textwidth]{numerical/selective-recon-high}
 \caption[Selective reconstruction on a $V_{k}^{high}$ diode]{Time-reversed reconstructions on the two diodes while targeting $V_{k}^{high}$. Sona amplitude modulation resulted in a clear contrast between the two signals.}
 \label{fig:numerical-selective-recon-high}
 \end{figure}
@@ -212,7 +208,7 @@ Our next question was whether or not these transfer efficiencies were a function
 \centering
 \includegraphics[width=0.85\linewidth]{numerical/room-model-a}
 \caption[Geometry of the Room Model]{Illustrates the geometry of the simulation.}
-\label{fig:numerical-room-model-a}g
+\label{fig:numerical-room-model}
 \end{figure}
 
 
