@@ -2,11 +2,21 @@
 
 \label{ch:conclusion}
 
-\todo{Need to fill this out}
+In sum, then, here are our collected investigations:
+
+We hypothesized that overlapping reconsturctions by overlaying sonas could result in more effective power transmitted per duty cycle. Our experiments seemed to support this in that the number of reconstructions in the cycle could be increased while maintaining their characteristic shape. However, our lab equipment attempted to scale each arbitrary waveform we broadcast to the same total output power. This prevented us from definitively finding a relationship between the number of reconstructions and the power received by the target.
+
+As part of investigating TR's applicability to WPT, the team wanted to map how broad and how strong the excitation from the collapsing wavefront was around a target antenna. An understanding of this would be useful to engineers attempting to integrate a TR WPT system into any larger system. Reconstruction were mapped at a variety of frequencies, and the width of this spatial profile was found to be directly related to the wavelength.
+
+The spatial profiling told us that the region of excitation around a target could be relatively broad compared to the size of our antenna. Next, we wanted to see whether we could take advantage of this by repeatedly re-targeting an antenna as it began to move out of the region of greater power. In this way, we hoped it would be possible for a TR WPT system to maintain steady power delivery to the target. Our results appeared to show that it should be, though we were somewhat limited by the time our TRM took to aquire a new sona and retarget the antenna.
+
+As discussed in the literature review, prior researchers have been able to distinguish between linear and nonlinear elements. We wanted to show that it was also possible to distinguish between two distinct nonlinear elements. While we were succesful in replicating previous work distinguishing linear and nonlinear elements, we were not able to produce two nonlinear elements sufficiently different in their nonlinear response that we could determine which was which in the frequency domain. We remain convinced that this should be possible, however, based on the results of our simulations.
+
+The team investigated whether ferromagnetic nanorods could be used to produce a distinctive nonlinear signature, but these tests were inconclusive. 
+
+Additionally, we attempted to make our own antenna that would both rectify incoming microwaves to a DC voltage and act as a nonlinear element for NLTR. For a variety of reasons, these rectennas were never usuable for full-scale NLTR in the Gigabox. However, we believe that other researchers with greater experience in manufacturing would see success with a similar method.
 
 \section{Future Work}
-
-\todo{Consider looking at last paragraph or two from Scott’s section.}
 
 Thanks to the generosity of Dr. Anlage and the UMD CNAM, Team TESLA had access to several state-of-the-art measuring and testing devices. Researching alongside graduate students associated with the CNAM, TESLA explored TR WPT primarily through the behavior of reconstruction, including how sonas can be manipulated to change reconstruction parameters.  Experiments including minimum TR cycle time, overlapping sonas, and reconstruction profile characterization have added to the literature surrounding practical TR, but gaps in knowledge continue to remain.  Many of these gaps we have identified are due to limitations in TESLA's technical expertise and lack of  access to proper equipment.  As a result of these shortcomings, we suggest areas of further research that could yield fruitful results with a dedicated and pioneering team, including what experiments could address these gaps.  It is our hope that our research will lay groundwork for further explorations of how TR can be applied to practical WPT.
 
@@ -16,41 +26,14 @@ The aluminum echoic chamber used in tests (the Gigabox), and the equipment used 
 
 The Gigabox was designed to be an ideal environment to study TR from a signal processing point of view. However, the Gigabox is not easily modified from this purpose. A Gigabox with interchangeable panels will allow for the creation of testing environments of differing absorption, translucence, and geometry. Fine control of these parameters will aid the development of a model for the effects of environment on the power losses of TR WPT. The lack of this model for transmission efficiency is one of the greatest hurdles towards designing a TR WPT system.
 
-Better tools can help the team revisit previously unsuccessful experiments. Early in TESLA’s research the team investigated how antenna design and form could relate to TR convergence.  This path yielded inconclusive results for a variety of reasons. Due to lack of resources and inexperience, the team approached antenna design and testing using a “rapid prototyping” plan that resulted in inconsistent designs. Higher quality fabrication techniques, coupled with prototyping in simulations, could have improved this aspect of research.  We suggest that future research in TR antenna optimization should focus on the creation of nonlinearly reflective antennas useful in NLTR.  These antennas will allow experiments on TR WPT with multiple receivers, a topic which may offer significant advances in the field.
+Better tools can help the team revisit previously unsuccessful experiments. Early in TESLA's research the team investigated how antenna design and form could relate to TR convergence.  This path yielded inconclusive results for a variety of reasons. Due to lack of resources and inexperience, the team approached antenna design and testing using a ``rapid prototyping'' plan that resulted in inconsistent designs. Higher quality fabrication techniques, coupled with prototyping in simulations, could have improved this aspect of research.  We suggest that future research in TR antenna optimization should focus on the creation of nonlinearly reflective antennas useful in NLTR.  These antennas will allow experiments on TR WPT with multiple receivers, a topic which may offer significant advances in the field.
 
 \subsection{Technical Inexperience}
 
 TESLA's research into TR was very much a learning experience.  The team began its research with little to no experience with TR, or with academic research as a whole.  As a result, many of the team's early research results should be reconsidered or revisited. There are other areas that the team did not investigate at all, and which now are obvious areas of research.
 
-TESLA’s experimentation focused significantly on the relationship between sona and reconstruction, and there are more areas within this topic that should be revisited in greater detail.  TESLA performed several early experiments on partial sonas to see how they relate to reconstruction quality.  However, the team prioritized completion of other tests at the time, as there was an unclear sense of practical application or benefit by continuing.  In retrospect, these tests may be useful in relating the sona to the environmental characteristics and should be considered in more detail.
+TESLA's experimentation focused significantly on the relationship between sona and reconstruction, and there are more areas within this topic that should be revisited in greater detail.  TESLA performed several early experiments on partial sonas to see how they relate to reconstruction quality.  However, the team prioritized completion of other tests at the time, as there was an unclear sense of practical application or benefit by continuing.  In retrospect, these tests may be useful in relating the sona to the environmental characteristics and should be considered in more detail.
 
-Future researchers may want to consider the quality of reconstructions created with partial sonas.  This research should also give a better quantification of what “reconstruction quality” means for arbitrary reconstruction waveforms. It could be beneficial to find methods of relating sona length and general shape to geometric factors of the environment. Understanding this relationship can allow the optimization of a TR WPT system for a given environment. The reverse is also true; some modifications to the transmission environment may help improve efficiency.
+Future researchers may want to consider the quality of reconstructions created with partial sonas.  This research should also give a better quantification of what ``reconstruction quality'' means for arbitrary reconstruction waveforms. It could be beneficial to find methods of relating sona length and general shape to geometric factors of the environment. Understanding this relationship can allow the optimization of a TR WPT system for a given environment. The reverse is also true; some modifications to the transmission environment may help improve efficiency.
 
-Finally, the effect of iterative time reversal on reconstruction was ignored in TESLA's tests.  The team suggests that it should be considered in future experimentation. Iterative time reversal mirrors are common in the literature for signal focusing [CITE HERE], and there is reason to believe that iteration will also improve EM TR WPT.  Iteration may have significant effects on transfer efficiency and spatial profile.  However, iteration is also based off of the idea of a stationary target, and may not work well for moving targets.  This tradeoff, once understood, will greatly help optimize the system.
-
-\section{Summary}
-
-Outline: (I'm writing below this outline and I have to say I don't like all of the items on it -Tim)
-	What discoveries or accomplishments have been made:
-Overlapping Reconstructions
-Ability to produce continual reconstructions on a stationary target
-Simultaneous reconstructions {linear TR}?
-Spatial Profile
-Description of localization of reconstructions on a stationary targets
-Moving Reconstructions
-Demonstrate capability to follow moving receiver based on spatial profile of reconstruction on a quasi-stationary receiver.
-Selective Targeting
-Ability to selectively target diodes by exploiting their separate nonlinear characteristics.
-Simultaneous reconstructions (non via overlapping sonas {nonlinear TR})?
-ferromagnetic nanorods
-Identifying potential nonlinear elements to be used in NLTR
-Properties of nanorod harmonic generation: amplification, suppression, and/or absence of nonlinear response
-Rectenna
-
-We hypothesized that overlapping reconsturctions by overlaying sonas could result in more effective power transmitted per duty cycle. Our experiments seemed to support this in that the number of reconstructions in the cycle could be increased while maintaining their characteristic shape. However, our lab equipment attempted to scale each arbitrary waveform we broadcast to the same total output power. This prevented us from definitively finding a relationship between the number of reconstructions and the power received by the target.
-
-As part of investigating TR's applicability to WPT, the team wanted to map how broad and how strong the excitation from the collapsing wavefront was around a target antenna. An understanding of this would be useful to engineers attempting to integrate a TR WPT system into any larger system. Reconstruction were mapped at a variety of frequencies, and the width of this spatial profile was found to be directly related to the wavelength.
-
-The spatial profiling told us that the region of excitation around a target could be relatively broad compared to the size of our antenna. Next, we wanted to see whether we could take advantage of this by repeatedly re-targeting an antenna as it began to move out of the region of greater power. In this way, we hoped it would be possible for a TR WPT system to maintain steady power delivery to the target. Our results appeared to show that it should be, though we were somewhat limited by the time our TRM took to aquire a new sona and retarget the antenna.
-
-In summary, several technical accomplishments have been made to assist
+Finally, the effect of iterative time reversal on reconstruction was ignored in TESLA's tests.  The team suggests that it should be considered in future experimentation. Iterative time reversal mirrors are common in the literature for signal focusing, and there is reason to believe that iteration will also improve EM TR WPT.  Iteration may have significant effects on transfer efficiency and spatial profile.  However, iteration is also based off of the idea of a stationary target, and may not work well for moving targets.  This tradeoff, once understood, will greatly help optimize the system.
