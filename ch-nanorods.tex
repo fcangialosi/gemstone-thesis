@@ -11,7 +11,7 @@ As noted in Chapter~\ref{ch:selective}, the team faced significant difficulties 
 
 An additional experiment was conducted by the team to determine whether ferromagnetic nanorods could generate a useable nonlinear signal for nonlinear time reversal. For the first experiment, the ferromagnetic nanorods were attached with tape to a monopole antenna and put into a small box lined with tin foil that acts as a reflective chamber. This was attached via a circulator in sequence with a signal generator and a spectrum analyzer (as shown in Figure~\ref{fig:nanorod-setup}). The signal generator output a CW, which swept from \numrange{1}{10}~GHz every .5~GHz.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{nanorod/setup}
     \caption[Initial ferromagnetic nanorod experimental setup]{Diagram showing connections between the antenna, signal generator, and spectrum analyzer used in the first experimental setup.}
@@ -24,7 +24,7 @@ In the first round of testing, a simple pole antenna was used, with the ferromag
 
 After initial tests with the control variable being the presence of the ferromagnetic nanorods, the next test compared the base behavior of the antenna to the response of the ferromagnetic nanorods in the presence of a magnetic field. In order to accomplish this, a magnet was affixed to the outside of the Gigabox as close to the transmitting port as possible. In each of these first two tests, the frequency was swept every .1~GHz from 3.5~GHz to 6.5~GHz.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{nanorod/antenna}
     \caption[Antenna used with ferromagnetic nanorods in the Gigabox]{The ferromagnetic nanorods are affixed inside the copper solenoid, which is placed beside the antenna in order to test a different alignment of the magnetic field.}
@@ -38,9 +38,39 @@ In each of the above tests, the carrier frequency was the independent variable s
 \section{Results}
 \label{sec:nanorod-results}
 
-Figure 7 shows positive spikes in nanorod response compared to the base at 4 GHz and 6 GHz. Contrast this to Figures 8 and 9 below; they show a sharp peak in nonlinear response with the ferromagnetic nanorods at 5 GHz, where the sharp dip in performance occurred in the first test.
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\linewidth]{nanorod/exp-1}
+        \caption[]{}
+        \label{nanorod-exp-1}
+    \end{subfigure}
+        \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\linewidth]{nanorod/exp-2}
+        \caption[]{}
+        \label{nanorod-exp-2}
+    \end{subfigure}
+        \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\linewidth]{nanorod/exp-3}
+        \caption[]{}
+        \label{nanorod-exp-3}
+    \end{subfigure}
+        \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.0\linewidth]{nanorod/exp-4}
+        \caption[]{}
+        \label{nanorod-exp-4}
+    \end{subfigure}
+    \caption[Ferromagnetic nanorod experimental results]{Experimental results}
+    \label{fig:nanorod-results}
+\end{figure}
 
-Figure 10 shows the final results with the loop antenna and magnetic stimulation, with behavior averaged across five tests. This is also the finest resolution, taken in the areas of interest from the results of the previous tests.
+Figure~\ref{fig:nanorod-exp-1} shows positive spikes in nanorod response compared to the base at 4 GHz and 6 GHz. Contrast this to Figures 8 and 9 below; they show a sharp peak in nonlinear response with the ferromagnetic nanorods at 5 GHz, where the sharp dip in performance occurred in the first test.
+
+Figure~\ref{fig:nanorod-exp-4} shows the final results with the loop antenna and magnetic stimulation, with behavior averaged across five tests. This is also the finest resolution, taken in the areas of interest from the results of the previous tests.
 
 \section{Discussion}
 \label{sec:nanorod-discussion}
