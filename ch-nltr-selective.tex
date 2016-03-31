@@ -1,4 +1,58 @@
 \chapter{Using Nonlinear Time Reversal for Selective Reconstructions}
 \label{ch:selective}
 
-\todo{Bring this over from google doc.}
+\section{Purpose}
+\label{sec:selective-purpose}
+
+With a wireless power scheme constructed, it could be advantageous to control which receivers are the recipients of electrical power. Sending energy to one device, but not another, allows the scheme operator to have greater control over the use of energy: an increase in transfer efficiency, an ability to distinguish between devices, and a capability to deliver power to multiple devices simultaneously are all desirable outcomes. In using a time-reversal mirror for a wireless power transfer scheme, several of these advantages are inherent. The process of time reversal isolates the sending and receiving devices. Creating a reconstruction at the receiving devices fundamentally creates a pulse that is spatially and temporally localized, with any other devices receiving negligibly more than background energy.
+
+Linear time reversal is useful for selective targeting of a single device, due to the ability to isolate a single receiver. However, the ability to keep track of several receivers and transmit energy to them independently poses a greater challenge. If two receivers request power from the sender, the sender must have some other information in order to target between them and avoid sending an electric signal to both devices. The two receivers must present some distinguishing features so the sending party can select which device to target. Nonlinear Time Reversal (NLTR) is a version of LTR that creates these distinguishing features.
+
+The time-reversal mirror fidelity requires a set of discrete paths between the transmitters and receivers, with neither party knowing the location of the other within the enclosure. The team investigated the case where the receivers differ in their frequency response to an interrogation signal.
+
+\section{Methodology}
+\label{sec:selective-meth}
+
+To investigate whether a TR technique can demonstrates the ability to distinguish between receiving targets on a basis of their frequency response to an interrogation signal. These experiments were performed within the Gigabox resonant cavity used in the LTR setup above. The AWG, PSG, and DSO setup are used to receive and transmit signals in a manner similar to their use in the LTR setup. The NLTR setup uses three input/output ports; one representing the sender, and two representing different receivers. The NLTR setup is described in Figure~\ref{fig:selective-setup}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{nonlinear/setup}
+    \caption[]{}
+    \label{fig:selective-setup}
+\end{figure}
+
+The two receivers are designated as either ``linear'' or ``nonlinear'' according to their response to a signal at a carrier frequency. The linear receiver responds to the interrogation with a signal at the same carrier frequency as it was queried with. The nonlinear receiver responds with a signal includes the second harmonic of the carrier frequency, in addition to the carrier frequency itself. When an interrogation pulse is transmitted from the sender to both receivers, it is met with a combination of responses at two discrete frequencies; filtering can be used to easily isolate one from the other.
+
+Creating ideal reflector antennas proved to be very difficult given the resources of the team.  Instead of reflectors, an initial signal was broadcast from the receiving antennas.  The nonlinear receiver was routed through a frequency multiplier to create the second harmonic needed for NLTR.  The sona created by the two receivers was collected at the transmitting antenna.  The time reversed sona, broadcast from the transmitting antenna, reconstructs on both of the receivers.  One receiver can be targeted separately by filtering the appropriate frequency from the sona, and broadcasting it alone. A reconstruction should appear at the corresponding receiver’s port while the other receiver can only detect noise. To ensure that selective reconstruction occurred, the resulting signals at both receivers were monitored and the presence of a reconstruction (or lack thereof) noted. As a reminder, the process for nonlinear targeting is illustrated in \todo{Figure Y}.\todo{Need to cite the following two figures in results somewhere in the text.}
+
+The experiment was performed with Gaussian interrogation pulses 50~ns in length, at a carrier frequency of 4.2~GHz. The sonas were recorded to lengths of 15~$\mu$s and the signals were broadcast at a power of 3~dBm.
+
+\section{Results}
+\label{sec:selective-results}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{nonlinear/selective-fundamental}
+    \caption[]{\todo{I NEED CAPTION}}
+    \label{fig:selective-fundamental}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{nonlinear/selective-harmonic}
+    \caption[]{\todo{I NEED CAPTION}}
+    \label{fig:selective-harmonic}
+\end{figure}
+
+The results of this experiment confirmed the fidelity of the time reversal mirror and its ability to selectively transmit power to a receiver. Monitoring the voltage response of both the linear port and the nonlinear port confirmed the existence of a reconstruction for each case.
+
+When the sona was filtered and broadcast at the linear, carrier frequency, a clear reconstruction emerged at the linear port. At the nonlinear receiver, the lack of a comparable reconstruction is notable. The peak-to-peak reconstruction at the linear receiver is four times larger than the strongest signal at the nonlinear port, showing that only the intended targets received the bulk of the signal.
+
+When broadcasting the sona filtered around the second harmonic, the opposite effect occurred. The nonlinear receiver received a reconstruction with a peak-to-peak voltage five times greater than the reconstruction at the linear receiver.
+
+\section{Discussion}
+\label{sec:selective-discussion}
+
+This experiment demonstrates the crux of the WPT method proposed by the team. So long as different receivers emit different frequencies of signals, TR can be used to selectively transmit energy to them. In a practical application a transmitter could service a wide number of receivers using this method. Receivers could conceivably alter their nonlinearity to ensure that no interference occurs between them.
+
+There are some further technical challenges that would need to be addressed before this plan can come to fruition however. The primary challenge is that an applied NLTR system would require antennas to reflect the interrogation signals sent to them. The team was unable to create an antenna that had this behavior the the degree desired. Creating nonlinear reflective antennas is an even greater technical challenge. A second challenge is that fine control of nonlinearity is not trivial to do--most changes in nonlinearity generally take the form of integer frequency multiplications. Limited to multiplicative differences will force the bandwidth of an NLTR system to become exponentially large with more receivers.
