@@ -51,7 +51,7 @@ The \texttt{MA4E1317} has low total capacitance (.045~pF) and series resistance 
 \section{Antenna Design}
 \label{sec:rectenna-antenna}
 
-A printed circuit board (PCB) dipole antenna was chosen for the system. The \texttt{MA4E1317} is a low-dimension flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based off of the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified heavily in our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
+A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the system. The copper trace acts as the antenna, and is etched into a FR-4 substrate. The \texttt{MA4E1317} is a flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based off of the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified in our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
 
 
 \begin{figure}[h!]
@@ -70,7 +70,7 @@ A printed circuit board (PCB) dipole antenna was chosen for the system. The \tex
     \label{fig:rectenna-design}
 \end{figure}
 
-The rectenna is composed of the \texttt{MA4E1317} diode, a 47~pF ceramic capacitor acting as a low-pass RF filter, a 330~$\Omega$ load resistor, and output pins for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the wavelength of the incident wave.
+The rectenna is composed of the \texttt{MA4E1317} diode, a 47~pF ceramic capacitor acting as a low-pass microwave filter, a 330~$\Omega$ load resistor, and output pins for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the wavelength of the incident wave.
 
 One important distinction for this rectenna design is the lack of filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out so that the antenna can generate nonlinear harmonics from the interrogation signal.
 
