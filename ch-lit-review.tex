@@ -45,7 +45,7 @@ Range is defined here as the maximum distance that a given amount of power can b
 
 \subsection{Maximum Power}
 
-The maximum amount of power that can be transmitted to a target using a given technology. Typically, this value is cited at relatively short distances, much shorter than the previously stated range. It should be specifically noted that there is generally a tradeoff between maximum power and range that is unavoidable. 
+The maximum amount of power that can be transmitted to a target using a given technology. Typically, this value is cited at relatively short distances, much shorter than the previously stated range. It should be specifically noted that there is generally a tradeoff between maximum power and range that is unavoidable.
 
 Maximum power limits the devices that can be powered by a given technology. While high power transmission is not important for all devices, a larger range of power improves the flexibility of the technology.
 
@@ -71,7 +71,7 @@ In order to classify the different companies, the most simplistic manner is to d
 The most restrictive technology in terms of range is that of Powermat. Devices are charged by being placed on the charging mat. Harnessing inductive coupling, the same method used to charge electric toothbrushes, Powermat has virtually no charging range, as the device and the charger must be in full contact. The technology is capable of charging multiple devices, and it has created compatibility devices for those devices which are not sold pre-Powermat-enabled.
 
 As the charging mat is wired, its range is still restricted to the length of a power cord. What Powermat saves is the burden of two to three more wires and the motion of plugging the charging cord into a device--if that. If the device is not compliant with the Powermat standard, then it must be plugged into a compatibility device anyway.
-The mat can deliver between 5 and 50W, making it a very effective charging tool, but it reaps virtually none of the potential benefits of wireless charging. 
+The mat can deliver between 5 and 50W, making it a very effective charging tool, but it reaps virtually none of the potential benefits of wireless charging.
 
 The most significant application to date has been the implementation of PowerMat devices inside furnature\cite{rogercheng205}. In doing so, the surface of a table may be transformed into a charging surface. This method is relatively old -- it was first incorporated in 2006  and started producing its product shortly thereafter. In fact, one may purchase a multi-device Powermat unit for less than \$50. Given the enormous costs that are generally seen for user versions of up-and-coming technologies, this is a very cheap price for a wireless charging system.
 
@@ -98,7 +98,7 @@ As is the case with the other investigated WPT companies, the primary feasibilit
 
 The technology itself uses two separate RF frequencies to perform wireless charging, representing both the Bluetooth communication (2.4~GHz) and power transfer frequency (5.7~GHz)~\cite{energouscorporation2016}. Both of these frequencies are allowed unlicensed frequency bands that are known to be used for wireless communication. We believe that WattUp chose to use separate frequencies in order to more easily differentiate the signals used for either targeting or power transfer. As the targeting algorithm is proprietary, we are unable to comment on their exact methodology for targeting the receiver.
 
-In terms of feasibility for commercialization, the transmitter is simply a 12-in x 12-in antenna array, resembling an oversized router~\cite{energouscorporation2016}. The receiver is much smaller, being only 1.5-in x 1.5-in that may easily be either embedded in a device or made into a small case or add-on to the device. Given the small size of the transmitter and receiver, the technology is still able to lock onto a device within a matter of seconds. The technology has been deemed safe by the FCC, and WattUp states that ``based on our preliminary calculations, the SAR at our receiver should be well below that of a typical cellular signal''. The combination of these two aspects coupled with the notable range, transmittable power, and allowed number of devices to charge causes WattUp to be a very viable commercial technology for the future. The major setback with this technology is that it requires a constant feedback loop of information from the Bluetooth connection. This implies that if a device is powered off, then it may not receive any power. Our process of NLTR would circumvent this problem; whereby, a the nonlinear element inside the device would allow WPT to occur even in a device has a power level of 0\%.
+In terms of feasibility for commercialization, the transmitter is simply a 12-in x 12-in antenna array, resembling an oversized router~\cite{energouscorporation2016}. The receiver is much smaller, being only 1.5-in x 1.5-in that may easily be either embedded in a device or made into a small case or add-on to the device. Given the small size of the transmitter and receiver, the technology is still able to lock onto a device within a matter of seconds. The technology has been deemed safe by the FCC, and WattUp states that ``based on our preliminary calculations, the SAR at our receiver should be well below that of a typical cellular signal''. The combination of these two aspects coupled with the notable range, transmittable power, and allowed number of devices to charge causes WattUp to be a very viable commercial technology for the future. The major setback with this technology is that it requires a constant feedback loop of information from the Bluetooth connection. This implies that if a device is powered off, then it may not receive any power. Our process of NLTR would circumvent this problem; whereby, a nonlinear element inside the device would allow WPT to occur even in a device has a power level of 0\%.
 
 \subsubsection{uBeam}
 The final primary medium range WPT titled uBeam uses an entirely unique method compared to other companies/methods, relying on ultrasonic waves rather than electromagnetic waves~\cite{ubeam2016}. One can imagine their system as an extremely high power microphone and speaker combination that specifically sends the sound to a device location. Although uBeam is unique in its approach, it boasts comparable range and power levels when discussed next to other WPT companies.
@@ -123,19 +123,19 @@ The technology has achieved a 30~ft range and a max power delivery of about 1~W,
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{lit-review/wicharge-1}
-    \caption{The resonating chamber of a typical laser. The gain medium allows for stimualted emission of photons. The 95\% reflective mirror partially transmits light, which is observed as the output of the laser}
+    \caption{The resonating chamber of a typical laser. The gain medium allows for stimualted emission of photons. The 95\% reflective mirror partially transmits light, which is observed as the output of the laser~\cite{wicharge2016}.}
     \label{fig:lit-review-wicharge-1}
 \end{figure}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{lit-review/wicharge-2}
-    \caption{A modification of the traditional laser resonating cavity to allow for collimation and coherency of the stimulated photons}
+    \caption{A modification of the traditional laser resonating cavity to allow for collimation and coherency of the stimulated photons~\cite{wicharge2016}.}
     \label{fig:lit-review-wicharge-2}
 \end{figure}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{lit-review/wicharge-3}
-    \caption{The setup of the Wi-Charge system. The gain medium in this case is air, with the 95\% reflective mirror being located within the receiver device. The laser light is immediately transfer to a photovoltaic cell where it may be converted back into an electrical signal to power a battery}
+    \caption{The setup of the Wi-Charge system. The gain medium in this case is air, with the 95\% reflective mirror being located within the receiver device. The laser light is immediately transfer to a photovoltaic cell where it may be converted back into an electrical signal to power a battery~\cite{wicharge2016}.}
     \label{fig:lit-review-wicharge-3}
 \end{figure}
 
