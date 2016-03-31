@@ -1,3 +1,43 @@
 \chapter{Nanorods}
 
-\todo{...}
+\label{ch:nanorod}
+
+\todo{Where is the purpose section here that’s been in every other chapter??}
+
+\section{Methodology}
+\label{sec:nanorod-meth}
+
+An additional experiment was conducted by the team to determine whether ferromagnetic nanorods could generate a useable nonlinear signal for nonlinear time reversal. For the first experiment, the ferromagnetic nanorods were attached with tape to a monopole antenna and put into a small box lined with tin foil that acts as a reflective chamber. This was attached via a circulator in sequence with a signal generator and a spectrum analyzer (as shown in Figure 1). The signal generator output a CW, which swept from 1 GHz to 10 GHz every .5 GHz.
+
+
+
+                  Figure 1
+
+The next step in this research was to move to Gigabox testing. The setup for this experiment followed that of the first step of linear time reversal, with modifications to the responding antenna depending on the iteration of the variable being tested.
+
+In the first round of testing, a simple pole antenna was used, with the ferromagnetic nanorods being taped to the transmitting antenna. The DSO then collected the signal from the transmitting antenna at a port several centimeters away.
+
+After initial tests with the control variable being the presence of the ferromagnetic nanorods, the next test compared the base behavior of the antenna to the response of the ferromagnetic nanorods in the presence of a magnetic field. In order to accomplish this, a magnet was affixed to the outside of the Gigabox as close to the transmitting port as possible. In each of these first two tests, the frequency was swept every .1 GHz from 3.5 GHz to 6.5 GHz.
+
+The third and final test relied on the same magnetic stimulation as the second iteration of the Gigabox test, with a different antenna, this one fashioned into a solenoid, to test a different alignment of the magnetic field. This final round of testing had the highest frequency resolution, which swept from 3.05 GHz to 6 GHz at every .05 GHz. For additional certainty, the measurements from five runs were averaged for a final result.
+
+In each of the above tests, the carrier frequency was the independent variable swept across. This is represented as 1F. The dependent variable was the recorded voltage at the nonlinear frequency, 2F, double the carrier frequency. This voltage was separated using an FFT function in Matlab.
+
+\section{Results}
+\label{sec:nanorod-results}
+
+Figure 7 shows positive spikes in nanorod response compared to the base at 4 GHz and 6 GHz. Contrast this to both of the graphs below show a sharp peak in nonlinear response with the ferromagnetic nanorods at 5 GHz, where the sharp dip in performance occurred in the first test.
+
+Figure 10 shows the final results with the loop antenna and magnetic stimulation, with behavior averaged across five tests. This is also the finest resolution, taken in the areas of interest from the results of the previous tests.
+
+{Captions that start with figures 9, 8, 7!!!}
+
+{four graphs from the googledoc!!!}
+
+
+\section{Discussion}
+\label{sec:nanorod-discussion}
+
+The results show a general attenuation response in the gigahertz range of transmission for the ferrite ferromagnetic nanorods. The first test involving the small foil-lined box showed an extremely attenuated response at 5 GHz, which is notable in that it is the location of the sharpest peak in the Gigabox tests. This could be due to spatial resonance differences between the boxes, however, in the final run in which five tests were averaged, the sharp peak in nonlinear response is instead just below 5 GHz. The level of attenuation across the vast majority of frequencies seems to indicate that the ferromagnetic nanorods actually inhibit a nonlinear response being broadcast from the antenna. This final average shows what the other tests indicate, which is an almost total indifference towards the presence of the ferromagnetic nanorods at low frequencies (less than 3.5 GHz). Looking forward, higher frequencies might provide a different response, hopefully a more positive one, though this would require equipment to measure possibly in excess of 20 GHz.
+Future research into this subject could look at a few variables that might affect the nonlinearity seen in the measuring oscilloscope. The first possibility should be to place the ferromagnetic nanorods on the receiving antenna, instead of the transmitting antenna. Additionally, a different geometry might be more successful. The two ports for transmitting and receiving were the two closest together in the Gigabox in order to increase the strength of transmission between the two as much as possible, but placing them farther apart might allow for a difference in action in the ferromagnetic nanorods.
+
