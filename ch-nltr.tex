@@ -28,7 +28,7 @@ Number of Processors & 2 & 2 \\ \hline
 RAM & 44 GB & 128 GB \\ \hline
 GPU Available & No & Yes \\ \hline
 \end{tabular}
-\caption{Brief Description of Computer Specs Used}
+\caption[Computer specifications]{Technical specifications of the computers used for conducting all simulations and modeling.}
 \label{tab:numerical-cpu-specs}
 \end{table}
 
@@ -39,7 +39,7 @@ To start any simulation, we first generated a Gaussian pulse signal in MatLab. F
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/input-wave}
-\caption{This shows our input waveform with a 4.4GHz center frequency and 1.0GHz bandwidth. The blue signal is the non-inverted input and the red signal is the inverted input. A singular, non-inverted waveform is shown inset.}
+\caption[Example of inverted and non-inverted interrogation signals]{This shows our input waveform with a 4.4GHz center frequency and 1.0GHz bandwidth. The blue signal is the non-inverted input and the red signal is the inverted input. A singular, non-inverted waveform is shown in the inset.}
 \label{fig:numerical-input-wave}
 \end{figure}
 
@@ -50,7 +50,7 @@ Due to the simplicity of pulse inversion, we used this method for extracting all
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{numerical/sonas}
-\caption{(a) shows a portion of the non-inverted (blue) and inverted (red) recorded response signal. (b) shows the same two response signals when a diode is present in the simulation. (c) the sum of the two signals in (a), resulting in signal annihilation. (d) the sum of the two signals in (b), which produce a non-zero signal.}
+\caption[Demonstration of pulse inversion]{(a) shows a portion of the non-inverted (blue) and inverted (red) recorded response signal. (b) shows the same two response signals when a diode is present in the simulation. (c) the sum of the two signals in (a), resulting in signal annihilation. (d) the sum of the two signals in (b), which produce a non-zero signal.}
 \label{fig:numerical-sonas}
 \end{figure}
 This method to extract the nonlinear sona was chosen over taking the FFT and filtering the recorded signal as sample rate for the simulation data was not high enough to ensure the results would not be distorted. This discretization of data caused the resulting time-reversed sonas to produce incorrect results using the FFT and filter method, while the time-reversed sonas produced correct results with the pulse inversion method.
@@ -74,17 +74,16 @@ I_{d} = G_{s}V_{d}
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/cst-diode}
-\caption{CST circuit model of a diode}
+\caption[CST circuit model of a diode]{CST circuit model of a diode.}
 \label{fig:numerical-cst-diode}
 \end{figure}
-
 
 To obtain idealized results, we set $C$ and $G_s$ to $0$, as these values reduced the magnitude of the nonlinear response. We used the default $R = 50 \Omega$, as very large $R$ reduced the overall signal greatly and a very small $R$ did not produce any harmonics. This left only $T$ to tune the I-V curve of the diode. In real life, different diodes have different I-V curves based on material. In order to simulate these differences mathematically, we changed the temperature of the diode in the simulation, as shown in Figure~\ref{fig:numerical-iv-curves}.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/iv-curves}
-\caption{Different I-V curves that can be modeled in CST. It should be noted that the "Temperature" of the diode only changes its mathematical definition of the I-V curve}
+\caption[I-V curves of diodes with different voltage knees]{Different I-V curves that can be modeled in CST. It should be noted that the ``Temperature'' of the diode only changes its mathematical definition of the I-V curve}
 \label{fig:numerical-iv-curves}
 \end{figure}
 
@@ -94,7 +93,7 @@ In reality, this changed the knee voltage ($V_{k}$) for the diode. We chose $V_{
 
 \subsection{Simultaneous Nonlinear Time Reversal}
 
-            The first focus of our numerical simulations was to illustrate the collapse of time-reversed nonlinear sonas on multiple targets simultaneously. To be an effective WPT system, our technology would need to be able to charge more than one device at a time. Based on literature illustrating NLTR collapsing on a single nonlinear object, we hypothesized that a nonlinear sona would collapse on an arbitrary number of nonlinear objects if the nonlinear objects were present in the time-forward step of NLTR~\cite{nltr-classical-waves,nltr-wave-chaotic}. We assumed that the reconstruction on each nonlinear object would sum linearly and independently such that no reconstruction would interfere with another, as shown in Equation~\ref{eq:numerical-r-tot}, where $R_{i}$ is the reconstruction on a single nonlinear object and $x_{i}$ is a weighting of the amount of power that the single nonlinear object contributes to the overall power of all reconstructions. Based on this, we expected the reconstruction waveforms of the independent single-diode simulations to match a single, multi-diode simulation.
+The first focus of our numerical simulations was to illustrate the collapse of time-reversed nonlinear sonas on multiple targets simultaneously. To be an effective WPT system, our technology would need to be able to charge more than one device at a time. Based on literature illustrating NLTR collapsing on a single nonlinear object, we hypothesized that a nonlinear sona would collapse on an arbitrary number of nonlinear objects if the nonlinear objects were present in the time-forward step of NLTR~\cite{nltr-classical-waves,nltr-wave-chaotic}. We assumed that the reconstruction on each nonlinear object would sum linearly and independently such that no reconstruction would interfere with another, as shown in Equation~\ref{eq:numerical-r-tot}, where $R_{i}$ is the reconstruction on a single nonlinear object and $x_{i}$ is a weighting of the amount of power that the single nonlinear object contributes to the overall power of all reconstructions. Based on this, we expected the reconstruction waveforms of the independent single-diode simulations to match a single, multi-diode simulation.
 
 \begin{equation}
 R_{tot} = \sum_{i} R_{i}x_{i}
@@ -112,7 +111,7 @@ Using a cavity of height 0.76 cm resulted in a cutoff frequency of 20 GHz, well 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/cst-box}
-\caption{The cut-box simulation geometry used in CST. (a) shows the location of the 2 ports (A and B), 2 diodes ($V_k^{high}, V_k^{low}$), length scale, and the lower inset shows the initial interrogation pulse. (b) shows the electric field at a point in the simulation, illustrating the limited excited mode density.}
+\caption[The Cut Box Model]{The Cut Box simulation geometry used in CST. (a) shows the location of the 2 ports (A and B), 2 diodes ($V_k^{high}, V_k^{low}$), length scale, and the lower inset shows the initial interrogation pulse. (b) shows the electric field at a point in the simulation, illustrating the limited excited mode density.}
 \label{fig:numerical-cst-box}
 \end{figure}
 
@@ -123,17 +122,17 @@ The specific frequency and bandwidth was chosen for this geometry to minimize in
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/s11-spectrum}
-\caption{The $S_{11}$ spectrum for the Cut Box Model. We wanted to minimize $S_{11}$ for our simulation while maintaining a large bandwidth. This led to choosing a 4GHz center frequency with a 1GHz bandwidth.}
+\caption[$S_{11}$ spectrum of the Cut Box Model]{The $S_{11}$ spectrum for the Cut Box Model. We wanted to minimize $S_{11}$ for our simulation while maintaining a large bandwidth. This led to choosing a 4GHz center frequency with a 1GHz bandwidth.}
 \label{fig:numerical-s11-spectrum}
 \end{figure}
 
 
 
-Using this input pulse and the pulse inversion method of sona extraction, we were able to perform NLTR in the Cut Box model. By measuring the observed voltage and corresponding current during the time-reversed step, we measured the quasi-power over time in each diode. As shown in Figure~\ref{fig:numerical-sim-recon}, the reconstruction waveform on each diode matches the expected results for a 1-diode experiment~\cite{taddese_sensing_2010,barbieri_time_2010}.
+Using this input pulse and the pulse inversion method of sona extraction, we were able to perform NLTR in the Cut Box Model. By measuring the observed voltage and corresponding current during the time-reversed step, we measured the quasi-power over time in each diode. As shown in Figure~\ref{fig:numerical-sim-recon}, the reconstruction waveform on each diode matches the expected results for a 1-diode experiment~\cite{taddese_sensing_2010,barbieri_time_2010}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.75\textwidth]{numerical/sim-recon}
-\caption{The time-reversed reconstruction on two diodes simultaneously performed inside the Cut Box geometry.}
+\caption[Simultaneous reconstructions on two diodes]{The time-reversed reconstruction on two diodes simultaneously performed inside the Cut Box geometry.}
 \label{fig:numerical-sim-recon}
 \end{figure}
 
@@ -160,30 +159,30 @@ Recall the current response in the diode from Equation~\ref{eq:numerical-vd-gt-0
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/knee-voltages}
-\caption{The nonlinear response of the diode had a clear maximum at a specific knee voltage. By using a pulse amplitude that corresponded with the specific diode knee voltage, we could selectively target diodes in CST.}
+\caption[Nonlinear response due to different diode settings]{The nonlinear response of the diode had a clear maximum at a specific knee voltage. By using a pulse amplitude that corresponded with the specific diode knee voltage, we could selectively target diodes in CST.}
 \label{fig:numerical-knee-voltages}
 \end{figure}
 
 
-To perform this selective targeting, we once again used the Cut Box model. In the simplest case, we consider selective targeting of a low $V_{k} = 0.79V$ ($V_K^{low}$) diode at the exclusion of a high $V_{k} = 6.60V$ ($V_k^{high}$) diode. Given the large value of $V_k^{high}$, we expect to see no response in that diode while maintaining a reasonable nonlinear response in the $V_k^{low}$ diode. We used a pulse with amplitude $V = 1.0 V$ during the time forward step, emitted at Port A in Figure~\ref{fig:numerical-cst-box}(a). Using pulse-inversion, we extracted the nonlinear sona from the recorded signal at Port B, time-reversed the signal, and re-emitted it from Port B. Figure~\ref{fig:numerical-selective-recon-low} shows the time-reversed reconstructions on both diodes. This results in a reconstruction almost exclusively on the $V_k^{low}$ diode during the time-reversed step. The presence of three reconstructions when only one initial pulse was \todo{missing} is not alarming, as short-orbit paths between Port A, the diodes, and Port B that carry enough power to excite the diode harmonics are known to exist ~\cite{hansjurgenstockmann2006}. To calculate the quality of the selective reconstruction, we determined the aspect ratio by comparing the max of $IV$ on both diodes. For this scenario, we calculate a power delivery aspect ratio of 6.35:1 for the $V_k^{low}$ diode relative to the diode with $V_k^{high}$.
+To perform this selective targeting, we once again used the Cut Box Model. In the simplest case, we consider selective targeting of a low $V_{k} = 0.79V$ ($V_K^{low}$) diode at the exclusion of a high $V_{k} = 6.60V$ ($V_k^{high}$) diode. Given the large value of $V_k^{high}$, we expect to see no response in that diode while maintaining a reasonable nonlinear response in the $V_k^{low}$ diode. We used a pulse with amplitude $V = 1.0 V$ during the time forward step, emitted at Port A in Figure~\ref{fig:numerical-cst-box}(a). Using pulse-inversion, we extracted the nonlinear sona from the recorded signal at Port B, time-reversed the signal, and re-emitted it from Port B. Figure~\ref{fig:numerical-selective-recon-low} shows the time-reversed reconstructions on both diodes. This results in a reconstruction almost exclusively on the $V_k^{low}$ diode during the time-reversed step. The presence of three reconstructions when only one initial pulse was \todo{missing} is not alarming, as short-orbit paths between Port A, the diodes, and Port B that carry enough power to excite the diode harmonics are known to exist ~\cite{hansjurgenstockmann2006}. To calculate the quality of the selective reconstruction, we determined the aspect ratio by comparing the max of $IV$ on both diodes. For this scenario, we calculate a power delivery aspect ratio of 6.35:1 for the $V_k^{low}$ diode relative to the diode with $V_k^{high}$.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/selective-recon-low}
-\caption{Time-reversed reconstructions on the two diodes while targeting $V_{k}^{low}$. Very little signal is seen on the $V_{k}^{high}$ diode. The insert shows the details of the reconstructions between 22 and 30 ns.}
+\caption[Selective reconstruction on a $V_{k}^{low}$ diode]{Time-reversed reconstructions on the two diodes while targeting $V_{k}^{low}$. Very little signal is seen on the $V_{k}^{high}$ diode. The insert shows the details of the reconstructions between 22 and 30 ns.}
 \label{fig:numerical-selective-recon-low}
 \end{figure}
 
-            The more difficult scenario was to selectively target a high $V_k$ diode at the exclusion of a low $V_k$ diode. We utilized the peak in nonlinear response as a function of knee voltage from Figure~\ref{fig:numerical-knee-voltages}. By choosing the correct pulse amplitude corresponding to a peak value that was matched to the high $V_k$ value, we expected to see the strongest nonlinear response from that specific diode, resulting in a stronger reconstruction. In this scenario, the low $V_k$ diode will still observe a reconstruction; however, it will be smaller in amplitude than the high $V_k$ diode reconstruction. Given that a real system would involve a rectification circuit in addition to the diode, the smaller amplitude reconstruction may not be able to turn on the rectifier while the high amplitude reconstruction at the high $V_k$ diode would turn on. For our simulations, we were able to model this by measuring the observed power ($IV$) on the diode and modify the sona amplitude in order to ensure the $V_k^{high}$ diode had rectification while the $V_k^{low}$ diode did not.
+The more difficult scenario was to selectively target a high $V_k$ diode at the exclusion of a low $V_k$ diode. We utilized the peak in nonlinear response as a function of knee voltage from Figure~\ref{fig:numerical-knee-voltages}. By choosing the correct pulse amplitude corresponding to a peak value that was matched to the high $V_k$ value, we expected to see the strongest nonlinear response from that specific diode, resulting in a stronger reconstruction. In this scenario, the low $V_k$ diode will still observe a reconstruction; however, it will be smaller in amplitude than the high $V_k$ diode reconstruction. Given that a real system would involve a rectification circuit in addition to the diode, the smaller amplitude reconstruction may not be able to turn on the rectifier while the high amplitude reconstruction at the high $V_k$ diode would turn on. For our simulations, we were able to model this by measuring the observed power ($IV$) on the diode and modify the sona amplitude in order to ensure the $V_k^{high}$ diode had rectification while the $V_k^{low}$ diode did not.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{numerical/selective-recon-high}
-\caption{Time-reversed reconstructions on the two diodes while targeting $V_{k}^{high}$. Sona amplitude modulation resulted in a clear contrast between the two signals.}
+\caption[Selective reconstruction on a $V_{k}^{high}$ diode]{Time-reversed reconstructions on the two diodes while targeting $V_{k}^{high}$. Sona amplitude modulation resulted in a clear contrast between the two signals.}
 \label{fig:numerical-selective-recon-high}
 \end{figure}
 
-            For this second scenario, with $V_k^{high} = 2.22V$, we once again used an amplitude $1.0 V$ pulse during the time-forward step so that we may compare the results from both scenarios equally. As shown in Figure~\ref{fig:numerical-selective-recon-high}, pulse amplitude of 1.0 has a maximum nonlinear response at $2.22V$. We chose this $V_k$ value, as it gave the clearest reconstruction. Once again, we used pulse-inversion to extract the nonlinear sona. In general, this results in a larger magnitude reconstruction on $V_k^{high}$. This contrast between the $V_k^{low}$ and $V_k^{high}$ reconstructions was amplified by modulating the time-reversed sona amplitude, such that the reconstruction voltage seen at the target diode was barely larger than $V_k$ for $V_k^{high}$ and just barely smaller than $V_k$ for $V_k^{low}$. This resulted in selectively reconstructing on $V_k^{high}$ only during the time-reversed step with an aspect ratio of 3.61:1 for the $V_k^{high}$  diode relative to $V_k^{low}$, as shown in Figure~\ref{???}\todo{Which ref?}.
+For this second scenario, with $V_k^{high} = 2.22V$, we once again used an amplitude $1.0 V$ pulse during the time-forward step so that we may compare the results from both scenarios equally. As shown in Figure~\ref{fig:numerical-selective-recon-high}, pulse amplitude of 1.0 has a maximum nonlinear response at $2.22V$. We chose this $V_k$ value, as it gave the clearest reconstruction. Once again, we used pulse-inversion to extract the nonlinear sona. In general, this results in a larger magnitude reconstruction on $V_k^{high}$. This contrast between the $V_k^{low}$ and $V_k^{high}$ reconstructions was amplified by modulating the time-reversed sona amplitude, such that the reconstruction voltage seen at the target diode was barely larger than $V_k$ for $V_k^{high}$ and just barely smaller than $V_k$ for $V_k^{low}$. This resulted in selectively reconstructing on $V_k^{high}$ only during the time-reversed step with an aspect ratio of 3.61:1 for the $V_k^{high}$  diode relative to $V_k^{low}$, as shown in Figure~\ref{???}\todo{Which ref?}.
 
 \subsection{Discussion of Selective Nonlinear Time Reversal}
 
@@ -201,29 +200,29 @@ e = \frac{\sum_{i}P_{i(diode)}(f)}{\sum_{i}P_{i(input)}(f)} \cdot 100
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{numerical/power-spectrum}
-\caption{A typical power spectrum obtained in the time-reversed step (reconstruction). The power that enters the diodes only represents a portion of the overall power input in the simulation.}
+\caption[Example transfer efficiency for a two-diode simultaneous reconstruction]{A typical power spectrum obtained in the time-reversed step (reconstruction). The power that enters the diodes only represents a portion of the overall power input in the simulation.}
 \label{fig:numerical-power-spectrum}
 \end{figure}
 
- The above data was taken from a simulation run in the Cut Box model for the previously discussed two-diode simultaneous reconstruction. For this simulation, we found that $18.6$\% and $7.3$\% of power were transferred from the nonlinear sona to diodes 1 and 2, respectively.  This provides a promising outlook.
+ The above data was taken from a simulation run in the Cut Box Model for the previously discussed two-diode simultaneous reconstruction. For this simulation, we found that $18.6$\% and $7.3$\% of power were transferred from the nonlinear sona to diodes 1 and 2, respectively.  This provides a promising outlook.
 
 Our next question was whether or not these transfer efficiencies were a function of distance between transmitter port, diode, and receiver port. We found that using similar diode positions as previously stated resulted in transmission values around the \numrange{7}{18}\% shown above. We decided to introduce a new model with a much larger length scale, called the Room Model shown in Figure~\ref{fig:numerical-room-model}.
 
-\begin{figure}
+\begin{figure}[t]
 \centering
 \begin{subfigure}{.4\textwidth}
 \centering
 \includegraphics[width=0.75\linewidth]{numerical/room-model-a}
-\caption{Illustrates the geometry of the simulation.}
+\caption[Geometry of the Room Model]{Illustrates the geometry of the simulation.}
 \label{fig:numerical-room-model-a}
 \end{subfigure}
 \begin{subfigure}{.4\textwidth}
 \centering
 \includegraphics[width=0.75\linewidth]{numerical/room-model-b}
-\caption{Illustrates the relatively large mode density present in the simulation.}
+\caption[Mode density of the Room Model]{Illustrates the relatively large mode density present in the simulation.}
 \label{fig:numerical-room-model-b}
 \end{subfigure}
-\caption{The room model}
+\caption[The Room Model]{The room model}
 \label{fig:numerical-room-model}
 \end{figure}
 

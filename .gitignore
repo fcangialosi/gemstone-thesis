@@ -65,3 +65,4 @@ acs-*.bib
 *.bak
 *.sav
 
+*.DS_Store
