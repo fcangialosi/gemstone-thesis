@@ -41,10 +41,10 @@ Once the efficacy of the sona was established, overlapping sonas were created. o
 \section{Results}
 \label{sec:overlapping-results}
 
-Sonas were tested with offsets between 0.1~$\mu$s and 15~$\mu$s, by increments of 0.1~$\mu$s. The average peak to peak voltages of reconstructions created with these sonas are plotted in Figure~\ref{fig:overlapping-power}. Note that increasing the number of sonas increases the amount of power transmitted in a given time frame. As such, the trend observed in Figure~\ref{fig:overlapping-power} is a result of the internal power settings of the PSG.
+Sonas were tested with offsets between 0.1~$\mu$s and 15~$\mu$s, by increments of 0.1~$\mu$s. The average peak to peak voltages of reconstructions created with these sonas are plotted in Figure~\ref{fig:overlapping-power}. Increasing the number of sonas should, logically, increase the amount of power transmitted in a given time frame. However, the trend observed in Figure~\ref{fig:overlapping-power} is much more complex than this. We believe these results to be a result of the internal power settings of the PSG: it attempts to level the total amount of power leaving (and has only so much to give per cycle), which results in the discontinuities when mechanically switching source components throughout the sweep.
 
 
 \section{Discussion}
 \label{sec:overlapping-discussion}
 
-\todo{Needs to be filled out.}
+We hypothesized that overlapping reconsturctions by overlaying sonas could result in more effective power transmitted per duty cycle. Our experiments seemed to support this in that the number of reconstructions in the cycle could be increased while maintaining their characteristic shape. However, our lab equipment attempted to scale each arbitrary waveform we broadcast to the same total output power. This prevented us from definitively finding a relationship between the number of reconstructions and the power received by the target.
