@@ -5,9 +5,9 @@ Commercial wireless power transfer technologies have developed as a response to 
 
 At the conclusion of this state-of-the-art overview, we will discuss both the general operation of time reversal and the historical developments of the TR field. This will include the acoustical roots of TR by Claire Prada and Matthias Fink, later communication accomplishments by Steven Anlage, and TESLA's modern WPT application.
 
-\section{Wireless Power Transfer Technologies}
+\section{Wireless Power Transfer Vocabulary}
 
-Several groups have already made practical WPT technologies. In this paper Powermat, WiTricity, Wattup, uBeam, Cota, and Wicharge will be considered as the state of the art WPT methods. These technologies will be compared using several different metrics, defined here. The capabilities of these technologies under these metrics are summarized in Table~\ref{tab:lit-review-company-compare}, and discussed in detail in the following sections. These companies represent many of the major players in the current WPT industry that either currently have a product on the market, are in the process of commericalizing a product, or have plans to commercialize a produce in the next few years.
+Several groups have already made practical WPT technologies. In this paper Powermat, WiTricity, Wattup, uBeam, Cota, and Wicharge will be considered as the state of the art WPT methods. The technologies these companies use in their products will be compared using several different metrics, defined here. The capabilities of these technologies under these metrics are summarized in Table~\ref{tab:lit-review-company-compare}, and discussed in detail in the following sections. These companies represent many of the major players in the current WPT industry that either currently have a product on the market, are in the process of commericalizing a product, or have plans to commercialize a produce in the next few years.
 
 \def\arraystretch{2}
 \begin{table}[t]
@@ -25,23 +25,23 @@ WiTricity & \cellstack{Inductive\\Coupling} & \cellstack{Scalable, on the\\order
 \caption[Comparison of wireless technology companies and their products' capabilities]{Comparison chart of wireless technology companies and their products' capabilities\footnotemark}
 \label{tab:lit-review-company-compare}
 \end{table}
-\footnotetext{Some companies are still in their early stages and thus have not released full details about their technology yet. The information in this table reflects all known publicly disclosed information at the time of writing.}
+\footnotetext{Some companies are still in their early stages and thus have not released full details about their technology yet. The information in this table reflects publicly disclosed information at the time of writing.}
 
-As can be seen, the different WPT technologies vary wildly in both their methods of operation and their intended application. Comparing different WPT technologies is difficult because the measures of characterizing performance used in Table~\ref{tab:lit-review-company-compare} are poorly defined. The field of WPT lacks one central governing body that defines such performance metrics. This, combined with the constant battle for market prominence leads to many crucial details being withheld due to Intellectual Property (IP) rights. Due to these complications, we will specify our own definitions of performance metrics important to this paper.
+As can be seen, the different WPT technologies vary wildly in both their methods of operation and their intended application. Comparing different WPT technologies is difficult because the measures of characterizing performance used in Table~\ref{tab:lit-review-company-compare} are poorly defined. The field of WPT lacks one central governing body that defines such performance metrics. This, combined with the constant battle for market prominence leads to many crucial details being withheld due to Intellectual Property (IP) rights. Due to these complications, we will specify our own definitions of performance metrics important to this thesis.
 
 \subsection{Efficiency}
 
 Efficiency in particular is difficult to quantify, as there does not currently exist a standardized definition used by all parties. In the literature, efficiency of transfer has included:
 \begin{itemize}
-    \item the amount of power drawn by the transmitter compared to the amount of energy delivered to the target
+    \item the amount of energy delivered to the target compared to the amount of power drawn by the transmitter
     \item the transfer between antennas within a setup, with other losses (such as those due to rectifiers after transmission) being ignored
 \end{itemize}
 
-Here, the team defines efficiency as the amount of electrical power input into the transmitter compared to the amount of power delivered to the battery of the target device.
+Here, the team defines efficiency as the amount of power delivered to the battery of the target device compared to the amount of electrical power input into the transmitter.
 
 \subsection{Range}
 
-Range is defined here as the maximum distance that a given amount of power can be transmitted. Due to the restrictive nature of IP for the discussed companies, this definition may be generalized to the largest distance that a company references being able to function.\\
+Range is defined here as the maximum distance that a given amount of power can be transmitted. Due to the restrictive nature of IP for the discussed companies, this definition may be generalized to the distance that a company claims in their press materials.\\
 
 \subsection{Maximum Power}
 
@@ -51,7 +51,7 @@ Maximum power limits the devices that can be powered by a given technology. Whil
 
 \subsection{Active or Passive Transmission}
 
-One characterization of WPT technologies can be made from considering whether or not the receiver requires power. WPT technologies that require power to complete the process can be described as an active transmission system. A passive technique is one in which the receiver does not require power.
+Some technologies require the device being powered to actively participate in the powering process, usually by broadcasting a signal to the WPT transmitter. We call this active transmission. Others, like charging mats, are ``always on'' as long as the device to be powered is within range: from the device's point of view, this is passive transmission.
 
 \subsection{Size and Weight of Transmitting and Receiving Units}
 
@@ -61,9 +61,8 @@ With the use of WPT technologies, the viability of the technologies towards part
 
 Electromagnetic radiation is known to have potentially harmful effects to biological tissue at sufficiently large energy density levels~\cite{adey1993biological}. The benchmark that is used to measure the applied energy density that is transmitted to a person's skin is referred to as Specific Absorption Rating (SAR), which is a measure of the energy deposited per unit mass of a material. In this case, the material is skin tissue and the SAR value is averaged over the entire body to arrive at a final value. In the US, the FCC legal limit on SAR is 1.6 $W/kg$~\cite{procon2015}. As a reference, the iPhone 5 has a cited SAR value of 1.18 $W/kg$~\cite{procon2015}. It is generally accepted that cell phone use is safe. As long as our TR process does not exceed the 1.6 $W/kg$ value, then we may assume it will be safe for human use and we do not need to be concerned with biological harm, as the FCC deems this a safe level of electromagnetic radiation.
 
-\section{Technologies}
+\section{Overview of WPT Technologies by Company}
 \label{sec:lit-review-tech}
-In this discussion of the major technologies in the WPT field, we will briefly explain the methodology emposed by the previously mentioned companies. These methods will be critique for strengths and weaknesses, illustrating how each technology may be improved. We will then propose how a TR-based WPT technology would solve issues associated with various aspects of each technology. We note that often the limitations or weaknesses of one company are isolated to just that company, and that other companies are not restricted by these limitations.
 In order to classify the different companies, the most simplistic manner is to do so based on our definition of range. For the purposes of this discussion, we note 3 ranges: (1) very short range (<1 foot), (2) medium range (max of 15 feet), and (3) long range (max of 30 feet). Now that we have defined a basic classification system for the current WPT technologies we may proceed to a more in-depth discussion of the companies themselves.
 
 \subsection{Very Short Range}
@@ -101,9 +100,9 @@ The technology itself uses two separate RF frequencies to perform wireless charg
 In terms of feasibility for commercialization, the transmitter is simply a 12-in x 12-in antenna array, resembling an oversized router~\cite{energouscorporation2016}. The receiver is much smaller, being only 1.5-in x 1.5-in that may easily be either embedded in a device or made into a small case or add-on to the device. Given the small size of the transmitter and receiver, the technology is still able to lock onto a device within a matter of seconds. The technology has been deemed safe by the FCC, and WattUp states that ``based on our preliminary calculations, the SAR at our receiver should be well below that of a typical cellular signal''. The combination of these two aspects coupled with the notable range, transmittable power, and allowed number of devices to charge causes WattUp to be a very viable commercial technology for the future. The major setback with this technology is that it requires a constant feedback loop of information from the Bluetooth connection. This implies that if a device is powered off, then it may not receive any power. Our process of NLTR would circumvent this problem; whereby, a nonlinear element inside the device would allow WPT to occur even in a device has a power level of 0\%.
 
 \subsubsection{uBeam}
-The final primary medium range WPT titled uBeam uses an entirely unique method compared to other companies/methods, relying on ultrasonic waves rather than electromagnetic waves~\cite{ubeam2016}. One can imagine their system as an extremely high power microphone and speaker combination that specifically sends the sound to a device location. Although uBeam is unique in its approach, it boasts comparable range and power levels when discussed next to other WPT companies.
+The final primary medium range WPT titled uBeam uses an entirely unique method compared to other companies/methods, relying on ultrasonic waves rather than electromagnetic waves~\cite{constine_ubeam_2015}. One can imagine their system as an extremely high power microphone and speaker combination that specifically sends the sound to a device location. Although uBeam is unique in its approach, it boasts comparable range and power levels when discussed next to other WPT companies.
 
-The first difficulty to using sound waves as opposed  to electromagnetic waves is the inherent dissipative nature of air as a medium. Due to this characteristic, uBeam uses output sound levels of \numrange{145}{155}~dB (316 - 3000~$\frac{W}{m^2}$), comparable to the sound produced by a jet engine or shotgun blast\cite{galencarolaudio207}. In order for this level of sound to be used safely, uBeam transmission frequencies of \numrange{45}{75}~kHz, as this is far above the audible range of both humans and animals. As an extra safety measure, uBeam cites that ``if a person were to be exposed to the uBeam ultrasound source, 99.9\% of the emitted ultrasound will bounce off the skin''~\cite{ubeam2016}. These considerations have allowed uBeam to stay well within the FDA safety regulations.
+The first difficulty to using sound waves as opposed  to electromagnetic waves is the inherent dissipative nature of air as a medium. Due to this characteristic, uBeam uses output sound levels of \numrange{145}{155}~dB (316 - 3000~$\frac{W}{m^2}$), comparable to the sound produced by a jet engine or shotgun blast\cite{galencarolaudio207}. In order for this level of sound to be used safely, uBeam transmission frequencies of \numrange{45}{75}~kHz, as this is far above the audible range of both humans and animals. As an extra safety measure, uBeam cites that ``if a person were to be exposed to the uBeam ultrasound source, 99.9\% of the emitted ultrasound will bounce off the skin''~\cite{constine_ubeam_2015}. These considerations have allowed uBeam to stay well within the FDA safety regulations.
 uBeam uses a phased array transmitter with thousands of antennas that result in a power range of \numrange{1}{4}~m. Although the tracking and targeting algorithm is proprietary in nature, uBeam boasts the ability to maintain power transfer while the receiver is moving, although uBeam does not cite specific speeds. One significant drawback to uBeam is that it requires line of sight in order to work due to the nature of sound as a mechanical oscillation. For example, if a cell phone is in a user's pocket, then it will not be able to be powered as the user's clothing will block or extremely dampen the ultrasonic waves.
 
 The main benefits that uBeam possesses include its moderate range, quick lock on time, and ability to power moving devices. Still, the main problem that uBeam does not cite is the overall efficiency of the power transfer. Using \numrange{145}{155}~dB is an extremely high power output from the transmitter. A reasonable output at the receiver is on the order of \numrange{1}{10}~s of watts. This disparity raises doubts that uBeam could be feasible WPT technology given the power input needed to produce such high dB levels is on the order of hundreds of watts. Using NLTR as a method of WPT possesses all the benefits of uBeam without the potentially small transfer efficiency.
@@ -135,23 +134,23 @@ The technology has achieved a 30~ft range and a max power delivery of about 1~W,
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{lit-review/wicharge-3}
-    \caption{The setup of the Wi-Charge system. The gain medium in this case is air, with the 95\% reflective mirror being located within the receiver device. The laser light is immediately transfer to a photovoltaic cell where it may be converted back into an electrical signal to power a battery~\cite{wicharge2016}.}
+    \caption{The setup of the Wi-Charge system. The fully reflective mirror is on the transmitter, while the 95\% reflective mirror is located within the receiver device. Behind the receiver's mirror is a photovoltaic cell to convert the light back into an electrical signal to power a battery~\cite{wicharge2016}.}
     \label{fig:lit-review-wicharge-3}
 \end{figure}
 
 Also capable of a 30~ft operating radius, Wi-Charge uses a combination of a laser cavity and a photovoltaic cell to create robust power transfer systems~\cite{wicharge2016}. To understand the system, it is necessary to discuss how a laser works. Consider Figure~\ref{fig:lit-review-wicharge-1}, which depicts two mirrors and an amplifier between them. Simply put, one photon, an energetic light particle, enters the amplifier and two come out. When the photons hit the mirror, they bounce back through amplifier in the opposite direction and two photons become four. This process repeats with each ricochet against a mirror, and the energy amplifies within the system. This process of recirculating light in a positive feedback loop with an amplifier creates a resonator.
 
-When that resonator has one mirror that is very slightly transparent, as in Figure~\ref{fig:lit-review-wicharge-1}, then a focused, high powered beam is generated. This beam is a laser.
+When that resonator has one mirror that is very slightly transparent, as in Figure~\ref{fig:lit-review-wicharge-1}, then a focused, high powered beam is generated. This is a laser beam.
 
 Any particles that do not travel along the axis between the two mirrors will hit the mirror at an odd angle and bounce out of the resonator. This is why only the photons that are traveling in the direction of the axis between the two mirrors will continue to amplify.
 
 Wi-Charge took this traditional definition of a laser, and made a few clever modifications to better suit their purposes, shown in Figure~\ref{fig:lit-review-wicharge-2}~\cite{wicharge2016}.
 
-First, they kept the components--two mirrors with an amplifier between them--but modified their arrangement. Second, they made the mirrors retro-reflectors which, unlike regular mirrors, reflect light back to their sources. The result is that the two mirrors spontaneously form a resonator when placed within each other's line of sight, and that the resonator is stalled immediately when the line of sight is broken.
+First, they kept the components--two mirrors with an amplifier between them--but modified their arrangement. Second, they made the mirrors retro-reflectors which, unlike regular mirrors, reflect light back to their sources. The result is that the two mirrors spontaneously form a resonator when placed within each other's line of sight, although the resonator is stalled immediately when the line of sight is broken. This last property may actually be desireable in a consumer setting, as it helps to prevent energy from accumulating anywhere but the intended receiver.
 
-Thus, if one of the mirrors is attached to the device and the other is attached to the transmitter, then an inherent, yet safe amplification system is created. Thus, the first mirror and the amplifier are grouped together as the transmitter, and the second mirror and a photovoltaic cell are grouped together as the receiver. This is shown in Figure~\ref{fig:lit-review-wicharge-3}. By placing the photovoltaic cell directly after the laser output location, the uBeam system effectively converts the optical signal back to an electrical signal that can be used to charge a battery.
+In Wi-Charge's setup, one mirror and the amplifier are grouped together as the transmitter, and a second mirror and a photovoltaic cell are grouped together as the receiver. This is shown in Figure~\ref{fig:lit-review-wicharge-3}. By placing the photovoltaic cell directly after the laser output location, the Wi-Charge system effectively converts the optical signal back to an electrical signal that can be used to charge a battery.
 
-Wi-Charge is a long range wireless power solution that can deliver up to 10~W of power~\cite{wicharge2016}. It can latch onto targets almost instantaneously and cease beaming equally quickly, intrinsically. It can also power multiple devices. However, the feature that enables all of its strongest points is also its seemingly irreparable flaw: line-of-sight. While this system may work beautifully in a sparsely populated environment, in any thriving business or locale, such as the busy coffee shop or airport in which Wi-Charge envisions its products, there will be too many obstructions disrupting its line of sight. Thus, this fatal flaw renders Wi-Charge an impractical solution to the problem of WPT.
+Wi-Charge is a long range wireless power solution that can deliver up to 10~W of power~\cite{wicharge2016}. It can latch onto targets almost instantaneously and cease beaming equally quickly, intrinsically. It can also power multiple devices. However, the system does require line-of-sight.
 
 \section{Time Reversal}
 \label{lit-review-tr}
