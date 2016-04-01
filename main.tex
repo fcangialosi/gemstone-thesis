@@ -21,11 +21,13 @@
 }
 \usepackage[toc]{glossaries}
 \usepackage{xcolor}
-\usepackage[detect-none]{siunitx}
-    \sisetup{range-phrase = \text{--}}
+%\usepackage[detect-none]{siunitx}
+%    \sisetup{range-phrase = \text{--}}
+\newcommand{\numrange}[2]{#1--#2}
 \usepackage{graphicx}
     \graphicspath{ {figs/} }
     \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage[labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage[bottom]{footmisc}
 
