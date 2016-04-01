@@ -449,7 +449,7 @@ reserved.\par\permission}}
 %% a macro to change the (expanded) argument to uppercase.
 \def\maketitle{\begin{titlepage}
 \large
-{\def\baselinestretch{1.2}\LARGE\bf \choosecase{\@title} \par}
+{\def\baselinestretch{1.2}\Large\bf \choosecase{\@title} \par}
 \vspace{1em}
 by\par
 {\Large \choosecase{\@author}}

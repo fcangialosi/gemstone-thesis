@@ -53,12 +53,21 @@
 
 \begin{document}
 
+
 \include{cover}
 
-\pagestyle{plain}
 
-%% Table of Contents
+%% Contents
+\renewcommand{\baselinestretch}{1}
+\small\normalsize
 \include{contents}
+\setlength{\parskip}{0em}
+\renewcommand{\baselinestretch}{2}
+\small\normalsize
+
+%Pages from this point start at Arabic numeral 1
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 %% Chapters
 \include{ch-intro}
@@ -78,6 +87,8 @@
 \include{glossary}
 
 %% Bibliography
+\renewcommand{\baselinestretch}{1}
+\small\normalsize
 \include{biblio}
 
 \end{document}

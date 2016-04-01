@@ -95,12 +95,17 @@
 %% the text of the abstract directly between the \begin{abstractpage} and
 %% \end{abstractpage} commands.
 
+%Pages from this point start at lower-case Roman number ii)
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
 % First copy: start a new page, and save the page number.
-\cleardoublepage
+%\cleardoublepage
+%\newpage
 % Uncomment the next line if you do NOT want a page number on your
 % abstract and acknowledgments pages.
 % \pagestyle{empty}
-\setcounter{savepage}{\thepage}
+%\setcounter{savepage}{\thepage}
 \begin{abstractpage}
 \input{abstract}
 \end{abstractpage}
@@ -114,8 +119,8 @@
 % \input{abstract}
 % \end{abstractpage}
 
-\cleardoublepage
-
+%\cleardoublepage
+\newpage
 \section*{Acknowledgments}
 
 Team TESLA would like to thank Nevenka Zdravkovska, the Gemstone Staff, and the graduate students of Dr. Anlage's lab for all of the help they have given the over the years
