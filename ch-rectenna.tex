@@ -4,11 +4,11 @@
 \section{Goals of Rectenna}
 \label{sec:rectenna-goals}
 
-One of the main components of any WPT system is its rectifier, as it performs the crucial step of capturing the broadcasted energy and transforming it into a usable form. To accomplish this, a rectenna, a dual-purpose device that combines an antenna and a rectifier, is necessary. The antenna picks up the unusable, oscillating AC signal received from the transmitter, the rectifier converts the signal to relatively stable DC power, and this usable power is passed to an arbitrary load.
+One of the main components of any WPT system is its rectifier, as it performs the crucial step of capturing the broadcasted energy and transforming it into a usable form. To accomplish this, a rectenna, a dual-purpose device that combines an antenna and a rectifier, is necessary. The antenna picks up the oscillating AC signal received from the transmitter, the rectifier converts the signal to relatively stable DC power, and this usable power is passed to an arbitrary load.
 
-In addition to standard rectification, the rectenna must serve as a passive nonlinear element. In NLTR, a nonlinear element is required to produce harmonics from the initial interrogation pulse broadcast by the transmitter. However, this goal is secondary to the main purpose of rectification.
+In addition to standard rectification, the rectenna must serve as a passive nonlinear element. In NLTR, a nonlinear element is required to produce harmonics from the initial interrogation pulse broadcast by the transmitter. This goal is secondary to the main purpose of rectification.
 
-The rectenna was designed to fit the following parameters. First, the rectenna must operate efficiently at the high frequency (\numrange{1}{10}~GHz) required for efficient NLTR. Additionally, losses due to reflection and parasitic effects within the antenna should be minimized. Finally, to fulfill the role of a nonlinear element, the rectenna should generate distinguishable harmonics strong enough for the purposes of NLTR.
+The rectenna was designed to satisfy the following parameters. First, the rectenna must operate efficiently at the high frequency (\numrange{1}{10}~GHz) required for efficient NLTR. Additionally, losses due to reflection and parasitic effects within the antenna should be minimized. Finally, to fulfill the role of a nonlinear element, the rectenna should generate distinguishable harmonics strong enough for the purposes of NLTR.
 
 In short, to rectify and generate harmonics for NLTR, the rectenna must be capable of not only efficient rectification at high frequencies, but also production of strong harmonics for NLTR.
 
@@ -19,11 +19,11 @@ The diode is the most important single component to consider for the rectenna, a
 
 For the rectenna in our design to perform efficiently, the diode must satisfy several requirements:
 
-The diode must maintain functionality as a diode at a transmission frequency of \numrange{1}{10}~GHz, and must rectify at a frequency of at least 10 GHz. This requirement severely limits the possible choices for the rectenna diode. The frequency of a diode is inversely related to its reverse-recovery time (TRR), the fastest time the diode can switch from forward to reverse bias~\cite{an1012-TRR}.In traditional P-N junction diodes, minimum TRR is on the order of tens to thousands of nanoseconds, even for fast diodes~\cite{davis2011schottky}. In a high frequency circuit, a P-N diode would be no different than a short circuit, and no rectification would occur.
+The diode must maintain rectification functionality at a transmission frequency of \numrange{1}{10}~GHz. This requirement severely limits the possible choices for the rectenna diode. The frequency of a diode is inversely related to its reverse-recovery time (TRR), the fastest time the diode can switch from forward to reverse bias~\cite{an1012-TRR}.In traditional P-N junction diodes, minimum TRR is on the order of tens to thousands of nanoseconds, even for fast diodes~\cite{davis2011schottky}. In a high frequency circuit, a P-N diode would be no different than a short circuit, and no rectification would occur.
 
 The diode must have the lowest forward voltage drop possible. The voltage drop represents the reverse bias that remains when the diode works in the forward direction, and can be a significant contributor to power loss. The team's experimental WPT capabilities are limited to fairly low voltage microwave signals (.5 V to 1 V signal amplitude), which makes forward voltage drop especially important.
 
-Finally, impedances should be minimized to reduce loss. All diodes have intrinsic impedances such as parasitic capacitance and resistance. Impedances contribute to losses during rectification and destabilize circuit behavior, resulting in unpredictable behavior.
+Finally, impedances should be minimized. All diodes have intrinsic impedances such as parasitic capacitance and resistance. Impedances contribute to losses during rectification, and minimizing these losses would increase the efficiency of rectification.
 
 Considering these factors, a Schottky barrier diode were chosen for the rectenna. Unlike P-N junction diodes, Schottky diodes have extremely low TRR and low forward voltage~\cite{davis2011schottky}.  Schottky diodes do have a lower maximum reverse voltage rating, higher reverse leakage current, and higher cost than P-N diodes. However, these are relatively minor issues in our application. A Schottky \texttt{MA4E1317} diode was used as the rectifying diode. The diode parameters from the are shown in Table~\ref{tab:rectenna-datasheet}.
 
@@ -36,7 +36,7 @@ Considering these factors, a Schottky barrier diode were chosen for the rectenna
 Junction Capacitance at 0 V at 1 MHz & Cj & pF & - & .020 & - \\ \hline
 Total Capacitance at 0 V at 1 MHz & Ct & pF & .030 & .045 & .060 \\ \hline
 Junction Capacitance Difference & DCj & pF & - & - & - \\ \hline
-Series Resistance at +10 $mA^2$ & Rs & $\Omega$ & - & 4 & 7 \\ \hline
+Series Resistance at +10 $mA$ & Rs & $\Omega$ & - & 4 & 7 \\ \hline
 Forward Voltage at +1 $mA$ & $Vf_1$ & V & .60 & .70 & .80 \\ \hline
 Forward Voltage Difference at +1 $mA$ & DVf & V & - & - & - \\ \hline
 Reverse Breakdown Voltage at $-10 \mu A$ & Vbr & V & 4.5 & 7 & - \\ \hline
@@ -51,7 +51,7 @@ The \texttt{MA4E1317} has low total capacitance (.045~pF) and series resistance 
 \section{Antenna Design}
 \label{sec:rectenna-antenna}
 
-A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the system. The copper trace acts as the antenna, and is etched into a FR-4 substrate. The \texttt{MA4E1317} is a flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based off of the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified in our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
+A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the system. The copper trace within the FR-4 substrate acts as the antenna. The \texttt{MA4E1317} is a flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based on the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified in our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
 
 
 \begin{figure}[h!]
@@ -70,9 +70,9 @@ A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the
     \label{fig:rectenna-design}
 \end{figure}
 
-The rectenna is composed of the \texttt{MA4E1317} diode, a 47~pF ceramic capacitor acting as a low-pass microwave filter, a 330~$\Omega$ load resistor, and output pins for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the wavelength of the incident wave.
+The rectenna is composed ofthree surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the wavelength of the incident wave.
 
-One important distinction for this rectenna design is the lack of filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out so that the antenna can generate nonlinear harmonics from the interrogation signal.
+One important distinction for this rectenna design is the lack of band-pass filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out to allow the harmonic response of the diode to escape through the dipole.
 
 No special consideration for impedance matching between the antenna and the rectifier components. This is definitely a point to consider for future improvement, as proper matching of the components should significantly improve the efficiency of rectification.
 
@@ -170,7 +170,7 @@ Figure~\ref{fig:rectenna-efficiency} shows the efficiency calculated this way, a
     \label{fig:rectenna-efficiency}
 \end{figure}
 
-Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz and 4.6~GHz, with 4.7\% and 4.4\% respectively. This rather low efficiency is expected given the lack of optimization and impedance matching in the rectenna. However, this result clearly demonstrates rectification of high frequency AC power.
+Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz and 4.6~GHz, with 4.7\% and 4.4\% respectively. This rather low efficiency is expected given the lack of optimization and impedance matching in the rectenna. However, this result clearly demonstrates rectification of high frequency microwave power to DC power.
 
 \subsection{Harmonic Generation}
 
@@ -192,4 +192,4 @@ The intent of the rectenna was twofold. The rectenna was designed to rectify RF 
 
 The current design has made no steps towards the impedance matching of the antenna to the components. This is likely a major source of power lost by the system for rectification, and should be a top priority to consider in subsequent designs.
 
-Our design of a dual-purpose rectenna satisfied our initial goals, and is a first step towards a functioning NLTR based WPT system. After considerable optimization and miniaturization, the rectenna would be used as a receiver for the electronics we want to power. After receiving the initial interrogation pulse and generating the 2nd harmonic response, it would then receive the main high power pulse and rectify the signal, providing the load device with DC power. Due to the nature of NLTR, the receiving devices do not require power to facilitate the process.
+Our design of a dual-purpose rectenna has satisfied our initial goals, and is a first step towards a functioning NLTR based WPT system.  It is able to receive the initial interrogation pulse and generate a 2nd harmonic response. It is also able to receive the high power pulse and rectify the signal, providing the load device with DC power. Due to the nature of NLTR, the receiving devices do not require power to facilitate either process. After considerable optimization and miniaturization, the rectenna would be used as a general-purpose receiver for the electronics we want to power.
