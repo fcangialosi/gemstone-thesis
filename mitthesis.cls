@@ -454,7 +454,7 @@ reserved.\par\permission}}
 by\par
 {\Large \choosecase{\@author}}
 \par
-Frank Cangialosi, Anu Challa, Tim Furman, Tyler Grover, Patrick Healey, Ben ``Tortellini'' Philllip, Scott Roman, Andrew Simon, Alex Tabatabai, Liangcheng Tao
+Frank Cangialosi, Anu Challa, Tim Furman, Tyler Grover, Patrick Healey, Ben Philip, Scott Roman, Andrew Simon, Alex Tabatabai, Liangcheng Tao
 \par
 \vspace{1.5em}
 Professor Steven Anlage, Mentor
