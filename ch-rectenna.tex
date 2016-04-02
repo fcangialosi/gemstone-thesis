@@ -51,7 +51,7 @@ The \texttt{MA4E1317} has low total capacitance (.045~pF) and series resistance 
 \section{Antenna Design}
 \label{sec:rectenna-antenna}
 
-A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the system. The copper trace within the FR-4 substrate acts as the antenna. The \texttt{MA4E1317} is a flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based on the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified in our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
+A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the system. The copper trace patterned on the FR-4 substrate acts as the antenna. The \texttt{MA4E1317} is a flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based on the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified for our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
 
 
 \begin{figure}[h!]
@@ -70,7 +70,7 @@ A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the
     \label{fig:rectenna-design}
 \end{figure}
 
-The rectenna is composed ofthree surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the wavelength of the incident wave.
+The rectenna is composed ofthree surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the free-space wavelength of the incident wave.1
 
 One important distinction for this rectenna design is the lack of band-pass filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out to allow the harmonic response of the diode to escape through the dipole.
 
@@ -112,7 +112,7 @@ P_{dc} = \frac{V^2}{R}
 \label{eq:dc_power}
 \end{equation}
 
-A plot of this is shown in Figure~\ref{fig:rectenna-test-1-power}.
+A plot of the resulting rectified DC power delivered to the load as a function of frequency is shown in Figure~\ref{fig:rectenna-test-1-power}.
 
 \begin{figure}[h!]
 \centering
@@ -170,7 +170,7 @@ Figure~\ref{fig:rectenna-efficiency} shows the efficiency calculated this way, a
     \label{fig:rectenna-efficiency}
 \end{figure}
 
-Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz and 4.6~GHz, with 4.7\% and 4.4\% respectively. This rather low efficiency is expected given the lack of optimization and impedance matching in the rectenna. However, this result clearly demonstrates rectification of high frequency microwave power to DC power.
+Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz and 4.6~GHz, with 4.7\% and 4.4\% respectively. This rather low efficiency is expected given the lack of optimization and impedance matching in the rectenna. However, this result clearly demonstrates rectification of microwave power to DC power.
 
 \subsection{Harmonic Generation}
 
