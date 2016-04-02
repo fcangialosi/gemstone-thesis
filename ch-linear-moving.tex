@@ -8,21 +8,8 @@ The experiment is conducted in two parts: mapping the spatial voltage profile of
 
 \subsection{Spatial Profiling}
 \label{sec:spatial-profile}
-
-\subsubsection{Purpose}
-
-A major concern with the practical application of TR to WPT is the ability of WPT to safely and consistently converge on its target.  An ideal TR WPT system will focus large amounts of energy on a very small space.  However, the question remains: how small of a space is it focused in?
-
-The answer to this question will have major repercussions on the ability of TR to be used in a WPT context.  If the area of reconstruction is large, additional energy may be directed to the area around the target.  The increased energy density in this region will make losses due to absorption much higher than in other parts of the chamber.  More importantly however, this absorbed energy may damage circuitry or biological matter near the TR receiver.
-
-Clearly, the spatial profile of a reconstruction should be as small as possible.  For TR WPT to be used on small electronic devices, the profile should be small enough not to damage circuits or biological matter within a centimeter or so of the device.  An experiment was done to characterize this behavior, as it exists in our setup.
-
 \subsubsection{Methodology}
-
-Characterization of the spatial profile was done in the same aluminum cavity used in the linear and nonlinear time reversal tests, listed above.
-
-The basic time reversal process in this environment proceeds as follows: First, a 50 ns Gaussian pulse (with a carrier frequency of 5 GHz) is injected into the cavity through the transmitting antenna. That sona is measured at the receiving antenna (Fig. 1b). The sona is then time reversed and injected into the transmitting antenna. The result is a reconstruction of the initial pulse back at the receiving antenna (Fig. 1c). This process makes use of another robust symmetry, namely the spatial reciprocity of the wave equation.
-Two monopole antennas inject and extract electromagnetic signals from different points in the enclosure. A transmitting antenna is attached to the cavity wall opposite the receiving antenna. The receiving antenna is attached to a panel that can move vertically with a total range of 70 millimeters. Motion of the receiving antenna is achieved using an externally-mounted PI MikroMove \texttt{M-415.DG} translation stage and the enclosure remains sealed during the translation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix \texttt{AWG7052} arbitrary waveform generator feeding an Agilent \texttt{E8267D} Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent \texttt{DSO91304A}) is used to record waveforms of interest. MATLAB is used for signal processing and instrument control and coordination.
+The experimental setting for this experiment differs only slightly from that described in section~\ref{fig:ltr-meth}. In this case, the antenna mounted on the scanning panel is designated as the receiving antenna. Motion of the receiving antenna is achieved using an externally-mounted PI MikroMove \texttt{M-415.DG} translation stage and the enclosure remains sealed during the translation. An interrogation pulse is used to create a reconstruction at the middle of the scanning range. The receiver is then stepped through the entire scanning range, at a step size of 0.2 mm. At each position, the peak to peak voltage of the reconstruction is measured and recorded. This experiment is repeated for a variety of frequencies to test for a wavelength dependence.
 
 \subsubsection{Results}
 
@@ -34,8 +21,6 @@ steps.  The inset shows the inverse of the fit $b$ values versus carrier frequen
 \label{fig:spatial-freq-profile}
 \end{figure}
 
-The first experiment measures the spatial profile of a reconstruction, with the goal of characterizing reconstruction size as a function of carrier signal wavelength. A reconstruction is focused on the receiving antenna, in the middle of its movement range. Without changing the time reversed sona being broadcast, the receiving antenna is systematically translated through its entire range of movement. Samples are taken every 0.2 mm across the entire 70~mm range, and the maximum peak-to-peak voltage of the corresponding reconstruction is recorded at each step. We repeated this experiment for carrier frequencies in the range 4-9 GHz and display these results in Figure~\ref{fig:spatial-freq-profile}.
-
 \begin{figure}[t!]
 \includegraphics[width=\columnwidth]{spatial/fit.pdf}
 \caption{Measured peak-to-peak voltage amplitude of reconstructions received in the
@@ -44,20 +29,23 @@ frequency, and fit to the \texttt{sinc(x)} function.}
 \label{fig:spatial-error-fit}
 \end{figure}
 
-The reconstruction peak-to-peak voltage profile is expected to take the form of a $sinc(x)$ function about the antenna~\ref{cite:lerosey-focusing}. Thus, the following equation is proposed to predict $V(x)$, the maximum peak-to-peak voltage from a given reconstruction, as a function of $x$, the distance between the reconstruction focal point and the receiver:
+The reconstruction peak-to-peak voltage profile is expected to take the form of a $sinc(x)$ function about the target location~\ref{cite:lerosey-focusing}. Thus, the following equation is proposed to predict $V(x)$, the maximum peak to peak voltage from a given reconstruction, as a function of $x$, the distance between the reconstruction focal point and the receiver:
 
 \begin{equation}
 \label{eq:vx}
 V(x) = a\cdot sinc\left(\frac{x+c}{b}\right) + d
 \end{equation}
 
-where $a$ is the maximum peak-to-peak reconstruction amplitude, $b$ is the wavelength of the signal divided by 2, $c$ is the location of the antenna along the x-axis, and $d$ is the noise level
+where $a$ is the maximum peak-to-peak reconstruction amplitude, $b$ is the half-wavelength, $c$ is the location of the antenna along the x-axis, and $d$ is the noise level
 offset voltage. Since $b$ is proportional to the wavelength (and inversely proportional
 to frequency), as the carrier frequency is increased,  $\frac{1}{b}$ also increases, causing the ``bubble'' of the sinc function in Fig~\ref{fig:spatial-freq-profile} to get smaller. This relationship is shown explicitly in the inset of Figure~\ref{fig:spatial-freq-profile}. Figure~\ref{fig:spatial-error-fit} shows Equation~\ref{eq:vx} fit to the 5 GHz curve from Figure~\ref{fig:spatial-freq-profile}, including error bars. The fit is good, but has a reduced $\chi^2$ of 234 due in part to the rather large background noise level. The error bars are primarily systematic, introduced by the oscilloscope internal voltage multiplier used in scaling.
 
 
+The results presented in Figure~\ref{fig:spatial-freq-profile} allow us to draw several conclusions. In this frequency range, the reconstructions can be categorized as broad, spanning several centimeters in width. This is a significant conclusion because it indicates that we can move the receiver slightly away from the target location and still collect energy from the reconstruction. This allows us to implement a system targeting a moving receiver as previously described.
+
 \subsection{Reconstructing on a Moving Target}
 \label{sec:recon-moving}
+
 For this experiment, the receiving antenna moved at a constant speed of 0.2~$\frac{mm}{s}$ across the entire 70~mm range provided by the \texttt{MikroMove}. To counteract the degradation of reconstruction strength as the antenna moved, we periodically repeated the interrogation step, effectively re-centering the reconstruction on the antenna. Since the test equipment does not allow broadcast of one sona while collecting another, it was not possible to transmit power during the collection time, leading to a finite ``dead time'', denoted $t_d$ in Figure~\ref{durfig:6.1}. During the broadcast period, the time-reversed sona was continually broadcast into the cavity (once every 15~$\mu$s) and the peak-to peak voltage across the receiver was measured once every 2.05~seconds, meaning that the reconstructions are highly undersampled in this plot. After every 15 samples were collected, we paused to collect a new sona and repeated the process. We refer to this full process of collecting a new sona and then broadcasting it for a given period time as a full ``cycle'' of length $t_c$. The results in Fig. 6.1 below were obtained using a carrier frequency of 5 GHz, $t_d$ of 7 seconds, and $t_c$ of 39.8 seconds. Based on the results from Section III-A, the peak-to-peak reconstruction voltage measured by the receiver is expected to decay according to the sinc(x) function as the receiver
 moves away from the reconstruction focal point. This $sinc(x)$ function will be centered on the position where the sona was last collected, making the reconstruction focus continually lag behind the antenna. Consequently, the maximum reconstruction strength is limited by the time needed to collect, time reverse and re-broadcast an updated sona. The following equation is proposed as a model for the peak-to-peak voltage of the reconstruction on a moving target as a
 function of time, assuming a constant velocity $\bar{v}$:
