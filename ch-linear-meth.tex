@@ -8,26 +8,25 @@ In investigating the applicability of time reversal to a wireless power transfer
 
 Of first importance is the transferring meaningful amounts of power. Here, "meaningful" is a relative term; depending on the application and what is being powered with the WPT scheme, the demand for energy will vary. The amount of energy required to charge an electric car (on the order of 3 kW) will be vastly larger than the amount of energy required to charge a mobile phone (on the order of 10 W), for example. ~\cite{witricity2013subsea} Our target application is the charging of cell phones, so it is necessary to investigate how much power can be transmitted safely using TR. For this specific WPT technique, this translates into the size and frequency of pulses that can be sent to the receiver.
 
-We also would like to characterize the extent to which TR can be used to charge a receiver in motion. Motion of either the receiver or transmitter is a limitation of many WPT technologies; we ask if TR is also subject to this limitation. Time reversal research has focused primarily on the technique's use in stationary environments with stationary transducers. Some research has shown that TR can be used as a motion detector, relying on the destruction of TR fidelity correlated with a change in the environment. ~\cite{taddese_sensing_2010}
+We also would like to characterize the extent to which TR can be used to charge a receiver in motion. Motion of either the receiver or transmitter is a limitation of many WPT technologies; we ask if TR is also subject to this limitation. Time reversal research has focused primarily on the technique's use in stationary environments with stationary transducers. Some research has shown that TR can be used as a motion detector, relying on the destruction of TR fidelity correlated with a change in the environment. ~\cite{taddese_sensing_2010} However, we would like to investigate the effect of small receiver position changes on the TR process. 
 
-\begin{itemize}
-    \item Characterize the behaviors of TR relevant to WPT applications
-    \item Understand fundamental limitations of TR applied to WPT
-    \item Create a baseline for which future work can be done
-\end{itemize}
-
-The general methodology for the experiments is described. Then, the purpose, methodology, and results of individual experiments are discussed individually.
+Understanding these phenomena allows us to make a judgement on whether TR could be used as an effective WPT technique. If TR can transmit large amounts of energy to a receiver, it fulfills the primary goal of a WPT scheme and merits further examination. Consideration of the more advanced goal of sending energy to a receiver in motion is more detailed. This ability is a gap in the current market, and is not prominent in current WPT technologies. Having identified this shortcoming, TR can fulfill a need that is not currently being met if it is able to target a receiver in motion.
 
 \section{Methodology for Conducting Linear Time Reversal Measurements}
 \label{sec:ltr-meth}
 
-The majority of our experiments take place within an enclosed, reflective cavity called the Gigabox: an aluminum box with a metallic foil scattering paddle to make the ray trajectories more ergodic. Ray chaos ensures that a propagating pulse will eventually reach every point in the environment. This improves reconstruction fidelity. Up to five monopole antennas inject and extract electromagnetic signals from different ports in the enclosure depending on the experiment.
+We conducted physical experiments to answer the following questions:
+\begin{itemize}
+    \item Can TR send a meaningful amount of power to a receiver?
+    \item How can TR be used to target receivers in motion?
+\end{itemize}
+Both of these proposals require similar methodologies for investigation. As such, the experiments we conducted shared much of the same equipment and procedure. Here we will detail the process that we used for establishing a linear time reversal mirror between two ports.
 
-Our Time Reversal scheme consists of three pieces of microwave processing equipment and a desktop workstation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix \texttt{AWG7052} arbitrary waveform generator feeding an Agilent \texttt{E8267D} Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent \texttt{DSO91304A}) is used to record waveforms of interest. MATLAB is used for signal processing and instrument control and coordination.
+These experiments take place within an enclosed, reflective cavity called a "gigabox" for ease of reference: an aluminum box with a metallic foil scattering paddle to make the ray trajectories more ergodic. The resulting ray chaos ensures that a propagating waveform will eventually reach every point in the environment. This is essential for the proper function of a time reversal mirror. Up to five identical monopole antennas can inject and extract electromagnetic signals from different ports in the enclosure, but for these experiments only two were used. One antenna was held stationary, while the other was mounted on a scanning window that could acommodate motion of up to 70 millimeters in one dimension. Ports on opposing sides of the gigabox were selected to avoid confounding short orbit effects which result from an insufficient mode density between the injecting and receiving ports.
 
-In many experiments, it is necessary to be able to ``read'' and ``write'' signals from the same port. Manually switching coaxial cables from the PSG to the DSO is slow and can destroy reconstructions, so we use four HP 8762C coaxial switches to reroute signals as required.
+Our Time Reversal scheme consists of several pieces of microwave processing equipment and a desktop workstation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix \texttt{AWG7052} arbitrary waveform generator feeding an Agilent \texttt{E8267D} Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent \texttt{DSO91304A}) is used to record waveforms of interest. MATLAB version 2015a is used for signal processing, instrument control and coordination. Connections between the microwave equipment and the gigabox antennas are made using standard coaxial cables.
 
-This hardware is laid out in Figure~\ref{fig:linear-gigabox}.
+In many experiments, it is necessary to be able to ``read'' and ``write'' signals from the same port. Manually switching coaxial cables from the PSG to the DSO is slow and can destroy reconstructions, so we use four HP 8762C coaxial switches to reroute signals as required. The relative connections of the hardware are laid out in Figure~\ref{fig:linear-gigabox}.
 
 \begin{figure}[h!]
 \centering
@@ -36,9 +35,9 @@ This hardware is laid out in Figure~\ref{fig:linear-gigabox}.
     \label{fig:linear-gigabox}
 \end{figure}
 
-Our TR experiments fall into two main categories, linear and nonlinear. Linear TR (LTR) refers to any experiment that uses a single frequency. Nonlinear TR (NLTR) makes use of harmonic reflections from the target to provide a means for isolation and targeting, a process similar to how we would envision a TR based WPT system to work.  It is experimentally much simpler to create reconstructions with LTR than with NLTR, so we use it for experiments investigating the behavior of the waves rather than the behavior of the target.
+TR processes fall into two main categories, linear and nonlinear. Linear TR (LTR) refers to any experiment that uses a single frequency for the interrogation pulse, time reversed sona, and reconstruction. Nonlinear TR (NLTR) makes use of harmonic reflections from the target to provide a means for isolation and targeting, a process similar to how we would envision a TR based WPT system to work.  It is experimentally much simpler to create reconstructions with LTR than with NLTR. For this reason, these experiments are conducted in the absence of nonlinear elements which respond to a fundamental frequency by generating harmonic signals at a variety of frequencies. 
 
-This section concerns LTR experiments. Conceptually, our general process for LTR in the Gigabox is as follows: we broadcast a Gaussian interrogation pulse from one port, serving as a transmitter. This interrogation pulse reverberates and echoes around the reflective cavity. Another port, designated as the receiver, records the multipath sum of these reverberations with the oscilloscope. This summed signal is named a sona, and inherently contains information relating to the size and shape of the interrogation pulse, the location of any scattering media in the environment, and the location of both ports. That sona is reversed in the time domain and subsequently rebroadcast from the transmitting port. The signal will travel through the same multipath channels and reconstruct a time reversed version of the original interrogation pulse upon the receiver, with some additional noise. This process is illustrated in Figure~\ref{fig:linear-ltr}.
+Conceptually, our general process for LTR in the Gigabox is as follows: we broadcast a Gaussian interrogation pulse from one port, serving as a transmitter. This interrogation pulse reverberates and echoes around the reflective cavity. Another port, designated as the receiver, records the multipath sum of these reverberations with the oscilloscope. This summed signal is named a sona, and inherently contains information relating to the size and shape of the interrogation pulse, the location of any scattering media in the environment, and the location of both ports. That sona is reversed in the time domain and subsequently rebroadcast from the transmitting port. The signal will travel through the same multipath channels and reconstruct a time reversed version of the original interrogation pulse upon the receiver, with some additional noise. This process is illustrated in Figure~\ref{fig:linear-ltr}.
 
 \begin{figure}[h!]
 \centering
@@ -47,10 +46,4 @@ This section concerns LTR experiments. Conceptually, our general process for LTR
     \label{fig:linear-ltr}
 \end{figure}
 
-Since this LTR process is well-suited to creating reconstructions of Gaussian waveforms, we used it for three experiments to examine characteristics and modifications of LTR itself. These were: 
-\begin{itemize}
-    \item Overlaying sonas to create more reconstructions closely spaced in time
-    \item Mapping the spatial profile of a reconstruction
-    \item Repeatedly retargeting the reconstructions upon a moving antenna
-\end{itemize}
-The experiments, results, and discussions for these sections are presented respectively as "Overlapping Reconstructions", "Spatial Profiling", and "Moving Reconstructions" below. The experience the team gained by performing these experiments and formulating results was invaluable in constructing and performing our later work with Nonlinear Time Reversal (NLTR). They also demonstrate important ideas regarding the transmission of large amounts of power to the receiver.
+The experiments, results, and discussions for these sections are presented in the following sections. The modifications of the basic LTR methodology as discussed and the implication for the use of TR in a WPT system. The experience the team gained by performing these experiments and formulating results was invaluable in constructing and performing our later work with Nonlinear Time Reversal (NLTR). They also demonstrate important ideas regarding the transmission of large amounts of power to the receiver.
