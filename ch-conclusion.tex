@@ -2,28 +2,7 @@
 
 \label{ch:conclusion}
 
-\section{Identification of Major Accomplishments}
-
-\todo{So, I've been thinking about the organization of the conclusion as a whole.  It appears that the structure follows this basic flow: 1 - We have demonstrated capabilities important to making a WPT system. 2 - We have made X achievements that mean Y. 3 - Future work. I suggest reordering in the order 2, 1, 3, and changing the subtitles (in order 2,1,3 to ``Contributions'', ``Evaluating Time Reversal as a Wireless Power Transfer Method'', and ``Final Words/Future Work''}
-
-Throughout this thesis, we have demonstrated many aspects of TR that may be incorporated into a future WPT technology. Our work focused on proof-of-concept experiments that demonstrate basic functionality and feasility of the proposed technology.  We first identified key characteristics of current WPT methods on the market or soon to enter the market. These characteristics were used to identify the following properties to be ideal for a WPT system and have demonstrated the first three throughout our thesis:
-
-\begin{enumerate}
-\item Ability to function while device is moving
-\item Ability to charge multiple devices 
-\item Ability to choose which devices receive power
-\item Ability to deliver >1 watt of power to a device
-\item Ability to function without line of sight
-\item Maximum range of up to 30 feet
-\end{enumerate}
-
-The ability to function while moving was shown in Chapter 3 by utilizing the spatial profile of a time reversed reconstruction. Because the reconstruction voltage changed predictably in space, we were able to deliver a relatively uniform amount of voltage to the receiver antenna as the antenna moved at a constant velocity. By re-collecting the sona signal after a set amount of time, we successfully used time reversal to send power to a moving target.  As discussed in Chapter 2, uBeam is the only company that boasts this feature, providing a clear feature that makes time reversal unique in the realm of WPT technology. \todo{I'm concerned with the way that this is phrased.  I'd personally like to talk about this being useful in WPT without mentioning technologies by name.}
-
-In Chapter 4 we illustrate charging multiple devices using NLTR. While every current WPT technology can charge multiple devices, most are dependent on feedback networks, complex algorithms, and/or constant communication between transmitter and receiver. As we demonstrated, NLTR can target on an arbitrary number of nonlinear elements in the time reversed step. Due to this aspect of NLTR, a time reversal based WPT system could charge 10 devices easily without any change to our algorithm. The generalizability of time reversal to an arbitrary number of receivers clearly illustrates both the simplicity and strength needed to be effective in the market for WPT.
-
-We further showed in Chapter 4 that using NLTR, we may select targets to receive power at the exclusion of others. By characterizing the nonlinear response of our model diode, we provided a basic method to produce a reconstruction on a specific diode. We were able to effectively discriminate where the reconstruction occurred under the condition that we wanted to selectively target either a $V_{k}^{high}$ or $V_{k}^{low}$ diode. Our experiments in selective targeting demonstrated one possible method of discriminating between receivers using NLTR. We believe that more efficient and more generalizable algorithms may exist for other types of nonlinear devices. 
-
-\section{Integration of Various Accomplishments Together}
+\section{Contributions}
 
 The various elements of this thesis at first glance may seem isolated from one another. We demonstrated six significant aspects to time reversal throughout our thesis:
 
@@ -36,13 +15,32 @@ The various elements of this thesis at first glance may seem isolated from one a
 \item Successfully designed a dual purpose rectenna
 \end{enumerate}
 
-Mapping the spatial profile of a reconstruction is perhaps our most significant contribution. As is the case with any WPT technology, safety is a principal concern. By understanding the spatial profile of a reconstruction, we are able to accurately address the effects of microwave radiation on individuals and electronics \todo{I changed to focus on non-living effects as well.  Thoughts?} nearby a charging device. We believe that this profile is generalizable from linear TR to NLTR, making the spatial profile a power tool for future work in both NLTR design as well as rectenna design.
+Mapping the spatial profile of a reconstruction is perhaps our most significant contribution. As is the case with any WPT technology, safety is a principal concern. By understanding the spatial profile of a reconstruction, we are able to accurately address the effects of microwave radiation on individuals and electronics nearby a charging device. We believe that this profile is generalizable from linear TR to NLTR, making the spatial profile a power tool for future work in both NLTR design as well as rectenna design.
 
-The proof-of-concept work in overlapping sonas demonstrates a WPT technology based on time reversal would require rapid pulsing of power instead of a continuous amount of power being transfer. This has important implications for the integration of rectennas into a TR WPT system. Having a simple method for controlling the time between reconstructions provides an avenue for optimizing a future rectenna system. This also provides another tunable variable to optimize a later WPT system. \todo{I changed the ordering of this paragraph because I thought that the final sentence was a stronger claim than the first.  Lemme know what you think}
+The proof-of-concept work in overlapping sonas demonstrates a WPT technology based on time reversal would require rapid pulsing of power instead of a continuous amount of power being transfer. This has important implications for the integration of rectennas into a TR WPT system. Having a simple method for controlling the time between reconstructions provides an avenue for optimizing a future rectenna system. This also provides another tunable variable to optimize a later WPT system.
 
-We showed in Chapter 4 that the strength of the nonlinear reconstruction is dependent on the strength of the nonlinear sona generated from the nonlinear object. Thus, a more distinct harmonic response in the rectenna is very desirable for both selective targeting as well as simultaneous reconstruction. Careful design of the dual-purpose rectenna will be needed for a successful NLTR WPT system. \todo{Also changed the order of phrasing here.}
+We showed in Chapter 4 that the strength of the nonlinear reconstruction is dependent on the strength of the nonlinear sona generated from the nonlinear object. Thus, a more distinct harmonic response in the rectenna is very desirable for both selective targeting as well as simultaneous reconstruction. Careful design of the dual-purpose rectenna will be needed for a successful NLTR WPT system.
 
-\section{Integration of a WPT System}
+\section{Evaluating Time Reversal as a Wireless Power Transfer Method}
+
+Throughout this thesis, we have demonstrated many aspects of TR that may be incorporated into a future WPT technology. Our work focused on proof-of-concept experiments that demonstrate basic functionality and feasility of the proposed technology.  We first identified key characteristics of current WPT methods on the market or soon to enter the market. These characteristics were used to identify the following properties to be ideal for a WPT system and have demonstrated the first three throughout our thesis:
+
+\begin{enumerate}
+\item Ability to function while device is moving
+\item Ability to charge multiple devices 
+\item Ability to choose which devices receive power
+\item Ability to deliver >1 watt of power to a device
+\item Ability to function without line of sight
+\item Maximum range of up to 30 feet
+\end{enumerate}
+
+The ability to function while moving was shown in Chapter 3 by utilizing the spatial profile of a time reversed reconstruction. Because the reconstruction voltage changed predictably in space, we were able to deliver a relatively uniform amount of voltage to the receiver antenna as the antenna moved at a constant velocity. By re-collecting the sona signal after a set amount of time, we successfully used time reversal to send power to a moving target.  As discussed in Chapter 2, uBeam is the only company that boasts this feature, providing a clear feature that makes time reversal unique in the realm of WPT technology.
+
+In Chapter 4 we illustrate charging multiple devices using NLTR. While every current WPT technology can charge multiple devices, most are dependent on feedback networks, complex algorithms, and/or constant communication between transmitter and receiver. As we demonstrated, NLTR can target on an arbitrary number of nonlinear elements in the time reversed step. Due to this aspect of NLTR, a time reversal based WPT system could charge 10 devices easily without any change to our algorithm. The generalizability of time reversal to an arbitrary number of receivers clearly illustrates both the simplicity and strength needed to be effective in the market for WPT.
+
+We further showed in Chapter 4 that using NLTR, we may select targets to receive power at the exclusion of others. By characterizing the nonlinear response of our model diode, we provided a basic method to produce a reconstruction on a specific diode. We were able to effectively discriminate where the reconstruction occurred under the condition that we wanted to selectively target either a $V_{k}^{high}$ or $V_{k}^{low}$ diode. Our experiments in selective targeting demonstrated one possible method of discriminating between receivers using NLTR. We believe that more efficient and more generalizable algorithms may exist for other types of nonlinear devices. 
+
+\section{Final Words}
 
 It is clear that many of experiments were linked in design, results, or motivation. By demonstrating the various elements to our time reversal based WPT system, and discussing the interrelationship between those elements, we have demonstrated the proof-of-concept for such a technology. 
 
