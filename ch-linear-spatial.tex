@@ -1,7 +1,7 @@
-\chapter{Spatial Profiling}
-\label{ch:spatial-profile}
-\section{Purpose}
-\label{sec:spatial-profile-purpose}
+\section{Spatial Profiling}
+\label{sec:spatial-profile}
+
+\subsection{Purpose}
 
 A major concern with the practical application of TR to WPT is the ability of WPT to safely and consistently converge on its target.  An ideal TR WPT system will focus large amounts of energy on a very small space.  However, the question remains: how small of a space is it focused in?
 
@@ -9,16 +9,14 @@ The answer to this question will have major repercussions on the ability of TR t
 
 Clearly, the spatial profile of a reconstruction should be as small as possible.  For TR WPT to be used on small electronic devices, the profile should be small enough not to damage circuits or biological matter within a centimeter or so of the device.  An experiment was done to characterize this behavior, as it exists in our setup.
 
-\section{Methodology}
-\label{sec:spatial-profile-meth}
+\subsection{Methodology}
 
 Characterization of the spatial profile was done in the same aluminum cavity used in the linear and nonlinear time reversal tests, listed above.
 
 The basic time reversal process in this environment proceeds as follows: First, a 50 ns Gaussian pulse (with a carrier frequency of 5 GHz) is injected into the cavity through the transmitting antenna. That sona is measured at the receiving antenna (Fig. 1b). The sona is then time reversed and injected into the transmitting antenna. The result is a reconstruction of the initial pulse back at the receiving antenna (Fig. 1c). This process makes use of another robust symmetry, namely the spatial reciprocity of the wave equation.
 Two monopole antennas inject and extract electromagnetic signals from different points in the enclosure. A transmitting antenna is attached to the cavity wall opposite the receiving antenna. The receiving antenna is attached to a panel that can move vertically with a total range of 70 millimeters. Motion of the receiving antenna is achieved using an externally-mounted PI MikroMove \texttt{M-415.DG} translation stage and the enclosure remains sealed during the translation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix \texttt{AWG7052} arbitrary waveform generator feeding an Agilent \texttt{E8267D} Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent \texttt{DSO91304A}) is used to record waveforms of interest. MATLAB is used for signal processing and instrument control and coordination.
 
-\section{Results}
-\label{sec:spatial-profile-results}
+\subsection{Results}
 
 \begin{figure}[t!]
 \includegraphics[width=\columnwidth]{spatial/freq_profile.pdf}
@@ -30,8 +28,7 @@ steps.  The inset shows the inverse of the fit $b$ values versus carrier frequen
 
 The first experiment measures the spatial profile of a reconstruction, with the goal of characterizing reconstruction size as a function of carrier signal wavelength. A reconstruction is focused on the receiving antenna, in the middle of its movement range. Without changing the time reversed sona being broadcast, the receiving antenna is systematically translated through its entire range of movement. Samples are taken every 0.2 mm across the entire 70~mm range, and the maximum peak-to-peak voltage of the corresponding reconstruction is recorded at each step. We repeated this experiment for carrier frequencies in the range 4-9 GHz and display these results in Figure~\ref{fig:spatial-freq-profile}.
 
-\section{Discussion}
-\label{sec:spatial-profile-discussion}
+\subsection{Discussion}
 
 \begin{figure}[t!]
 \includegraphics[width=\columnwidth]{spatial/fit.pdf}
