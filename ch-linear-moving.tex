@@ -12,6 +12,7 @@ The experiment is conducted in two parts: mapping the spatial voltage profile of
 The experimental setting for this experiment differs only slightly from that described in section~\ref{fig:ltr-meth}. In this case, the antenna mounted on the scanning panel is designated as the receiving antenna. Motion of the receiving antenna is achieved using an externally-mounted PI MikroMove \texttt{M-415.DG} translation stage and the enclosure remains sealed during the translation. An interrogation pulse is used to create a reconstruction at the middle of the scanning range. The receiver is then stepped through the entire scanning range, at a step size of 0.2 mm. At each position, the peak to peak voltage of the reconstruction is measured and recorded. This experiment is repeated for a variety of frequencies to test for a wavelength dependence.
 
 \subsubsection{Results}
+\label{sec:profile-results}
 
 \begin{figure}[t!]
 \includegraphics[width=\columnwidth]{spatial/freq_profile.pdf}
@@ -29,7 +30,7 @@ frequency, and fit to the \texttt{sinc(x)} function.}
 \label{fig:spatial-error-fit}
 \end{figure}
 
-The reconstruction peak-to-peak voltage profile is expected to take the form of a $sinc(x)$ function about the target location~\ref{cite:lerosey-focusing}. Thus, the following equation is proposed to predict $V(x)$, the maximum peak to peak voltage from a given reconstruction, as a function of $x$, the distance between the reconstruction focal point and the receiver:
+The reconstruction peak-to-peak voltage profile is expected to take the form of a $sinc(x)$ function about the target location~\cite{lerosey-focusing}. Thus, the following equation is proposed to predict $V(x)$, the maximum peak to peak voltage from a given reconstruction, as a function of $x$, the distance between the reconstruction focal point and the receiver:
 
 \begin{equation}
 \label{eq:vx}
@@ -46,7 +47,8 @@ The results presented in Figure~\ref{fig:spatial-freq-profile} allow us to draw 
 \subsection{Reconstructing on a Moving Target}
 \label{sec:recon-moving}
 
-For this experiment, the receiving antenna moved at a constant speed of 0.2~$\frac{mm}{s}$ across the entire 70~mm range provided by the \texttt{MikroMove}. To counteract the degradation of reconstruction strength as the antenna moved, we periodically repeated the interrogation step, effectively re-centering the reconstruction on the antenna. Since the test equipment does not allow broadcast of one sona while collecting another, it was not possible to transmit power during the collection time, leading to a finite ``dead time'', denoted $t_d$ in Figure~\ref{durfig:6.1}. During the broadcast period, the time-reversed sona was continually broadcast into the cavity (once every 15~$\mu$s) and the peak-to peak voltage across the receiver was measured once every 2.05~seconds, meaning that the reconstructions are highly undersampled in this plot. After every 15 samples were collected, we paused to collect a new sona and repeated the process. We refer to this full process of collecting a new sona and then broadcasting it for a given period time as a full ``cycle'' of length $t_c$. The results in Fig. 6.1 below were obtained using a carrier frequency of 5 GHz, $t_d$ of 7 seconds, and $t_c$ of 39.8 seconds. Based on the results from Section III-A, the peak-to-peak reconstruction voltage measured by the receiver is expected to decay according to the sinc(x) function as the receiver
+\subsubsection{Methodology}
+For this experiment, the receiving antenna was moved at a constant speed of 0.2~$\frac{mm}{s}$ across the entire 70~mm range provided by the \texttt{MikroMove}. To counteract the degradation of reconstruction strength as the antenna moved, we periodically repeated the interrogation step, effectively re-centering the reconstruction on the antenna. Since the test equipment does not allow broadcast of one sona while collecting another, it was not possible to transmit power during the collection time, leading to a finite ``dead time'', denoted $t_d$ in Figure~\ref{fig:moving-recon}. During the broadcast period, the time-reversed sona was continually broadcast into the cavity (once every 15~$\mu$s) and the peak-to peak voltage across the receiver was measured once every 2.05~seconds, meaning that the reconstructions are highly undersampled in this plot. After every 15 samples were collected, the process was repeated. We refer to this full process of collecting a new sona and then broadcasting it for a given period time as a full ``cycle'' of length $t_c$. The results in Fig. 6.1 below were obtained using a carrier frequency of 5 GHz, $t_d$ of 7 seconds, and $t_c$ of 39.8 seconds. Based on the results from Section~\ref{sec:spatial-results}, the peak-to-peak reconstruction voltage measured by the receiver is expected to decay according to the $sinc(x)$ function as the receiver
 moves away from the reconstruction focal point. This $sinc(x)$ function will be centered on the position where the sona was last collected, making the reconstruction focus continually lag behind the antenna. Consequently, the maximum reconstruction strength is limited by the time needed to collect, time reverse and re-broadcast an updated sona. The following equation is proposed as a model for the peak-to-peak voltage of the reconstruction on a moving target as a
 function of time, assuming a constant velocity $\bar{v}$:
 
@@ -61,9 +63,14 @@ function of time, assuming a constant velocity $\bar{v}$:
 %\end{displaymath}
 \end{equation}
 
+\subsubsection{Results}
+\label{moving-results}
+
+The results of this experiment are very promising. We hypothesized that the reconstruction peak to peak voltage would reset back to a maximal value when a new sona was used to refocus the reconstruction, and follow the voltage profile as the receiver moved away from the new target location. This was confirmed by the experimental results. 
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.85\textwidth]{moving/moving_recon}
-    \caption[Voltage measured during moving reconstructions]{Reconstruction voltage amplitude vs. time as the target moves along one wall of the enclosure. A new sona signal is acquired every $t_c = 39.8s$, leading to a dead time of duration $t_d = 7s$. The target is moving at a speed of 0.5~$\frac{mm}{s}$ and the carrier frequency is 5~GHz. The green line is Eq. (6.1).}
+    \caption[Voltage measured during moving reconstructions]{Reconstruction voltage amplitude vs. time as the target moves along one wall of the enclosure. A new sona signal is acquired every $t_c = 39.8s$, leading to a dead time of duration $t_d = 7s$. The target is moving at a speed of 0.5~$\frac{mm}{s}$ and the carrier frequency is 5~GHz. The green line is Eq.~ref{eq:vt}.}
     \label{fig:moving-recon}
 \end{figure}
