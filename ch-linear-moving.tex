@@ -7,16 +7,16 @@ For this experiment, the receiving antenna moved at a constant speed of 0.5~$\fr
 moves away from the reconstruction focal point. This $sinc(x)$ function will be centered on the position where the sona was last collected, making the reconstruction focus continually lag behind the antenna. Consequently, the maximum reconstruction strength is limited by the time needed to collect, time reverse and re-broadcast an updated sona. The following equation is proposed as a model for the peak-to-peak voltage of the reconstruction on a moving target as a
 function of time, assuming a constant velocity $\bar{v}$:
 
-\begin{equation}\label{eq:vt}
+%\begin{equation}\label{eq:vt}
 %\begin{displaymath}
-  V(t) = \left\{
+  $$V(t) = \left\{
         \begin{array}{ll}
                 0 & : t\pmod{t_c} \le t_d \\
                 a\cdot sinc(\frac{\bar{v}t}{b})+d & : t\pmod{t_c} > t_d
         \end{array}\,.
-  \right.
+  \right.$$
 %\end{displaymath}
-\end{equation}
+%\end{equation}
 
 \begin{figure}[t]
 \centering
