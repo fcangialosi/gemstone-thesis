@@ -477,7 +477,7 @@ Thesis submitted in partial fulfillment of the requirements of the \\
 \iffinal
 	% no compile label
 \else
-	\par\noindent\centerline{\textbf{This veresion compiled on \today~at~\currenttime}}
+	\par\noindent\centerline{\textbf{This version compiled on \today~at~\currenttime}}
 \fi
 
 \begin{center}{\large{\bf \@title} \\
