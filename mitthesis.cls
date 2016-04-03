@@ -440,7 +440,8 @@ reserved.\par\permission}}
   \signature{Certified by}{#1 \\ Team Mentor}}
   \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
   \vskip\baselineskip \def\baselinestretch{1}\@normalsize
-  \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
+  \par\noindent Thesis Supervisor: #1 \\ Title: #2
+	}}
 
 % department chairman, not thesis committee chairman
 \def\chairman#1#2{\gdef\@chairmanname{#1}\gdef\@chairmantitle{#2}}
@@ -472,6 +473,13 @@ Thesis submitted in partial fulfillment of the requirements of the \\
 % but we want people to also be able to get at the more
 % basic abstract environment
 \def\abstractpage{\newpage
+
+\iffinal
+	% no compile label
+\else
+	\par\noindent\centerline{\textbf{This veresion compiled on \today~at~\currenttime}}
+\fi
+
 \begin{center}{\large{\bf \@title} \\
 by \\
 \@author \\[\baselineskip]}

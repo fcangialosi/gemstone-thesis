@@ -43,9 +43,15 @@
 
 %% Drafting Commands
 \newcommand\todo[1]{TODO:\textcolor{red}{#1}}
+\newif\iffinal
+\finalfalse
+%\finaltrue
 
 %% Table Comands
 \newcommand\cellstack[1]{\rule{0pt}{2.5em}\shortstack{#1}}
+
+%% Compile time
+\usepackage[yyyymmdd,hhmmss]{datetime}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
