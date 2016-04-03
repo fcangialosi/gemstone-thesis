@@ -75,6 +75,7 @@ I_{d} = G_{s}V_{d}
 \caption[CST diode circuit model]{CST diode circuit model}
 \label{fig:numerical-cst-diode}
 \end{figure}
+\todo{Can we shrink this?  It's far too large}
 
 To obtain idealized results, we set $C$ and $G_s$ to $0$, as these values reduced the magnitude of the nonlinear response. We used the default $R = 50 \Omega$, as very large $R$ reduced the overall signal greatly and a very small $R$ did not produce any harmonics. This left only $T$ to tune the I-V curve of the diode. In real life, different diodes have different I-V curves based on material. In order to simulate these differences mathematically, we changed the temperature of the diode in the simulation, as shown in Figure~\ref{fig:numerical-iv-curves}.
 
