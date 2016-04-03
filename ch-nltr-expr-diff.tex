@@ -1,77 +1,50 @@
 \section{Experimental Difficulties}
 \label{sec:nltr-expr-diff}
 
-\subsection{Ferromagnetic Nanorods as a Nonlinear Beacon}
-\label{sec:nltr-nanorod}
+\subsection{Ferromagnetic Nanorods as a Magnetic Nonlinear Beacon}
 
-\subsubsection{Purpose}
+In order to generate a harmonic response, the nonlinear object must possess inherent nonlinearity in its material properties. Since TR uses electromagnetic waves, we are interested in possble nonlinear electric or magnetic properties. In this section, we discuss a potential magnetic nonlinear object in the form of ferromagnetic nanorods. These nanorods have a nonlinear magnetization curve, as shown in ~\todo{add figure for hysteresis loop}. This means that the B-field generated from an interrogation signal should have a harmonic response that we may use for NLTR. 
 
-As noted in Chapter~\ref{ch:selective}, the team faced significant difficulties creating a nonlinear signal for use in NLTR.  The team investigated the use of ferromagnetic nanorods to generate a nonlinear signal.
+While the usage of diodes as a nonlinear object had been well-documented, the usage of ferromagnets as a nonlinear object had not. Due to this, we had to perform preliminary experiments on the ferromagnetic nanorods in order to verify that the nonlinear response was strong enough to ensure success NLTR experiments. 
 
-\subsubsection{Methodology}
+This preliminary expertiment consisted of sending a pulse signal into an antenna with the ferromagnetic nanorods attached to them and recording the response signal. By transforming the response signal to the frequency domain, we were able to easily identify whether or not a 2f harmonic was generated. 
+ 
+ \begin{figure}[h!]
+     \centering
+     \begin{subfigure}{0.45\textwidth}
+         \centering
+         \includegraphics[width=1.0\linewidth]{nanorod/exp-1}
+         \caption[]{}
+         \label{fig:nanorod-exp-1}
+     \end{subfigure}
+         \begin{subfigure}{0.45\textwidth}
+         \centering
+         \includegraphics[width=1.0\linewidth]{nanorod/exp-2}
+         \caption[]{}
+         \label{fig:nanorod-exp-2}
+     \end{subfigure}
+         \begin{subfigure}{0.45\textwidth}
+         \centering
+         \includegraphics[width=1.0\linewidth]{nanorod/exp-3}
+         \caption[]{}
+         \label{fig:nanorod-exp-3}
+     \end{subfigure}
+         \begin{subfigure}{0.45\textwidth}
+         \centering
+         \includegraphics[width=1.0\linewidth]{nanorod/exp-4}
+         \caption[]{}
+         \label{fig:nanorod-exp-4}
+     \end{subfigure}
+     \caption[Ferromagnetic nanorod experimental results]{Experimental results}
+     \label{fig:nanorod-results}
+ \end{figure}
+ 
+  Figure~\ref{fig:nanorod-results}(a)-(d) show the 2f response under a variety of conditions. Although there seem to be peaks in (a) - (d), the peaks are somewhat randomly distributed and are small in magnitude. Due to these two aspects of our preliminary testing, we determined that using ferromagnetic nanorods as a potential magnetic nonlinear object was infeasible for performing NLTR. 
+  
+\subsection{Diodes as an Electric Nonlinear Beacon}
 
-An additional experiment was conducted by the team to determine whether ferromagnetic nanorods could generate a useable nonlinear signal for nonlinear time reversal. For the first experiment, the ferromagnetic nanorods were attached with tape to a monopole antenna and put into a small box lined with tin foil that acts as a reflective chamber. This was attached via a circulator in sequence with a signal generator and a spectrum analyzer (as shown in Figure~\ref{fig:nanorod-setup}). The signal generator output a CW, which swept from \numrange{1}{10}~GHz every .5~GHz.
+While utilizing a nonlinear magnetic response was not feasible, utilizing a nonlinear electric response has been well-documented through the use of a diode. This represents a nonlinear object, as the current response to an applied voltage for a diode changes significantly after a certain applied voltage value, as seen in ~\todo{find an image for IV curve-- probably just like Wikipedia}. Frazier et al. have previously used diodes in NLTR experiments to much success.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth]{nanorod/setup}
-    \caption[Initial ferromagnetic nanorod experimental setup]{Diagram showing connections between the antenna, signal generator, and spectrum analyzer used in the first experimental setup.}
-    \label{fig:nanorod-setup}
-\end{figure}
+We performed another preliminary test to verify the nonlinear response of a diode after being interrogated by a Gaussian pulse. Given the history of diodes in NLTR, we believed that we would see a large 2f response. While performing these preliminary tests we were unable to produce any measureable harmonic from a diode while it was present in the Gigabox. In order to circumvent this problem, we used extremely large amplifiers as done by Hong et al. in their NLTR experiments. We were still unable to generate a significant harmonic response.
 
-The next step in this research was to move to Gigabox testing. The setup for this experiment followed that of the first step of linear time reversal, with modifications to the responding antenna depending on the iteration of the variable being tested.
-
-In the first round of testing, a simple pole antenna was used, with the ferromagnetic nanorods being taped to the transmitting antenna. The DSO then collected the signal from the transmitting antenna at a port several centimeters away.
-
-After initial tests with the control variable being the presence of the ferromagnetic nanorods, the next test compared the base behavior of the antenna to the response of the ferromagnetic nanorods in the presence of a magnetic field. In order to accomplish this, a magnet was affixed to the outside of the Gigabox as close to the transmitting port as possible. In each of these first two tests, the frequency was swept every .1~GHz from 3.5~GHz to 6.5~GHz.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth]{nanorod/antenna}
-    \caption[Antenna used with ferromagnetic nanorods in the Gigabox]{The ferromagnetic nanorods are affixed inside the copper solenoid, which is placed beside the antenna in order to test a different alignment of the magnetic field.}
-    \label{fig:nanorod-setup}
-\end{figure}
-
-The third and final test relied on the same magnetic stimulation as the second iteration of the Gigabox test, with a different antenna, this one fashioned into a solenoid, to test a different alignment of the magnetic field. This final round of testing had the highest frequency resolution, which swept from 3.05 GHz to 6 GHz at every .05 GHz. For additional certainty, the measurements from five runs were averaged for a final result.
-
-In each of the above tests, the carrier frequency was the independent variable swept across. This is represented as 1F. The dependent variable was the recorded voltage at the nonlinear frequency, 2F, double the carrier frequency. This voltage was separated using an FFT function in Matlab.
-
-\subsubsection{Results}
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=1.0\linewidth]{nanorod/exp-1}
-        \caption[]{}
-        \label{fig:nanorod-exp-1}
-    \end{subfigure}
-        \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=1.0\linewidth]{nanorod/exp-2}
-        \caption[]{}
-        \label{fig:nanorod-exp-2}
-    \end{subfigure}
-        \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=1.0\linewidth]{nanorod/exp-3}
-        \caption[]{}
-        \label{fig:nanorod-exp-3}
-    \end{subfigure}
-        \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=1.0\linewidth]{nanorod/exp-4}
-        \caption[]{}
-        \label{fig:nanorod-exp-4}
-    \end{subfigure}
-    \caption[Ferromagnetic nanorod experimental results]{Experimental results}
-    \label{fig:nanorod-results}
-\end{figure}
-
-Figure~\ref{fig:nanorod-exp-1} shows positive spikes in nanorod response compared to the base at 4 GHz and 6 GHz. Contrast this to Figures 8 and 9 below; they show a sharp peak in nonlinear response with the ferromagnetic nanorods at 5 GHz, where the sharp dip in performance occurred in the first test.
-
-Figure~\ref{fig:nanorod-exp-4} shows the final results with the loop antenna and magnetic stimulation, with behavior averaged across five tests. This is also the finest resolution, taken in the areas of interest from the results of the previous tests.
-
-\subsubsection{Discussion}
-
-The results show a general attenuation response in the gigahertz range of transmission for the ferrite ferromagnetic nanorods. The first test involving the small foil-lined box showed an extremely attenuated response at all frequencies. The level of attenuation seems to indicate that the ferromagnetic nanorods have no significant nonlinear response. Higher frequencies might provide a more significant response, though this would require different equipment than what is currently available.
+As a last effort we used various frequency multipliers to generate a nonlinear signal. We did this to verify that the equipment used in our setup was functioning properly. We were able to extract a nonlinear sona from the frequency multiplier; however, this is infeasible in a WPT technology as frequency multipliers are large in size. This confirmed that our equipment was working properly but that we were unable to generate a large response. Due to not being able to generate a nonlinear sona experimentally, we conducted all of our NLTR experiments using numerical simulation.
