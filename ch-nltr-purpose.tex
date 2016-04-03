@@ -1,10 +1,7 @@
 \chapter{Nonlinear Time Reversal}
 \label{ch:nltr}
 
-\section{Purpose and Conceptual Overview of Nonlinear Time Reversal}
-\label{sec:nltr-purpose}
-
-The preceeding chapters have been concerned with linear time reversal, or LTR, and have focused primarily on investigating properties of reconstructions. Now, we move into our nonlinear(NLTR) investigations, which focus on proof of concept of targeting capabilities. NLTR makes use of harmonic reflections from the target to isolate it via frequency domain inspection after the sona is collected, a process similar to how we would envision a TR based WPT system to work. 
+The preceeding chapters have been concerned with linear time reversal, or LTR, and have focused primarily on investigating properties of reconstructions. Now, we move into our nonlinear(NLTR) investigations, which focus on proof of concept of targeting capabilities. NLTR makes use of harmonic reflections from the target to isolate it via frequency domain inspection after the sona is collected, a process similar to how we would envision a TR based WPT system to work.
 
 Conceptually, our general process is this: we broadcast a Gaussian pulse from one port. Elsewhere in the cavity is a nonlinear element serving as a target. Any signal that interrogates this element will generate higher frequency harmonics of the interrogation signal. These harmonics are embedded along with all the other echos in the sona collected back at the transceiving port. However, before time reversing the sona, we transform it into the frequency domain and filter out all the components not within some band of the harmonic frequencies. In this way, we isolate only those wave paths that had contact with the nonlinear target. That filtered sona is time reversed and rebroadcast from the transceiving port, which will cause a slightly distorted version of the original Gaussian pulse to reconstruct at the target. This process is illustrated in Figure~\ref{fig:nonlinear-diagram}.
 
