@@ -20,7 +20,7 @@ Our team had two computers with a total of two shared CST licenses to perform si
 \begin{tabular}{|l|l|l|}
 \hline
  & \textbf{CPU A} & \textbf{CPU B} \\ \hline
-Processor & \rule{0pt}{2.5em}\shortstack{Intel Xeon CPU \\ X5670 @ 2.93 GHz} & \rule{0pt}{2.5em}\shortstack{Intel Xeon CPU \\ E5-2680 @ 2.50 GHz} \\ \hline
+Processor & \rule{0pt}{2.5em}\shortstack{Intel Xeon CPU \\ X5670 @ 2.93~GHz} & \rule{0pt}{2.5em}\shortstack{Intel Xeon CPU \\ E5-2680 @ 2.50~GHz} \\ \hline
 Number of Processors & 2 & 2 \\ \hline
 RAM & 44 GB & 128 GB \\ \hline
 GPU Available & No & Yes \\ \hline
@@ -36,7 +36,7 @@ To start any simulation, we first generated a Gaussian pulse signal in MatLab. F
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.85\textwidth]{numerical/input-wave}
-\caption[Example of inverted and non-inverted interrogation signals]{This shows our input waveform with a 4.4GHz center frequency and 1.0GHz bandwidth. The blue signal is the non-inverted input and the red signal is the inverted input. A singular, non-inverted waveform is shown in the inset.}
+\caption[Example of inverted and non-inverted interrogation signals]{This shows our input waveform with a 4.4~GHz center frequency and 1.0~GHz bandwidth. The blue signal is the non-inverted input and the red signal is the inverted input. A singular, non-inverted waveform is shown in the inset.}
 \label{fig:numerical-input-wave}
 \end{figure}
 
@@ -105,7 +105,7 @@ f_c = \frac{c}{2h}
 \label{eq:numerical-cutoff-freq}
 \end{equation}
 
-Using a cavity of height 0.76 cm resulted in a cutoff frequency of 20 GHz, well above our typical test frequencies of 4-5 GHz fundamental and 8-10 GHz harmonic. We chose this cutoff frequency in the event we needed to use a higher fundamental frequency to create better spatial resolution of our reconstruction. The area dimensions for the Cut Box Model were chosen to minimize computational time while still maintaining a reasonable mode density, as shown in Figure~\ref{fig:numerical-cst-box}(a). This mode density is required to allow the ray chaotic environment to have high sensitivity to initial and boundary conditions; a low mode density will prevent NLTR from having high spatial resolution.
+Using a cavity of height 0.76 cm resulted in a cutoff frequency of 20~GHz, well above our typical test frequencies of \numrange{4}{5}~GHz fundamental and \numrange{8}{10}~GHz harmonic. We chose this cutoff frequency in the event we needed to use a higher fundamental frequency to create better spatial resolution of our reconstruction. The area dimensions for the Cut Box Model were chosen to minimize computational time while still maintaining a reasonable mode density, as shown in Figure~\ref{fig:numerical-cst-box}(a). This mode density is required to allow the ray chaotic environment to have high sensitivity to initial and boundary conditions; a low mode density will prevent NLTR from having high spatial resolution.
 
 \begin{figure}[t]
 \centering
@@ -114,14 +114,14 @@ Using a cavity of height 0.76 cm resulted in a cutoff frequency of 20 GHz, well 
 \label{fig:numerical-cst-box}
 \end{figure}
 
-We used two Teflon-coated dipole antennas to emit and record signals~\cite{hemmady2006universal}. Two diodes are placed inside the cavity, shown by the blue circles in Fig. 5. A 4.4 GHz center frequency pulse with a 1.0 GHz bandwidth was chosen to minimize the reflected power and applied to antenna A. The interrogating pulse is shown as an inset in Figure~\ref{fig:numerical-cst-box}(a).
+We used two Teflon-coated dipole antennas to emit and record signals~\cite{hemmady2006universal}. Two diodes are placed inside the cavity, shown by the blue circles in Figure~\ref{fig:numerical-cst-box}. A 4.4~GHz center frequency pulse with a 1.0~GHz bandwidth was chosen to minimize the reflected power and applied to antenna A. The interrogating pulse is shown as an inset in Figure~\ref{fig:numerical-cst-box}(a).
 
-The specific frequency and bandwidth was chosen for this geometry to minimize initial wave reflection ($S_{11}$) into the enclosure. Figure~\ref{fig:numerical-s11-spectrum} shows that using a 1 GHz bandwidth, an optimal center frequency is 4.4 GHz. The dips in the $S_{11}$ value represent optimal frequencies to use, as a low $S_{11}$ indicates a large portion of the signal entered the cavity. The large number of peaks is indicative of the mode density of the geometry, where low frequencies are sparse given the relatively small scale of the cavity.
+The specific frequency and bandwidth was chosen for this geometry to minimize initial wave reflection ($S_{11}$) into the enclosure. Figure~\ref{fig:numerical-s11-spectrum} shows that using a 1.0~GHz bandwidth, an optimal center frequency is 4.4~GHz. The dips in the $S_{11}$ value represent optimal frequencies to use, as a low $S_{11}$ indicates a large portion of the signal entered the cavity. The large number of peaks is indicative of the mode density of the geometry, where low frequencies are sparse given the relatively small scale of the cavity.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{numerical/s11-spectrum}
-\caption[$S_{11}$ spectrum of the Cut Box Model]{The $S_{11}$ spectrum for the Cut Box Model. We wanted to minimize $S_{11}$ for our simulation while maintaining a large bandwidth. This led to choosing a 4GHz center frequency with a 1GHz bandwidth.}
+\caption[$S_{11}$ spectrum of the Cut Box Model]{The $S_{11}$ spectrum for the Cut Box Model. We wanted to minimize $S_{11}$ for our simulation while maintaining a large bandwidth. This led to choosing a 4~GHz center frequency with a 1.0~GHz bandwidth.}
 \label{fig:numerical-s11-spectrum}
 \end{figure}
 

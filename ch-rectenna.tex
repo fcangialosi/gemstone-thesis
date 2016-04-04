@@ -19,13 +19,13 @@ The diode is the most important single component to consider for the rectenna, a
 
 For the rectenna in our design to perform efficiently, the diode must satisfy several requirements:
 
-The diode must maintain rectification functionality at a transmission frequency of \numrange{1}{10}~GHz. This requirement severely limits the possible choices for the rectenna diode. The frequency of a diode is inversely related to its reverse-recovery time ($t_{rr}$), the fastest time the diode can switch from forward to reverse bias~\cite{an1012-TRR}.In traditional P-N junction diodes, minimum $t_{rr}$ is on the order of tens to thousands of nanoseconds, even for fast diodes~\cite{davis2011schottky}. In a high frequency circuit, a P-N diode would be no different than a short circuit, and no rectification would occur.
+The diode must maintain rectification functionality at a transmission frequency of \numrange{1}{10}~GHz. This requirement severely limits the possible choices for the rectenna diode. The frequency of a diode is inversely related to its reverse-recovery time ($t_{rr}$), the fastest time the diode can switch from forward to reverse bias~\cite{an1012-TRR}. In traditional P-N junction diodes, minimum $t_{rr}$ is on the order of tens to thousands of nanoseconds, even for fast diodes~\cite{davis2011schottky}. In a high frequency circuit, a P-N diode would be no different than a short circuit, and no rectification would occur.
 
 The diode must have the lowest forward voltage drop possible. The voltage drop represents the reverse bias that remains when the diode works in the forward direction, and can be a significant contributor to power loss. The team's experimental WPT capabilities are limited to fairly low voltage microwave signals (.5 V to 1 V signal amplitude), which makes forward voltage drop especially important.
 
 Finally, impedances should be minimized. All diodes have intrinsic impedances such as parasitic capacitance and resistance. Impedances contribute to losses during rectification, and minimizing these losses would increase the efficiency of rectification.
 
-Considering these factors, a Schottky barrier diode were chosen for the rectenna. Unlike P-N junction diodes, Schottky diodes have extremely low $t_{rr}$ and low forward voltage~\cite{davis2011schottky}.  Schottky diodes do have a lower maximum reverse voltage rating, higher reverse leakage current, and higher cost than P-N diodes. However, these are relatively minor issues in our application. A Schottky \texttt{MA4E1317} diode was used as the rectifying diode. The diode parameters from the are shown in Table~\ref{tab:rectenna-datasheet}.
+Considering these factors, a Schottky barrier diode was chosen for the rectenna. Unlike P-N junction diodes, Schottky diodes have extremely low $t_{rr}$ and low forward voltage~\cite{davis2011schottky}.  Schottky diodes do have a lower maximum reverse voltage rating, higher reverse leakage current, and higher cost than P-N diodes. However, these are relatively minor issues in our application. A Schottky \texttt{MA4E1317} diode was used as the rectifying diode. The diode parameters from the manufacturer's datasheet are shown in Table~\ref{tab:rectenna-datasheet}.
 
 \def\arraystretch{2}
 \begin{table}[h]
@@ -71,11 +71,11 @@ A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the
     \label{fig:rectenna-design}
 \end{figure}
 
-The rectenna is composed of three surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the free-space wavelength of the incident wave.1
+The rectenna is composed of three surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the free-space wavelength of the incident wave.
 
 One important distinction for this rectenna design is the lack of band-pass filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out to allow the harmonic response of the diode to escape through the dipole.
 
-No special consideration for impedance matching between the antenna and the rectifier components. This is definitely a point to consider for future improvement, as proper matching of the components should significantly improve the efficiency of rectification.
+It is worth noting, however, that we did not attempt impedance matching between the antenna and the rectifier components. This is an important point to consider for future work, as proper matching of the components should significantly improve the efficiency of rectification.
 
 \section{Rectenna Testing}
 \label{sec:rectenna-testing}
@@ -106,7 +106,7 @@ To determine the overall rectification efficiency, a second antenna was used to 
     \label{fig:rectenna-test-1}
 \end{figure}
 
-Rectification was most pronounced in the 3-5~GHz frequency band. Rectified voltage is highest at 3.4~GHz and 4.6~GHz, with DC voltage levels of 66.5~mV and 59.0~mV respectively. Unfortunately, DC voltage results of higher frequencies were unreliable and erratic given the measurement techniques, and accurate data could not be taken.
+Rectification was most pronounced in the 3-5~GHz frequency band. Rectified voltage is highest at 3.4~GHz and 4.6~GHz, with DC voltage levels of 66.5~mV and 59.0~mV respectively. Unfortunately, DC voltage results of higher frequencies were unreliable and erratic given the measurement techniques, and accurate data could not be collected.
 
 Given the resistive load of 330~$\Omega$, rectified DC power can be calculated from the voltage above. Using DC voltage ($V$) and load resistance ($R$), the DC power ($P_{dc}$) was calculated using Equation ~\ref{eq:dc_power}:
 
@@ -127,7 +127,7 @@ A plot of the resulting rectified DC power delivered to the load as a function o
 
 Considering the input power of 17~dBm (around 50.12~mW), the wall-to-load efficiency of the experiment is extremely low for all frequencies. These losses can come from a number of sources, including bad coupling between the broadcast antenna and rectenna, reflection from broadcast antenna, losses in coaxial connections between components, and power radiated away from the rectenna, among others. However, the inherent losses of the experimental setup are not relevant to the overall efficiency of the system; for this, the efficiency result must be compared to only the rectification efficiency.
 
-To establish rectification efficiency, AC power tests were conducted on a bare dipole antenna with no diode, resistor, or capacitor. The results of this test establish the overall power accepted by the rectenna, and is directly comparable to the previous DC power results.
+To establish rectification efficiency, AC power tests were conducted on a bare dipole antenna with no diode, resistor, or capacitor. The results of this test establish the overall power accepted by the rectenna, and are directly comparable to the previous DC power results.
 
 The setup of the AC power experiment was similar to the DC power experiment, with the exception of two key differences: the voltmeter was replaced by a \texttt{DSO91304A} oscilloscope, and the rectenna was replaced by the bare dipole antenna. In the absence of the 330~$\Omega$ load resistor on the rectenna, the 50~$\Omega$ input impedance of the oscilloscope~\cite{DSO91304A-manual} was used as the load.
 
@@ -179,7 +179,7 @@ Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz 
 
 \subsection{Harmonic Generation}
 
-Harmonic generation was then tested by measuring second harmonic power reflected from the rectenna. The antenna was stimulated by a 10~dBm~CW signal, and the second harmonic reflected from the antenna was collected using a directional coupler feeding into the spectrum analyzer for measurement. The test setup for and results are shown in Figure~\ref{fig:rectenna-test-3-setup}.
+Harmonic generation was tested by measuring second harmonic power reflected from the rectenna. The antenna was stimulated by a 10~dBm~CW signal, and the second harmonic reflected from the antenna was collected using a directional coupler fed into a spectrum analyzer for measurement. The test setup and results for this experiment are shown in Figure~\ref{fig:rectenna-test-3-setup}.
 
 \begin{figure}[]
 \centering
@@ -193,7 +193,7 @@ In initial testing, the harmonic generation of the rectenna was minimal, as the 
 \section{Discussion}
 \label{sec:rectenna-discussion}
 
-The intent of the rectenna was twofold. The rectenna was designed to rectify RF signals (\numrange{1}{10}~GHz) and generate of higher-order harmonics. Both of these qualities are needed for the creation of an NLTR rectifier. The current experiments establish a baseline for rectification and harmonic generation that can be used for future designs.
+The intent of the rectenna was twofold. The rectenna was designed to rectify RF signals (\numrange{1}{10}~GHz) and generate higher-order harmonics. Both of these qualities are needed for the creation of an NLTR rectifier. The current experiments establish a baseline for rectification and harmonic generation that can be used for future designs.
 
 The current design has made no steps towards the impedance matching of the antenna to the components. This is likely a major source of power lost by the system for rectification, and should be a top priority to consider in subsequent designs.
 
