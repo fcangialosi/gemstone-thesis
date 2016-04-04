@@ -11,12 +11,10 @@
 
 \newcommand{\mydriver}{pdftex} %Making a PDF directly using pdflatex.
 
-\documentclass[12pt,twoside]{umdthesis}
+\documentclass[12pt,twoside]{mitthesis}
 
 %% Packages
 \usepackage{titlesec}
-   \titleformat{\chapter}
-      {\normalfont\large}{Chapter \thechapter:}{1em}{}
 \usepackage{cite}
 \usepackage{lscape}
 \usepackage{indentfirst}
@@ -38,15 +36,15 @@
 \usepackage[\mydriver, bookmarks, colorlinks=true, plainpages=false, citecolor=blue, urlcolor=blue, filecolor=blue, linkcolor=blue]{hyperref}
 
 %% Setup Margins
-\newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
-\renewcommand{\baselinestretch}{2}
-\setlength{\textwidth}{5.9in}
-\setlength{\textheight}{9in}
-\setlength{\topmargin}{-.50in}
+%\newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
+%\renewcommand{\baselinestretch}{2}
+%\setlength{\textwidth}{5.9in}
+%\setlength{\textheight}{9in}
+%\setlength{\topmargin}{-.50in}
 %\setlength{\topmargin}{0in}    %use this setting if the printer makes the the top margin 1/2 inch instead of 1 inch
-\setlength{\oddsidemargin}{.55in}
-\setlength{\parindent}{.4in}
-
+%\setlength{\oddsidemargin}{.55in}
+%\setlength{\parindent}{.4in}
+%
 %% Glossary
 \loadglsentries{tesla-glossary}
 \makeglossaries
