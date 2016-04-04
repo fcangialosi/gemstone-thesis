@@ -32,7 +32,7 @@ Once the efficacy of the single sona was established, the experiment was modifie
 
 \subsection{Results}
 
-Increasing the number of sonas should increase the amount of power transmitted in a given time frame, if the amplitude of each reconstruction remains constant. We hypothesized that overlapping reconstructions by linearly superimposing sonas would not decrease the size of the reconstructions. As a result, a great amount of effective power transmitted per duty cycle. Our experiments seemed to support this conjecture, in that the number of reconstructions in the cycle could be increased while maintaining their characteristic shape. However, the size of the packets did decrease as the number of reconstructions within the window became larger.
+Increasing the number of sonas should increase the amount of power transmitted in a given time frame, if the amplitude of each reconstruction remains constant. We hypothesized that overlapping reconstructions by linearly superimposing sonas would not decrease the size of the reconstructions. As a result, a great amount of effective power was transmitted per duty cycle. Our experiments seemed to support this conjecture, in that the number of reconstructions in the cycle could be increased while maintaining their characteristic shape. However, the size of the packets did decrease as the number of reconstructions within the window became larger.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.85\textwidth]{overlapping/voltage_per_recon}
@@ -50,5 +50,3 @@ To better model how these reconstructions would interact with a practical WPT sy
 \end{figure}
 
 Important to note is the overall increasing trend, which resembles a square root function. This is expected, as the power is expected to vary linearly with the number of overlaid sonas, and is proportional to the peak to peak voltage squared. The positive correlation between repetition rate and total voltage indicates that the use of this technique would be very valuable for a WPT scheme. We can acquire a sona and then broadcast the time reversed version at very high repetition rates to transmit large amounts of energy to the receiver. Coupled with an arbitrary amplification according to the application's needs, this modification to a time reversal WPT system shows promise for increasing the quantity of power that can be transferred.
-
-\todo{Currently we have the last figure appear at the end of the chapter, well after it is mentioned.  Can we push it up?}
