@@ -9,33 +9,43 @@
 %% Last Updated: March 30, 2016
 %%
 
-\documentclass[12pt,twoside]{mitthesis}
+\newcommand{\mydriver}{pdftex} %Making a PDF directly using pdflatex.
+
+\documentclass[12pt,twoside]{umdthesis}
+
+%% Packages
+\usepackage{titlesec}
+   \titleformat{\chapter}
+      {\normalfont\large}{Chapter \thechapter:}{1em}{}
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\usepackage{latexsym}
+\usepackage{multirow}
+\usepackage{tabls}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{supertabular}
 \usepackage{lgrind}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{xcolor}
-%\usepackage[detect-none]{siunitx}
-%    \sisetup{range-phrase = \text{--}}
 \newcommand{\numrange}[2]{#1--#2}
 \usepackage{graphicx}
-    \graphicspath{ {figs/} }
+    \graphicspath{{figs/}}
     \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage[labelfont=bf]{caption}
 \usepackage{subcaption}
-\usepackage[bottom]{footmisc}
+\usepackage[\mydriver, bookmarks, colorlinks=true, plainpages=false, citecolor=blue, urlcolor=blue, filecolor=blue, linkcolor=blue]{hyperref}
 
-%% These have been added at the request of the MIT Libraries, because
-%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\pagestyle{plain}
+%% Setup Margins
+\newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
+\renewcommand{\baselinestretch}{2}
+\setlength{\textwidth}{5.9in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-.50in}
+%\setlength{\topmargin}{0in}    %use this setting if the printer makes the the top margin 1/2 inch instead of 1 inch
+\setlength{\oddsidemargin}{.55in}
+\setlength{\parindent}{.4in}
 
 %% Glossary
 \loadglsentries{tesla-glossary}
@@ -47,6 +57,26 @@
 \finalfalse
 %\finaltrue
 
+%% Naming conventions
+%%   Please use these instead of hardcoding names directly into the document for
+%%   consistency's sake
+\def\Umd{University of Maryland, College Park}
+\def\UMD{UNIVERSITY OF MARYLAND, COLLEGE PARK}
+\def\teamname{Team TESLA}
+\def\ournames{Frank Cangialosi, Anu Challa, Tim Furman, Tyler Grover, Patrick
+Healey, Ben Philip, Scott Roman, Andrew Simon, Liangcheng Tao}
+\def\discussantsEACHLINE{Romel Del Rosario Gomez\\
+Raymond John Sedwick\\
+Biniyam Taddese\\
+Vladimir Talanov}
+\def\mentor{Dr. Steven Anlage}
+\def\mentorsdepartment{Department of Physics}
+%\def\year{2016}
+\def\Title{Time Reversed Electromagnetic Wave Propagation as a Novel Method of
+Wireless Power Transfer}
+\def\TITLE{TIME REVERSED ELECTROMAGNETIC WAVE PROPAGATION AS A NOVEL METHOD OF
+WIRELESS POWER TRANSFER}
+
 %% Table Comands
 \newcommand\cellstack[1]{\rule{0pt}{2.5em}\shortstack{#1}}
 
@@ -54,8 +84,13 @@
 \usepackage{datetime}
 
 %% Let's make all equations single-spaced
-\BeforeBeginEnvironment{equation}{\begin{singlespace}}
-\AfterEndEnvironment{equation}{\end{singlespace}\noindent\ignorespaces}
+\newcommand{\startSINGLEspacing}{\renewcommand{\baselinestretch}{1}\small\normalsize}
+\newcommand{\startDOUBLEspacing}{\renewcommand{\baselinestretch}{2}\small\normalsize}
+
+\BeforeBeginEnvironment{figure}{\startSINGLEspacing}
+\AfterEndEnvironment{figure}{\startDOUBLEspacing}
+\BeforeBeginEnvironment{equation}{\startSINGLEspacing}
+\AfterEndEnvironment{equation}{\startDOUBLEspacing\noindent\ignorespaces}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,19 +98,37 @@
 
 \begin{document}
 
+%% Front matter, non-numbered
+\pagestyle{empty}
+\include{abstract}
+\include{title}
+\include{copyright}
 
-\include{cover}
+%% Start numbering at roman numeral ii
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
 
+%% Front matter, numbered with romans
+\include{ack}
 
-%% Contents
-\renewcommand{\baselinestretch}{1}
-\small\normalsize
-\include{contents}
+%% List of things should be single spaced
+\startSINGLEspacing
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures 
+\newpage
+%\addcontentsline{toc}{chapter}{List of Abbreviations}
+%\include{abbreviations}
+
+%% Setup some formatting for chapters, start double-spacing
+\newpage
 \setlength{\parskip}{0em}
-\renewcommand{\baselinestretch}{2}
-\small\normalsize
+\startDOUBLEspacing
 
-%Pages from this point start at Arabic numeral 1
+%% Start regular numbering at 1
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
@@ -92,9 +145,10 @@
 \include{ch-rectenna}
 \include{ch-conclusion}
 
+%% Bring back the single spacing for back matter
+\startSINGLEspacing
+
 %% Glossary
-\renewcommand{\baselinestretch}{1}
-\small\normalsize
 \include{glossary}
 
 %% Bibliography
