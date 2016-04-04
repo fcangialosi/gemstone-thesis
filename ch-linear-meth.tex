@@ -12,7 +12,7 @@ We also would like to characterize the extent to which TR can be used to charge 
 
 Understanding these phenomena allows us to make a judgement on whether TR could be used as an effective WPT technique. If TR can transmit large amounts of energy to a receiver, it fulfills the primary goal of a WPT scheme and merits further examination. Consideration of the more advanced goal of sending energy to a receiver in motion is more detailed. This ability is a gap in the current market, and is not prominent in current WPT technologies. Having identified this shortcoming, TR can fulfill a need that is not currently being met if it is able to target a receiver in motion.
 
-\section{Methodology for Conducting Linear Time Reversal Measurements}
+\section{Methodology for Linear Time Reversal}
 \label{sec:ltr-meth}
 
 We conducted physical experiments to answer the following questions:
@@ -39,10 +39,10 @@ TR processes fall into two main categories, linear and nonlinear. Linear TR (LTR
 
 Conceptually, our general process for LTR in the Gigabox is as follows: we broadcast a Gaussian interrogation pulse from one port, serving as a transmitter. This interrogation pulse reverberates and echoes around the reflective cavity. Another port, designated as the receiver, records the multipath sum of these reverberations with the oscilloscope. This summed signal is named a sona, and inherently contains information relating to the size and shape of the interrogation pulse, the location of any scattering media in the environment, and the location of both ports. That sona is reversed in the time domain and subsequently rebroadcast from the transmitting port. The signal will travel through the same multipath channels and reconstruct a time reversed version of the original interrogation pulse upon the receiver, with some additional noise. This process is illustrated in Figure~\ref{fig:linear-ltr}.
 
-\begin{figure}[h!]
+\begin{figure}[]
 \centering
-\includegraphics[width=0.85\textwidth]{linear/ltr}
-    \caption[Conceptual overview of linear time reversal]{Reading order from top left: Visualization of the linear time reversal process (1) The TRM broadcasts a signal (in this case,a pulse, pictured in the inset below the panel) into the cavity, which (2) reverberates within the cavity. Some of the reflections incoherently reach the receiver as the sona, represented in blue in the inset. (3) The TRM time reverses the sona, then re-emits it into the cavity. (4) The time reversed waves coherently collapse back on the receiver in a slightly distorted reconstruction of the original pulse (inset, blue).}
+\includegraphics[width=0.95\textwidth]{linear/ltr}
+    \caption[Conceptual overview of linear time reversal]{Reading in order from top left: Visualization of the linear time reversal process (1) The TRM broadcasts a signal (in this case,a pulse, pictured in the inset below the panel) into the cavity, which (2) reverberates within the cavity. Some of the reflections incoherently reach the receiver as the sona, represented in blue in the inset. (3) The TRM time reverses the sona, then re-emits it into the cavity. (4) The time reversed waves coherently collapse back on the receiver in a slightly distorted reconstruction of the original pulse (inset, blue).}
     \label{fig:linear-ltr}
 \end{figure}
 
