@@ -19,13 +19,13 @@ The diode is the most important single component to consider for the rectenna, a
 
 For the rectenna in our design to perform efficiently, the diode must satisfy several requirements:
 
-The diode must maintain rectification functionality at a transmission frequency of \numrange{1}{10}~GHz. This requirement severely limits the possible choices for the rectenna diode. The frequency of a diode is inversely related to its reverse-recovery time (TRR), the fastest time the diode can switch from forward to reverse bias~\cite{an1012-TRR}.In traditional P-N junction diodes, minimum TRR is on the order of tens to thousands of nanoseconds, even for fast diodes~\cite{davis2011schottky}. In a high frequency circuit, a P-N diode would be no different than a short circuit, and no rectification would occur.
+The diode must maintain rectification functionality at a transmission frequency of \numrange{1}{10}~GHz. This requirement severely limits the possible choices for the rectenna diode. The frequency of a diode is inversely related to its reverse-recovery time ($t_{rr}$), the fastest time the diode can switch from forward to reverse bias~\cite{an1012-TRR}.In traditional P-N junction diodes, minimum $t_{rr}$ is on the order of tens to thousands of nanoseconds, even for fast diodes~\cite{davis2011schottky}. In a high frequency circuit, a P-N diode would be no different than a short circuit, and no rectification would occur.
 
 The diode must have the lowest forward voltage drop possible. The voltage drop represents the reverse bias that remains when the diode works in the forward direction, and can be a significant contributor to power loss. The team's experimental WPT capabilities are limited to fairly low voltage microwave signals (.5 V to 1 V signal amplitude), which makes forward voltage drop especially important.
 
 Finally, impedances should be minimized. All diodes have intrinsic impedances such as parasitic capacitance and resistance. Impedances contribute to losses during rectification, and minimizing these losses would increase the efficiency of rectification.
 
-Considering these factors, a Schottky barrier diode were chosen for the rectenna. Unlike P-N junction diodes, Schottky diodes have extremely low TRR and low forward voltage~\cite{davis2011schottky}.  Schottky diodes do have a lower maximum reverse voltage rating, higher reverse leakage current, and higher cost than P-N diodes. However, these are relatively minor issues in our application. A Schottky \texttt{MA4E1317} diode was used as the rectifying diode. The diode parameters from the are shown in Table~\ref{tab:rectenna-datasheet}.
+Considering these factors, a Schottky barrier diode were chosen for the rectenna. Unlike P-N junction diodes, Schottky diodes have extremely low $t_{rr}$ and low forward voltage~\cite{davis2011schottky}.  Schottky diodes do have a lower maximum reverse voltage rating, higher reverse leakage current, and higher cost than P-N diodes. However, these are relatively minor issues in our application. A Schottky \texttt{MA4E1317} diode was used as the rectifying diode. The diode parameters from the are shown in Table~\ref{tab:rectenna-datasheet}.
 
 \def\arraystretch{2}
 \begin{table}[h]
@@ -71,7 +71,7 @@ A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the
     \label{fig:rectenna-design}
 \end{figure}
 
-The rectenna is composed of three surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the free-space wavelength of the incident wave.1
+The rectenna is composed of three surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the free-space wavelength of the incident wave.1
 
 One important distinction for this rectenna design is the lack of band-pass filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out to allow the harmonic response of the diode to escape through the dipole.
 
