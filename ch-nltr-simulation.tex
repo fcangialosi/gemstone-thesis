@@ -35,7 +35,7 @@ To start any simulation, we first generated a Gaussian pulse signal in MatLab. F
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{numerical/input-wave}
+\includegraphics[width=0.85\textwidth]{numerical/input-wave}
 \caption[Example of inverted and non-inverted interrogation signals]{This shows our input waveform with a 4.4GHz center frequency and 1.0GHz bandwidth. The blue signal is the non-inverted input and the red signal is the inverted input. A singular, non-inverted waveform is shown in the inset.}
 \label{fig:numerical-input-wave}
 \end{figure}
@@ -47,7 +47,7 @@ Due to the simplicity of pulse inversion, we used this method for extracting all
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{numerical/sonas}
+\includegraphics[width=0.85\textwidth]{numerical/sonas}
 \caption[Demonstration of pulse inversion]{(a) shows a portion of the non-inverted (blue) and inverted (red) recorded response signal. (b) shows the same two response signals when a diode is present in the simulation. (c) the sum of the two signals in (a), resulting in signal annihilation. (d) the sum of the two signals in (b), which produce a non-zero signal.}
 \label{fig:numerical-sonas}
 \end{figure}
@@ -69,25 +69,25 @@ I_{d} = G_{s}V_{d}
 \label{eq:numerical-vd-lt-0}
 \end{equation}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{numerical/cst-diode}
-\caption[CST diode circuit model]{CST diode circuit model}
-\label{fig:numerical-cst-diode}
-\end{figure}
 
 To obtain idealized results, we set $C$ and $G_s$ to $0$, as these values reduced the magnitude of the nonlinear response. We used the default $R = 50 \Omega$, as very large $R$ reduced the overall signal greatly and a very small $R$ did not produce any harmonics. This left only $T$ to tune the I-V curve of the diode. In real life, different diodes have different I-V curves based on material. In order to simulate these differences mathematically, we changed the temperature of the diode in the simulation, as shown in Figure~\ref{fig:numerical-iv-curves}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{numerical/iv-curves}
-\caption[I-V curves of diodes with different voltage knees]{Different I-V curves that can be modeled in CST. It should be noted that the ``Temperature'' of the diode only changes its mathematical definition of the I-V curve}
-\label{fig:numerical-iv-curves}
-\end{figure}
 
 In reality, this changed the knee voltage ($V_{k}$) for the diode. We chose $V_{k}$ to be the applied voltage needed to achieve a current of $0.2 I_{0}$. The parameter $a$ is used to define this $0.2 I_{0}$ cutoff. As discussed later in this chapter, we will show how the nonlinear response of a diode is dependent on both the input pulse amplitude and the knee voltage. This nonlinear response was maximized to allow for selective targeting between two diodes simultaneously.
 \section{Results}
 \label{sec:numerical-results}
+
+\begin{figure}[]
+\centering
+\includegraphics[width=0.7\textwidth]{numerical/cst-diode}
+\caption[CST diode circuit model]{CST diode circuit model}
+\label{fig:numerical-cst-diode}
+
+\vspace*{\floatsep}% http://tex.stackexchange.com/q/26521/5764
+
+\includegraphics[width=0.7\textwidth]{numerical/iv-curves}
+\caption[I-V curves of diodes with different voltage knees]{Different I-V curves that can be modeled in CST. It should be noted that the ``Temperature'' of the diode only changes its mathematical definition of the I-V curve}
+\label{fig:numerical-iv-curves}
+\end{figure}
 
 \subsection{Simultaneous Nonlinear Time Reversal}
 
@@ -99,6 +99,7 @@ R_{tot} = \sum_{i} R_{i}x_{i}
 \end{equation}
 
 This feature was realized by creating a geometry with two diodes present along with two ports to record and emit signals, shown below. We created a quasi-two-dimensional (2D) irregular cavity in CST. This cavity was a 15cm x 15cm x 0.76cm square box modified with various circular and elliptical segments removed from the walls as shown in Figure~\ref{fig:numerical-cst-box}.  The 0.76cm height was chosen to maintain a 2D simulation. Equation~ref{eq:numerical-cutoff-freq} was used to calculate the cutoff frequency for the fundamental mode of a parallel plate cavity, below which only 1 frequency will propagate, reducing the time needed to simulate~\cite{griffiths_david_introduction_1999}.
+
 \begin{equation}
 f_c = \frac{c}{2h}
 \label{eq:numerical-cutoff-freq}
@@ -152,7 +153,7 @@ Recall the current response in the diode from Equation~\ref{eq:numerical-vd-gt-0
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{numerical/knee-voltages}
+\includegraphics[width=\textwidth]{numerical/knee-voltages}
 \caption[Nonlinear response due to different diode characteristics]{The nonlinear response of the diode had a clear maximum at a specific knee voltage. By using a pulse amplitude that corresponded with the specific diode knee voltage, we could selectively target diodes in CST.}
 \label{fig:numerical-knee-voltages}
 \end{figure}
@@ -186,6 +187,7 @@ We have demonstrated a basic method for creating selective rectification using N
 
 We have so far shown that NLTR may be used in a WPT system to either power all nonlinear objects or selectively target the nonlinear objects within a relevant range. One significant question though that arises is to what efficiency are these objects powered. Surely a system that can only transfer 2\% of applied power will not be a successful WPT technology, as the consumer is paying for the luxury to not carry around a cable. If the user has to pay 50x more for the power they are very unlikely to use our system.
 As previously discussed, energy losses are often difficult to calculate in real experiments due to wave reflection and other systematic sources of error. However, by simulating the NLTR process, we are able to observe approximate transfer efficiency. In CST, we are able to track input power and power loss via wave reflection, absorption in both lumped elements and environment materials, and radiation loss at other ports. One drawback to using the built-in CST power tracking is that everything is recorded in the frequency domain rather than time domain. For example, a typical power spectrum from a time-reversed step of a 2-diode NLTR simulation is shown in Figure~\ref{fig:numerical-power-spectrum}. As we are interested in overall power input compared to overall power output, we used this data along with Equation~\ref{eq:numerical-transfer-efficiency} to compute the efficiency of transfer in our simulations.
+
 \begin{equation}
 e = \frac{\sum_{i}P_{i(diode)}(f)}{\sum_{i}P_{i(input)}(f)} \cdot 100
 \label{eq:numerical-transfer-efficiency}
@@ -202,10 +204,11 @@ The above data was taken from a simulation in the Cut Box model for the previous
 
 Our next question was whether or not these transfer efficiencies were a function of distance between transmitter port, diode, and receiver port. We found that using similar diode positions as previously stated resulted in transmission values around the \numrange{7}{18}\% shown above. We decided to introduce a new model with a much larger length scale, called the Room Model shown in Figure~\ref{fig:numerical-room-model}.
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
-\includegraphics[width=0.85\linewidth]{numerical/room-model-a}
-\caption[The Room Model]{Illustrates the geometry of the simulation.}
+\includegraphics[width=0.85\textwidth]{numerical/room-model-a}
+\caption[The Room Model]{(a) illustrates the geometry of the Room Model and (b)
+shows the mode density of the space.}
 \label{fig:numerical-room-model}
 \end{figure}
 

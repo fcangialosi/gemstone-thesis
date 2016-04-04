@@ -28,7 +28,7 @@ Finally, impedances should be minimized. All diodes have intrinsic impedances su
 Considering these factors, a Schottky barrier diode were chosen for the rectenna. Unlike P-N junction diodes, Schottky diodes have extremely low TRR and low forward voltage~\cite{davis2011schottky}.  Schottky diodes do have a lower maximum reverse voltage rating, higher reverse leakage current, and higher cost than P-N diodes. However, these are relatively minor issues in our application. A Schottky \texttt{MA4E1317} diode was used as the rectifying diode. The diode parameters from the are shown in Table~\ref{tab:rectenna-datasheet}.
 
 \def\arraystretch{2}
-\begin{table}[h!]
+\begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
@@ -54,13 +54,14 @@ The \texttt{MA4E1317} has low total capacitance (.045~pF) and series resistance 
 A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the system. The copper trace patterned on the FR-4 substrate acts as the antenna. The \texttt{MA4E1317} is a flip-chip device, and is only suitable for mounting on a PCB. The design and specific parameters of the antenna is based on the dual frequency WPT rectenna in~\cite{suh2002high}, but has been modified for our implementation. The design of the rectenna is shown in Figure~\ref{fig:rectenna-design}.
 
 
-\begin{figure}[h!]
+\begin{figure}[]
     \centering
     \begin{subfigure}{.85\textwidth}
         \centering
         \includegraphics[width=1.0\linewidth]{rectenna/rectenna-design}
         \caption[Rectenna schematica]{A schematic of the PCB rectenna design and component specifications.}
     \end{subfigure}
+		\par\bigskip
     \begin{subfigure}{.85\textwidth}
         \centering
         \includegraphics[width=1.0\linewidth]{rectenna/rectenna-photo}
@@ -86,7 +87,7 @@ To thoroughly test the rectenna, distinct tests were run to order to verify both
 To determine the overall rectification efficiency, a second antenna was used to broadcast energy to the rectenna. A 17~dBm~CW signal was generated from the PSG and broadcast through a monopole antenna. The rectenna was then positioned parallel to the broadcast antenna, at a distance of 2~cm. and the average DC voltage and power was measured over the load resistor. The test was repeated over a range of broadcast frequencies from 1~to~7~GHz. The setup is shown in Figure~\ref{fig:rectenna-test-1-setup} and the results are shown in Figure~\ref{fig:rectenna-test-1-voltage}.
 
 
-\begin{figure}[h!]
+\begin{figure}[]
     \centering
     \begin{subfigure}{.85\textwidth}
         \centering
@@ -94,6 +95,7 @@ To determine the overall rectification efficiency, a second antenna was used to 
         \caption{Experimental setup for rectification testing}
         \label{fig:rectenna-test-1-setup}
     \end{subfigure}
+		\par\bigskip
     \begin{subfigure}{.85\textwidth}
         \centering
         \includegraphics[width=1.0\linewidth]{rectenna/test-1-voltage}
@@ -115,7 +117,7 @@ P_{dc} = \frac{V^2}{R}
 
 A plot of the resulting rectified DC power delivered to the load as a function of frequency is shown in Figure~\ref{fig:rectenna-test-1-power}.
 
-\begin{figure}[h!]
+\begin{figure}[]
 \centering
 \includegraphics[width=0.85\textwidth]{rectenna/test-1-power}
     \caption[Rectified DC power]{Rectified DC power calculated from DC voltage using the relation: $P = \frac{V^2}{R}$}
@@ -138,7 +140,7 @@ P_{ac} = \frac{V_{max}^2}{2R}
 
 The setup and results of the test are shown below in Figures~\ref{fig:rectenna-test-2-setup}~and~\ref{fig:rectenna-test-2-power}, respectively.
 
-\begin{figure}[h!]
+\begin{figure}[]
     \centering
     \begin{subfigure}{.85\textwidth}
         \centering
@@ -146,6 +148,7 @@ The setup and results of the test are shown below in Figures~\ref{fig:rectenna-t
         \caption{Experimental setup for measuring accepted AC power}
         \label{fig:rectenna-test-2-setup}
     \end{subfigure}
+		\par\bigskip
     \begin{subfigure}{.85\textwidth}
         \centering
         \includegraphics[width=1.0\linewidth]{rectenna/test-2-power}
@@ -165,7 +168,7 @@ E = \frac{P_{dc}}{P_{ac}}
 
 Figure~\ref{fig:rectenna-efficiency} shows the efficiency calculated this way, across the range of frequencies tested.
 
-\begin{figure}[h!]
+\begin{figure}[]
 \centering
 \includegraphics[width=0.85\textwidth]{rectenna/efficiency}
     \caption[Rectification efficiency]{Rectification efficiency, calculated using accepted AC power as a baseline. Calculated using the ratio of rectified DC power to accepted AC power.}
@@ -178,7 +181,7 @@ Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz 
 
 Harmonic generation was then tested by measuring second harmonic power reflected from the rectenna. The antenna was stimulated by a 10~dBm~CW signal, and the second harmonic reflected from the antenna was collected using a directional coupler feeding into the spectrum analyzer for measurement. The test setup for and results are shown in Figure~\ref{fig:rectenna-test-3-setup}.
 
-\begin{figure}[h!]
+\begin{figure}[]
 \centering
 \includegraphics[width=0.85\textwidth]{rectenna/test-3-setup}
 \caption{Experimental setup for harmonic generation testing.}
