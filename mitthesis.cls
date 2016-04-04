@@ -262,73 +262,73 @@
 % Format for draft of thesis.  Define our own PageStyle -
 % Just like headings, but has foot lines with the date and warning
 
-\if@twoside         % If two-sided printing.
-\def\ps@drafthead{
-    \let\@mkboth\markboth
-    \def\@oddfoot{\rm \today \hfil \sc \draftrmark}
-    \def\@evenfoot{\sc \draftlmark \hfil \rm \today }
-    \def\@evenhead{\rm \thepage\hfil \sl \leftmark}
-    \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}
-    \def\chaptermark##1{\markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
-	\@chapapp\ \thechapter. \ \fi ##1}}{}}
-    \def\sectionmark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\z@
-	\thesection. \ \fi ##1}}}
-    \pulldownheader				% Bring header down from edge
-    \pullupfooter				% Bring footer up
-}
-\else               % If one-sided printing.
-\def\ps@drafthead{
-    \let\@mkboth\markboth
-    \def\@oddfoot{\rm \today \hfil \sc \draftrmark}
-    \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}
-    \def\chaptermark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
-	\@chapapp\ \thechapter. \ \fi ##1}}}
-    \pulldownheader				% Bring header down from edge
-    \pullupfooter				% Bring footer up
-}
-\fi
-
+%\if@twoside         % If two-sided printing.
+%\def\ps@drafthead{
+%    \let\@mkboth\markboth
+%    \def\@oddfoot{\rm \today \hfil \sc \draftrmark}
+%    \def\@evenfoot{\sc \draftlmark \hfil \rm \today }
+%    \def\@evenhead{\rm \thepage\hfil \sl \leftmark}
+%    \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}
+%    \def\chaptermark##1{\markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
+%	\@chapapp\ \thechapter. \ \fi ##1}}{}}
+%    \def\sectionmark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\z@
+%	\thesection. \ \fi ##1}}}
+%    \pulldownheader				% Bring header down from edge
+%    \pullupfooter				% Bring footer up
+%}
+%\else               % If one-sided printing.
+%\def\ps@drafthead{
+%    \let\@mkboth\markboth
+%    \def\@oddfoot{\rm \today \hfil \sc \draftrmark}
+%    \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}
+%    \def\chaptermark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
+%	\@chapapp\ \thechapter. \ \fi ##1}}}
+%    \pulldownheader				% Bring header down from edge
+%    \pullupfooter				% Bring footer up
+%}
+%\fi
+%
 % I redefine these formats that were defined in report.sty
 % Definition of 'headings' page style
 %  Note the use of ##1 for parameter of \def\chaptermark inside the
 %  \def\ps@headings.
 %
 
-\if@twoside					% If two-sided printing.
-\def\ps@headings{\let\@mkboth\markboth
-    \def\@oddfoot{}
-    \def\@evenfoot{}		% No feet.
-    \def\@evenhead{\rm \thepage\hfil \sl \leftmark}	% Left heading.
-    \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}	% Right heading.
-    \def\chaptermark##1{\markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
-	\@chapapp\ \thechapter. \ \fi ##1}}{}}
-    \def\sectionmark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\z@
-	\thesection. \ \fi ##1}}}
-    \pulldownheader				% Bring header down from edge
-}
-\else						% If one-sided printing.
-\def\ps@headings{\let\@mkboth\markboth
-    \def\@oddfoot{}
-    \def\@evenfoot{}		%     No feet.
-    \def\@oddhead{\hbox {}\sl \rightmark \hfil \rm\thepage}	% Heading.
-    \def\chaptermark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
-	\@chapapp\ \thechapter. \ \fi ##1}}}
-    \pulldownheader				% Bring header down from edge
-}
-\fi
-
+%\if@twoside					% If two-sided printing.
+%\def\ps@headings{\let\@mkboth\markboth
+%    \def\@oddfoot{}
+%    \def\@evenfoot{}		% No feet.
+%    \def\@evenhead{\rm \thepage\hfil \sl \leftmark}	% Left heading.
+%    \def\@oddhead{\hbox{}\sl \rightmark \hfil \rm\thepage}	% Right heading.
+%    \def\chaptermark##1{\markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
+%	\@chapapp\ \thechapter. \ \fi ##1}}{}}
+%    \def\sectionmark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\z@
+%	\thesection. \ \fi ##1}}}
+%    \pulldownheader				% Bring header down from edge
+%}
+%\else						% If one-sided printing.
+%\def\ps@headings{\let\@mkboth\markboth
+%    \def\@oddfoot{}
+%    \def\@evenfoot{}		%     No feet.
+%    \def\@oddhead{\hbox {}\sl \rightmark \hfil \rm\thepage}	% Heading.
+%    \def\chaptermark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
+%	\@chapapp\ \thechapter. \ \fi ##1}}}
+%    \pulldownheader				% Bring header down from edge
+%}
+%\fi
+%
 % Redefinition of 'myheadings' page style.
 %
-\def\ps@myheadings{\let\@mkboth\@gobbletwo
-    \def\@oddfoot{}
-    \def\@evenfoot{}
-    \def\sectionmark##1{}
-    \def\subsectionmark##1{}
-    \def\@evenhead{\rm \thepage\hfil\sl\leftmark\hbox {}}	%
-    \def\@oddhead{\hbox{}\sl\rightmark \hfil \rm\thepage}	%
-    \pulldownheader				% Bring header down from edge
-}
-
+%\def\ps@myheadings{\let\@mkboth\@gobbletwo
+%    \def\@oddfoot{}
+%    \def\@evenfoot{}
+%    \def\sectionmark##1{}
+%    \def\subsectionmark##1{}
+%    \def\@evenhead{\rm \thepage\hfil\sl\leftmark\hbox {}}	%
+%    \def\@oddhead{\hbox{}\sl\rightmark \hfil \rm\thepage}	%
+%    \pulldownheader				% Bring header down from edge
+%}
+%
 % Redefine '/chapter' to always start on an odd page.
 % Should make no difference in singleside mode.
 %

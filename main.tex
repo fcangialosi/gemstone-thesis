@@ -15,6 +15,15 @@
 
 %% Packages
 \usepackage{titlesec}
+    \titleformat{\chapter}
+    {\normalfont\Large\bfseries}{Chapter \thechapter:}{1em}{}
+    \titlespacing*{\chapter}{0pt}{10pt}{40pt}
+    \titleformat{\section}
+    {\normalfont\large\bfseries}{\thesection}{1em}{}
+    \titleformat{\subsection}
+    {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+    \titleformat{\subsubsection}
+    {\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
 \usepackage{cite}
 \usepackage{lscape}
 \usepackage{indentfirst}
@@ -82,8 +91,8 @@ WIRELESS POWER TRANSFER}
 \def\Los{Line-of-sight}
 % Preferred capitalization
 \def\giga{Gigabox}
-\def\matlab{MATLAB} 
-% Plz don't hypenate these things latex
+\def\matlab{MATLAB}
+% Plz don't hypenate thesge things latex
 \hyphenation{WattUp}
 
 
@@ -126,7 +135,7 @@ WIRELESS POWER TRANSFER}
 \newpage
 \listoftables
 \newpage
-\listoffigures 
+\listoffigures
 \newpage
 %\addcontentsline{toc}{chapter}{List of Abbreviations}
 %\include{abbreviations}
