@@ -37,7 +37,7 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{thesis}
+\ProvidesClass{umdthesis}
               [2006/04/26 v0.1]
 \newcommand\@ptsize{}
 \newif\if@restonecol
@@ -322,7 +322,7 @@
                     \thispagestyle{plain}%
                     \global\@topnum\z@
                     \@afterindentfalse
-                    \secdef\@chapter\@schapter}
+                   \secdef\@chapter\@schapter}
 \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
                          \refstepcounter{chapter}%
                          \typeout{\@chapapp\space\thechapter.}%
