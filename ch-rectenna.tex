@@ -73,6 +73,8 @@ A printed circuit board (PCB) half-wave dipole was chosen as the antenna for the
 
 The rectenna is composed of three surface-mount components. The \texttt{MA4E1317} diode acts as the rectification and harmonic generation components. A 47~pF high-frequency ceramic capacitor acts as a low-pass filter, blocking microwave signal from reaching the load. Finally, a 330~$\Omega$ resistor is used as a load for experimental purposes. Output pins also attached for measurement purposes. The antenna is designed for operation at 5.45~GHz, so the length of the dipole is 27.55~mm, half the free-space wavelength of the incident wave.
 
+The topology of the diode was chosen to maximize rectification efficiency. The Schottky diode is positioned shunt to the feed-in lines of the rectenna. This topology was chosen instead of a voltage doubler (a two diode configuration) because of its inherently higher power efficiency. However, if higher voltage levels are necessary for a load device, the voltage doubler would be a better choice. Both options should be considered for future iterations of our design.
+
 One important distinction for this rectenna design is the lack of band-pass filtering for higher-order harmonics. This feature is common in most rectennas, but is deliberately left out to allow the harmonic response of the diode to escape through the dipole.
 
 It is worth noting, however, that we did not attempt impedance matching between the antenna and the rectifier components. This is an important point to consider for future work, as proper matching of the components should significantly improve the efficiency of rectification.
