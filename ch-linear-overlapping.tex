@@ -34,19 +34,19 @@ Once the efficacy of the single sona was established, the experiment was modifie
 Increasing the number of sonas should increase the amount of power transmitted in a given time frame, if the amplitude of each reconstruction remains constant. We hypothesized that overlapping reconstructions by linearly superimposing sonas would not decrease the size of the reconstructions. As a result, a great amount of effective power was transmitted per duty cycle. Our experiments seemed to support this conjecture, in that the number of reconstructions in the cycle could be increased while maintaining their characteristic shape. However, the size of the packets did decrease as the number of reconstructions within the window became larger.
 
 We believe these results to be a combination of two factors. The loss of information due to destructive interference during sona superposition, and the function of power scaling within the PSG signal generator both may have contributed to this decreasing trend. The generator attempts to level a preset amount of power across the entire broadcast window, which is split among the multiple reconstructions.
-To better model how these reconstructions would interact with a practical WPT system, we also examined the ``total \ptp voltage,'' which we defined as the maximum \ptp voltage multiplied by the number of reconstructions present within the measurement window. This quantity emulates the energy that would be rectified within the same time window, so we can compare the various repetition rates with regard to the energy that a receiver would accept within that time frame. This correlation is plotted in Figure~\ref{fig:overlapping-total-voltage}.
+To better model how these reconstructions would interact with a practical WPT system, we also examined the ``total \ptp{} voltage,'' which we defined as the maximum \ptp{} voltage multiplied by the number of reconstructions present within the measurement window. This quantity emulates the energy that would be rectified within the same time window, so we can compare the various repetition rates with regard to the energy that a receiver would accept within that time frame. This correlation is plotted in Figure~\ref{fig:overlapping-total-voltage}.
 
-Important to note is the overall increasing trend, which resembles a square root function. This is expected, as the power is expected to vary linearly with the number of overlaid sonas, and is proportional to the \ptp voltage squared. The positive correlation between repetition rate and total voltage indicates that the use of this technique would be very valuable for a WPT scheme. We can acquire a sona and then broadcast the time reversed version at very high repetition rates to transmit large amounts of energy to the receiver. Coupled with an arbitrary amplification according to the application's needs, this modification to a time reversal WPT system shows promise for increasing the quantity of power that can be transferred.
+Important to note is the overall increasing trend, which resembles a square root function. This is expected, as the power is expected to vary linearly with the number of overlaid sonas, and is proportional to the \ptp{} voltage squared. The positive correlation between repetition rate and total voltage indicates that the use of this technique would be very valuable for a WPT scheme. We can acquire a sona and then broadcast the time reversed version at very high repetition rates to transmit large amounts of energy to the receiver. Coupled with an arbitrary amplification according to the application's needs, this modification to a time reversal WPT system shows promise for increasing the quantity of power that can be transferred.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.85\textwidth]{overlapping/voltage_per_recon}
-\caption[Max \ptp voltage from overlapped reconstructions]{Max \ptp voltage versus number of overlapped reconstructions.}
+\caption[Max \ptp{} voltage from overlapped reconstructions]{Max \ptp{} voltage versus number of overlapped reconstructions.}
 \label{fig:overlapping-vpp}
 
 \vspace*{\floatsep}% http://tex.stackexchange.com/q/26521/5764
 
 \includegraphics[width=0.85\textwidth]{overlapping/total_voltage}
-\caption[Total \ptp voltage from overlapped reconstructions]{Total \ptp voltage versus number of overlapped reconstructions.}
+\caption[Total \ptp{} voltage from overlapped reconstructions]{Total \ptp{} voltage versus number of overlapped reconstructions.}
 \label{fig:overlapping-total-voltage}
 \end{figure}
