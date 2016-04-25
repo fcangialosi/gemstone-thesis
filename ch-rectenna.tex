@@ -4,7 +4,7 @@
 \section{Goals of Rectenna}
 \label{sec:rectenna-goals}
 
-One of the main components of any WPT system is its rectifier, as it performs the crucial step of capturing the broadcasted energy and transforming it into a usable form. To accomplish this, a rectenna, a dual-purpose device that combines an antenna and a rectifier, is necessary. The antenna picks up the oscillating AC signal received from the transmitter, the rectifier converts the signal to relatively stable DC power, and this usable power is passed to an arbitrary load.
+One of the main components of any WPT system is its rectifier, as it performs the crucial step of capturing the broadcast energy and transforming it into a usable form. To accomplish this, a rectenna, a dual-purpose device that combines an antenna and a rectifier, is necessary. The antenna picks up the oscillating AC signal received from the transmitter, the rectifier converts the signal to relatively stable DC power, and this usable power is passed to an arbitrary load.
 
 In addition to standard rectification, the rectenna must serve as a passive nonlinear element. In NLTR, a nonlinear element is required to produce harmonics from the initial interrogation pulse broadcast by the transmitter. This goal is secondary to the main purpose of rectification.
 
@@ -80,7 +80,7 @@ It is worth noting, however, that we did not attempt impedance matching between 
 \section{Rectenna Testing}
 \label{sec:rectenna-testing}
 
-To thoroughly test the rectenna, distinct tests were run to order to verify both its rectification and harmonic generation capabilities. We examined a range of frequencies for all tests to isolate peak performance.
+To thoroughly test the rectenna, distinct tests were run in order to verify both its rectification and harmonic generation capabilities. We examined a range of frequencies for all tests to isolate peak performance.
 
 \subsection{DC Power Characterization}
 
@@ -99,7 +99,7 @@ To determine the overall rectification efficiency, a second antenna was used to 
     \begin{subfigure}{.85\textwidth}
         \centering
         \includegraphics[width=1.0\linewidth]{rectenna/test-1-voltage}
-        \caption{DC voltage measured from the voltmeter in the setup on the left for a range (1-7~GHz) of frequency inputs.}
+        \caption{Average DC voltage measured from the voltmeter in the setup on the left for a range (1-7~GHz) of frequency inputs.}
         \label{fig:rectenna-test-1-voltage}
     \end{subfigure}
     \caption[Rectenna Rectification]{Rectenna rectification testing}
@@ -108,26 +108,26 @@ To determine the overall rectification efficiency, a second antenna was used to 
 
 Rectification was most pronounced in the 3-5~GHz frequency band. Rectified voltage is highest at 3.4~GHz and 4.6~GHz, with DC voltage levels of 66.5~mV and 59.0~mV respectively. Unfortunately, DC voltage results of higher frequencies were unreliable and erratic given the measurement techniques, and accurate data could not be collected.
 
-Given the resistive load of 330~$\Omega$, rectified DC power can be calculated from the voltage above. Using DC voltage ($V$) and load resistance ($R$), the DC power ($P_{dc}$) was calculated using Equation ~\ref{eq:dc_power}:
+Given the resistive load of 330~$\Omega$, rectified DC power can be calculated from the voltage above. Using DC voltage ($V$) and load resistance ($R$), the average DC power ($P_{dc}$) was calculated using Equation ~\ref{eq:dc_power}:
 
 \begin{equation}
 P_{dc} = \frac{V^2}{R}
 \label{eq:dc_power}
 \end{equation}
 
-A plot of the resulting rectified DC power delivered to the load as a function of frequency is shown in Figure~\ref{fig:rectenna-test-1-power}.
+A plot of the resulting average DC power delivered to the load as a function of frequency is shown in Figure~\ref{fig:rectenna-test-1-power}.
 
 \begin{figure}[]
 \centering
 \includegraphics[width=0.85\textwidth]{rectenna/test-1-power}
-    \caption[Rectified DC power]{Rectified DC power calculated from DC voltage using the relation: $P = \frac{V^2}{R}$}
+    \caption[Rectified DC power]{Average rectified DC power calculated from DC voltage using the relation: $P = \frac{V^2}{R}$}
     \label{fig:rectenna-test-1-power}
 \end{figure}
 
 
-Considering the input power of 17~dBm (around 50.12~mW), the wall-to-load efficiency of the experiment is extremely low for all frequencies. These losses can come from a number of sources, including bad coupling between the broadcast antenna and rectenna, reflection from broadcast antenna, losses in coaxial connections between components, and power radiated away from the rectenna, among others. However, the inherent losses of the experimental setup are not relevant to the overall efficiency of the system; for this, the efficiency result must be compared to only the rectification efficiency.
+Considering the input power of 17~dBm (around 50.12~mW), the wall-to-load efficiency of the experiment is extremely low for all frequencies. These losses can come from a number of sources, including bad coupling between the broadcast antenna and rectenna, reflection from broadcast antenna, losses in coaxial connections between components, and power radiated away from the rectenna, among others. However, the inherent losses of the experimental setup are not relevant to the overall efficiency of the system; for this, the DC rectification result must be compared to only to power accepted by the antenna.
 
-To establish rectification efficiency, AC power tests were conducted on a bare dipole antenna with no diode, resistor, or capacitor. The results of this test establish the overall power accepted by the rectenna, and are directly comparable to the previous DC power results.
+To establish rectification efficiency, AC power tests were conducted on a bare dipole antenna with no diode, resistor, or capacitor. The results of this test establish the overall power accepted by the rectenna, representing the peak power available for rectification. These results are directly comparable to the previous DC power results.
 
 The setup of the AC power experiment was similar to the DC power experiment, with the exception of two key differences: the voltmeter was replaced by a \texttt{DSO91304A} oscilloscope, and the rectenna was replaced by the bare dipole antenna. In the absence of the 330~$\Omega$ load resistor on the rectenna, the 50~$\Omega$ input impedance of the oscilloscope~\cite{DSO91304A-manual} was used as the load.
 
@@ -195,6 +195,6 @@ In initial testing, the harmonic generation of the rectenna was minimal, as the 
 
 The intent of the rectenna was twofold. The rectenna was designed to rectify RF signals (\numrange{1}{10}~GHz) and generate higher-order harmonics. Both of these qualities are needed for the creation of an NLTR rectifier. The current experiments establish a baseline for rectification and harmonic generation that can be used for future designs.
 
-The current design has made no steps towards the impedance matching of the antenna to the components. This is likely a major source of power lost by the system for rectification, and should be a top priority to consider in subsequent designs.
+The current design has made no steps toward the impedance matching of the antenna to the components. This is likely a major source of power lost by the system for rectification, and should be a top priority to consider in subsequent designs.
 
 Our design of a dual-purpose rectenna has satisfied our initial goals, and is a first step towards a functioning NLTR based WPT system.  It is able to receive the initial interrogation pulse and generate a 2nd harmonic response. It is also able to receive the high power pulse and rectify the signal, providing the load device with DC power. Due to the nature of NLTR, the receiving devices do not require power to facilitate either process. After considerable optimization and miniaturization, the rectenna would be used as a general-purpose receiver for the electronics we want to power.
