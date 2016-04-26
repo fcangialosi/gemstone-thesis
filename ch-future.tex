@@ -18,7 +18,7 @@ The first is a rectenna that serves as the receiver.
 %
 The system as described in Section~\ref{sec:ltr-meth} would require an
 out-of-band feedback channel between the receiver and transmitter. However, we
-have demonstrated in Section~\ref{sec:ltr-meth} that a transmitter can target
+have demonstrated in Section~\ref{sec:selective-sim} that a transmitter can target
 receivers entirely in-band.
 %
 Our system in Fig.~\ref{fig:SysImage} builds on these findings.
@@ -31,12 +31,11 @@ environment.
 
 
 
-In a practical system, the rectenna could be integrated into the hardware of a
+In a practical system, the rectenna will be integrated into the hardware of a
 mobile device, or into an external component that plugs into the battery.
 %
-The transmitter would need to be connected to an external power source, but
+The transmitter would  be connected to an external power source, but
 could otherwise be located anywhere in the room.
-
 
 Although not a component of the system, another important consideration in this
 scenario is the environment; a low-loss scattering environment is necessary for
@@ -48,15 +47,27 @@ time reversal to be effective.
 \label{fig:SysImage}
 \end{figure}
 
-%
-However, we leave optimization of performance and efficiency to future work.
+We have demonstrated the underlying concepts of the WPT system depicted in Fig.~\ref{fig:SysImage}.
+However, much work is necessary to transform this proof-of-concept technology to a functional product that consumers may use.
+Future work discussed here falls into one of two categories. The first category includes established TR techniques that may be extended into the field of TR WPT.
+The second category includes novel designs proposed by the team applicable only to TR WPT. Both will be discussed below. 
 
 \section{Future work on applying other techniques from TR to WPT}
 \label{sec:future-tr}
+\todo{Is this redundant with the intro? Also, kinda awkward, but I can't think of anything better}
+Imaging of objects and non-invasive surgery have been major applications of TR in the past.
+As a result  many techniques have been developed to improve reconstruction quality on a target.
+We suspect that many of these techniques may have applicability to our proposed system, but did not
+have the opportunity to investigate them in our research.
+However, stationary TR methods have different design priorities than our proposed TR WPT system.
+These differences are significant enough that we suggest that dedicated experiments for WPT applicability may be useful.
 
 \subsection{Iterations}
 
-Stuff
+It has been well proven in the literature that time reversal focusing on an object can be repeated to improve
+waveform collapse on a target. \todo{cite a fink acoustic paper showing this} \todo{We need to define what ``improved waveform collapse'' is} However, this technique has not been applied to TR WPT.
+
+We suspect that applying 
 
 \subsection{Multiple Receivers}
 
