@@ -125,7 +125,13 @@ The specific frequency and bandwidth was chosen for this geometry to minimize in
 \label{fig:numerical-s11-spectrum}
 \end{figure}
 
-Using this input pulse and the pulse inversion method of sona extraction, we were able to perform NLTR in the Cut Box Model. By measuring the observed voltage and corresponding current during the time-reversed step, we measured the quasi-power over time in each diode. As shown in Figure~\ref{fig:numerical-sim-recon}, the reconstruction waveform on each diode matches the expected results for a 1-diode experiment~\cite{taddese_sensing_2010,barbieri_time_2010}.
+Using this input pulse and the pulse inversion method of sona extraction, we were able to perform NLTR in the Cut Box Model. By measuring the observed voltage and corresponding current during the time-reversed step, we measured the instantaneous power over time in each diode. As shown in Figure~\ref{fig:numerical-sim-recon}, the reconstruction waveform on each diode matches the expected results for a 1-diode experiment~\cite{taddese_sensing_2010,barbieri_time_2010}. We also measured the instantanous power at a non-target location near Port A, shown in green in Figure~\ref{fig:numerical-sim-recon}. The ratio of the the peak-to-peak instantaneous power for each target diode to non-target diode is 10.1:1 and 7.84:1 for Diode 1 and Diode 2, respectively. This also corresponds to an integrated power ratio of 139.7:1 and 56.4:1 for Diode 1 and Diode 2, respectively, compared to the non-target integrated power. Here, we define integrated power as the total deposited energy during the time reversed step, as shown in Equation~\ref{eq:integrated_power}
+
+\begin{equation}
+E = \int_{0}^{t_{final}} I(t)V(t)dt
+\label{eq:integrated_power}
+\end{equation}
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.75\textwidth]{numerical/sim-recon}
