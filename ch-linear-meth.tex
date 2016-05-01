@@ -26,13 +26,20 @@ These experiments take place within an enclosed, reflective cavity called a ``Gi
 
 Our time reversal scheme consists of several pieces of microwave processing equipment and a desktop workstation. Interrogation pulses and time-reversed sona signals are created and broadcast using a Tektronix \texttt{AWG7052} arbitrary waveform generator feeding an Agilent \texttt{E8267D} Vector PSG microwave source. A digital storage oscilloscope (DSO, Agilent \texttt{DSO91304A}) is used to record waveforms of interest. \matlab{} Version 2015a is used for signal processing, instrument control and coordination. Connections between the microwave equipment and the gigabox antennas are made using standard coaxial cables.
 
-In many experiments, it is necessary to be able to ``read'' and ``write'' signals from the same port. Manually switching coaxial cables from the PSG to the DSO is slow and can destroy reconstructions, so we used four HP 8762C coaxial switches to reroute signals as required. The relative connections of the hardware are shown in Figure~\ref{fig:linear-gigabox}.
+In many experiments, it is necessary to be able to ``read'' and ``write'' signals from the same port. Manually switching coaxial cables from the PSG to the DSO is slow and can destroy reconstructions, so we used four HP 8762C coaxial switches to reroute signals as required. The relative connections of the hardware and a diagram of the available connections on the box are shown in Figures~\ref{fig:linear-gigabox} and ~\ref{fig:diagram-gigabox}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{linear/gigabox}
     \caption[Experimental Setup]{Experimental setup used: (1) Tektronix \texttt{AWG7052} Arbitrary Waveform Generator, (2) Agilent \texttt{E8267D} Vector PSG Microwave Source, (3) Array of four Hewlett-Packard 8762C coaxial switches, (4) Agilent \texttt{DSO91304A} Digital Storage Oscilloscope, 5) 1.06~$m^3$ aluminum ``Gigabox'' with interior conductive scattering paddle.}
     \label{fig:linear-gigabox}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{diagram-gigabox}
+    \caption[Experimental Setup]{Diagram describing the internals of the Gigabox and the layout of its five antenna ports.}
+    \label{fig:diagram-gigabox}
 \end{figure}
 
 TR processes fall into two main categories, linear and nonlinear. Linear TR (LTR) refers to any experiment that uses a single frequency for the interrogation pulse, time reversed sona, and reconstruction. Nonlinear TR (NLTR) makes use of harmonic reflections from the target to provide a means for isolation and targeting, a process similar to how we would envision a TR based WPT system to work.  It is experimentally much simpler to create reconstructions with LTR than with NLTR. For this reason, these experiments are conducted in the absence of nonlinear elements, which respond to a fundamental frequency by generating harmonic signals at a variety of frequencies.
