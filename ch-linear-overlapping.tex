@@ -13,7 +13,16 @@ A concern with the above method is whether or not it would result in lost inform
 
 \subsection{Methodology}
 
-This test sought to evaluate the practicality of overlapping sonas as a method of transmitting power. This experiment was done using the basic, two-port linear time reversal scheme, described in Section~\ref{sec:ltr-meth}. A sona was generated with a 3.9 GHz interrogation pulse. To verify that the sona could converge on the target, it was time reversed without any further manipulation, and injected back into the cavity. The reconstruction was recorded and compared to the original interrogation pulse to check for irregularities.
+This test sought to evaluate the practicality of overlapping sonas as a method of transmitting power. This experiment was done using the basic, two-port linear time reversal scheme, first described in Section~\ref{sec:ltr-meth}. A diagram of this scheme appears as ~\fig{ltr-process}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{linear/ltr-process}
+    \caption[Experimental Setup]{A diagram of our typical two-port linear time reversal scheme. In the time forward step, a pulse is broadcast from antenna port B and a sona collected at D. In the time reversed step, the reversed sona is broadcast from B and a reconstruction occurs at D. This setup takes advantage of spatial as well as temporal reciprocity to avoid having to record and broadcast from the same port, which greatly complicates cabling and introduces losses from the switches.}
+    \label{fig:ltr-process}
+\end{figure}
+
+A sona was generated with a 3.9 GHz interrogation pulse. To verify that the sona could converge on the target, it was time reversed without any further manipulation, and injected back into the cavity. The reconstruction was recorded and compared to the original interrogation pulse to check for irregularities.
 
 Once the efficacy of the single sona was established, the experiment was modified. Several sonas were superimposed with a constant time shift, resulting in evenly spaced copies of the verified sona across the total broadcast window. Figure~\ref{fig:overlapping-sonas} gives an example of sonas overlapping in this way. The resulting signal was then time reversed and broadcast through the linear system in the same manner as before, which resulted in the reconstructions in Figure~\ref{fig:overlapping-recons}. This test was repeated many times, with the number of sonas superimposed within the 15~$\mu$s broadcast window varying from one to three hundred. This corresponds to repetition rates between 66 kHz and 20 MHz.
 
