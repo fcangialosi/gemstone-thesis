@@ -181,7 +181,7 @@ Analysis of the graph shows the same peak rectification efficiencies at 3.2~GHz 
 
 \subsection{Harmonic Generation}
 
-Harmonic generation was tested by measuring second harmonic power reflected from the rectenna. The antenna was stimulated by a 10~dBm~CW signal, and the second harmonic reflected from the antenna was collected using a directional coupler fed into a spectrum analyzer for measurement. The test setup and results for this experiment are shown in Figure~\ref{fig:rectenna-test-3-setup}.
+Harmonic generation was tested by measuring second harmonic power reflected from the rectenna. A microwave source produced  a 10~dBm~CW signal, which was broadcast from a bare antenna of the same length as the rectenna. The rectenna, positioned around 1 mm away in the same orientation as the broadcast antenna, should passively generate second harmonics from this fundamental signal. These second harmonic reflections were collected by the bare antenna, passing through a directional coupler and into a spectrum analyzer for measurement. The test setup and results for this experiment are shown in Figure~\ref{fig:rectenna-test-3-setup}.
 
 \begin{figure}[]
 \centering
@@ -190,7 +190,7 @@ Harmonic generation was tested by measuring second harmonic power reflected from
 \label{fig:rectenna-test-3-setup}
 \end{figure}
 
-In initial testing, the harmonic generation of the rectenna was minimal, as the measured 2nd harmonic power was comparable to the noise level power. However, after filtering out harmonic responses from microwave source, a distinct 2nd harmonic was found at 2.45~GHz at -150~dBm compared to the noise level power of -161~dBm. Bandwidth restrictions of filtering components prevented analysis of a full frequency spectrum, and thus, 2.45~GHz is the only frequency we were able to probe for harmonics. Even so, this result does demonstrate the harmonic generation capabilities of the rectenna.
+As seen in the experimental setup, harmonic responses from microwave source were filtered out with a combination of high and low pass filters. A distinct 2nd harmonic was found at 2.45~GHz at -150~dBm, distinctly higher than to the noise level power of -161~dBm. Bandwidth restrictions of filtering components prevented analysis of a full frequency spectrum, and thus, 2.45~GHz is the only frequency we were able to probe for harmonics. Even so, this result does demonstrate the harmonic generation capabilities of the rectenna.
 
 \section{Discussion}
 \label{sec:rectenna-discussion}
