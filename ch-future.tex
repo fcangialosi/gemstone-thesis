@@ -2,10 +2,8 @@
 \label{ch:future}
 
 
-\section{Anticipated TR WPT System}
+\section{Vision of a WPT System using TR}
 \label{sec:future-roadmap}
-\todo{Let's think of a better name!}
-
 This research represents a first step in the exploration of building a
 time reversal WPT system.
 %
@@ -54,43 +52,41 @@ The second category includes novel designs proposed by the team applicable only 
 
 \section{Future work on applying other techniques from TR to WPT}
 \label{sec:future-tr}
-\todo{Is this redundant with the intro? Also, kinda awkward, but I can't think of anything better}
-Imaging of objects and non-invasive surgery have been major applications of TR in the past.
-As a result  many techniques have been developed to improve reconstruction quality on a target.
+Imaging of objects and non-invasive surgery are already common applications of TR.
+As a result, many techniques have been developed to improve reconstruction quality on a target.
 We suspect that many of these techniques may have applicability to our proposed system, but did not
 have the opportunity to investigate them in our research.
 However, stationary TR methods have different design priorities than our proposed TR WPT system.
-These differences are significant enough that we suggest that dedicated experiments for WPT applicability may be useful.
+Some modifications on the basic TR methodology that has been developed for these purposes may prove useful for an application to WPT. We suggest that future research be dedicated to investigating the applicability of techniques such as iterative time reversal and super-resolution to a practical WPT scheme.
 
 \subsection{Iterations}
 
-It has been well proven in the literature that time reversal focusing on an object can be repeated to improve
-waveform collapse on a target. \todo{cite a fink acoustic paper showing this} \todo{We need to define what ``improved waveform collapse'' is} However, this technique has not been applied to TR WPT.
+It has been well proven in the literature that time reversal focusing on an object can be repeated to improve waveform collapse on a target. ~\cite{prada_iterative_1991} However, this technique has not yet been applied to TR WPT.
 
-We suspect that applying iterative TR can ``prune'' reflection orbits that contribute poorly to the final reconstruction, in favor of ones that do. We predict that we can maximize our efficiency and reconstruction quality using this method. Additionally, we predict that this method will only be useful for stationary targets.
+We suspect that applying iterative TR to reduce the effect of reflection orbits which contribute poorly to the final reconstruction, in favor of ones that do. The side lobes in the time domain are representative of energy that may not be able to be rectified unless they are combined into the main peak. We predict that we can maximize our efficiency and reconstruction quality using this method. Additionally, we predict that this method will only be useful for stationary targets. Because iterating the time reversal process takes several more steps, the length of time required to focus on a target is increased considerably. Since the technique for focusing upon a moving receiver proposed earlier relies upon repeating the time reversal process many times, it may not be acceptable for the time required to perform TR to increase several hundred percent. 
 
-Both of these characteristics can be easily tested, using algorithms already applied to acoustic TR. An experimental setup very similar to ours could be applied to this research. A faster refresh rate \todo{Is refresh rate the correct term?} would be required from the TR system for this method to be able to outpace the natural ``decay'' of the testing environment. Once an iterative algorithm has been tested and found successful it should be tested in a less homogeneously reflective environment, to determine if it can be used to improve efficiency in lossy environments.
+Both of these characteristics can be easily tested, using algorithms already applied to acoustic TR. An experimental setup very similar to ours could be applied to this research. A faster sona refresh rate would be required from the TR system for this method to be able to outpace the natural ``decay'' of the testing environment. Once an iterative algorithm has been tested and found successful it should be tested in a less homogeneously reflective environment, to determine if it can be used to improve efficiency in lossy environments.
 
-The novelty of such research is primarily in the characteristics measured. The demonstration (or not) of filtering of lossy paths would also be a major finding. Models should be generated relating the refresh rate \todo{see above comment about refresh rate} to performance gains using iterative method. If possible, multiple environments should be tested to generalize these results.
+The novelty of such research is primarily in the characteristics measured. The demonstration (or lack thereof) of filtering of lossy paths would also be a major finding. Models should be generated relating the sona refresh rate to performance gains using iterative method. If possible, multiple environments should be tested to generalize these results.
 
 \subsection{Multiple Transmitters}
 
-Many TR applications make use of multiple transmitters as a method of improving signal quality. Time reversal with multiple transmitters has the effect of improving the reconstruction strength at a target point. \todo{This statement is based off of a comment by Dr. Anlage. Need to verify/cite} All research done by the team was done using a single transmitting antenna. The incorporation of multiple antennas would require major modifications to our experimental setup, and was beyond our operating budget.
+Many TR applications make use of multiple transmitters as a method of improving signal quality. Time reversal with multiple transmitters has the effect of improving the reconstruction strength at a target point, because more paths can be utilized to increase the superposition of the reconstruction pulses. All research done by the team was performed using a single transmitting antenna. The incorporation of multiple antennas would require major modifications to our experimental setup, and was beyond our capabilities at this time.
 
-While final signal strength of the reconstruction is gauranteed to increase, how much remains to be determined. Future research should attempt to determine how multiple antennas relate to the efficiency of transfer. Particular attention to how this efficiency changes as sources of loss are introduced into the system.
+While final signal strength of the reconstruction is predicted to increase, how much remains to be determined. Future research should attempt to determine how the use of multiple antennas relates to the efficiency of energy transfer. Particular attention should be paid to how this efficiency changes as sources of loss are introduced into the system.
 
-\subsection{Expontential Amplification}
+\subsection{Exponential Amplification}
 
 From \cite{Biniyam} we know that exponential amplification can be used to counteract decreased reconstruction quality caused by system losses. Exponential sona amplification is a nonlinear amplification to the sona across its timespan. It is meant to counteract the larger losses (due to larger number of reflections) experienced by reflective orbits with larger paths.
 
-However, it should be understood that this method only compensates for the losses experienced by a time reversed signal. It does not avoid losses, and in face more energy is lost through this method. As a result, effiency using this method decreases. This introduces a tradeoff to using the method that could be significant to designers of a TR WPT system. Quantifying the aspects of this tradeoff in a WPT context so that informed decisions can be made in the design of future systems.
+However, it should be understood that this method only compensates for the losses experienced by a time reversed signal. It does not avoid losses, and in fact more energy is lost through this method. As a result, efficiency using this method should decrease. This introduces a tradeoff to using the method that could be significant to designers of a TR WPT system. Quantifying the aspects of this tradeoff in a WPT context so that informed decisions can be made in the design of future systems.
 
 \section{New problems that arise with TR in a WPT context}
 \label{sec:future-wpt}
 
-There are additional challenges involved with a TR WPT sytem that create avenues for research and innovation. Many of these deal with addressing the differing design goals with a TR WPT system - most TR applications care little about efficiency, caring only about the fidelity of the reconstruction on the target. In TR WPT the opposite is true - perfect reconstructions are far less important than the efficiency of transfer. Most TR applications consider stationary - or near stationary - targets. TR WPT system must always consider moving targets.
+There are additional challenges involved with a TR WPT sytem that create avenues for research and innovation. Many of these deal with addressing the differing design goals with a TR WPT system - most TR applications care little about efficiency, caring only about the fidelity of the reconstruction on the target. In TR WPT the opposite is true - perfect reconstructions are far less important than the efficiency of transfer. Most TR applications consider stationary - or near stationary - targets. TR WPT system must always consider moving targets, or at least stationary targets within a dynamic environment.
 
-These and other considerations set TR WPT apart from other TR research, and require the development of novel techniques. Below we suggest some TR WPT-specific research topics, experiments that could explore them, and how the results of these experiments can benefit TR WPT.
+These and other considerations set TR WPT apart from other TR research, and require the development of novel techniques. Below we suggest several TR WPT-specific research topics, experiments that could explore them, and how the results of these experiments can benefit TR WPT.
 
 \subsection{Sub Cavity}
 
@@ -100,11 +96,11 @@ We suggest that the easiest method to improve efficiency of TR wireless power tr
 
 \begin{itemize}
   \item High transfer efficiency/low reflective losses
-  \item Chaotic geometry to allow TR to work
-  \item Ability for path between the sub cavity and main environment
+  \item Chaotic geometry to facilitate the function of TR
+  \item Presence of one or more paths between the sub cavity and main environment
 \end{itemize}
 
-There are many methods that could potentially geneate such a cavity - a proposal for such as system can be found in Fig.~\ref{fig:subCav}. This cavity is a thin sheet of material that would be mounted to the ceiling of the room in question. The material in this sheetshould have a smaller index of refraction than air; as a result any signal broadcast into can become ``trapped'' in the layer. At any given point along the barrier of the sub cavity only small amounts of signal will return to the main environment. A TR WPT system can selectively choose paths through the sub cavity that will focus on a given receiver with high transfer efficiency. Reflectors can be added to the sub cavity as needed to ensure that its complexity is enough to allow TR to occur.
+There are many methods that could potentially generate such a cavity - a proposal for such as system can be found in Fig.~\ref{fig:subCav}. This cavity is a thin sheet of material that would be mounted to the ceiling of the room in question. The material in this sheet should have a smaller index of refraction than air; as a result any signal broadcast into can become ``trapped'' in the layer. At any given point along the barrier of the sub cavity only small amounts of signal will return to the main environment. A TR WPT system can selectively choose paths through the sub cavity that will focus on a given receiver with high transfer efficiency. Reflectors can be added to the sub cavity as needed to ensure that its complexity is enough to allow TR to occur.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{future/subCavity}
@@ -112,11 +108,9 @@ There are many methods that could potentially geneate such a cavity - a proposal
 \label{fig:subCav}
 \end{figure}
 
-Research would focus on, firstly, proving that this method (or one like it) can work for the purposes of increasing efficiency of transfer. Once this has been established, the geometry of the sub cavity should be optimized to work in a wide range of potential environments. Uniformity of signal covereage is a major concern, and must be tested either experimentally, or through use of simulation software.
+Research would focus on, firstly, proving that this method can work for the purposes of increasing efficiency of transfer. Once this has been established, the geometry of the sub cavity should be optimized to work in a wide range of potential environments. Uniformity of signal coverage is a major concern, and must be tested either experimentally, or through use of simulation software.
 
 \subsection{Protection of Information}
-\todo{Literally EVERYTHING that I say in this section may be wrong. Double-check with Dr. Anlage}
-
 Many of the improvements suggested above are focused on increasing the efficiency of the final system. Most of these improvements assume that while the system may be lossy, it is enclosed. That is, while signals may be absorbed by the environment, they are not lost completely. However, complete loss can be expected to occur often in practical applications. This can be due either due to holes in the environment (such as windows or doors) or heavily absorptive materials. The use of a selective transmission channel (as proposed above) may mitigate the effects of complete loss. \todo{Need better term for ``complete loss''} However, other methods should also be considered.
 
 Earlier our concern with losses focused primarily on their impact on efficiency. Information transfer was sufficient to allow TR to occur. However, complete losses remove information from the system, and severely damage the ability for TR to reconstruct on a target. We believe that this can be visualized using the idea of loss of outgoing paths. Fig.~\ref{fig:outgo} shows how time reversal can be impacted by environments with complete loss.
