@@ -4,29 +4,29 @@
 
 \section{Contributions}
 
-The various elements of this thesis at first glance may seem isolated from one another. We demonstrated six significant aspects to time reversal throughout our thesis:
+The various elements of this thesis serve to display the separate aspects of a wireless power system that can be accomplished using time reversal. We successfully demonstrated six significant aspects to time reversal throughout our thesis:
 
 \begin{enumerate}
 \item Mapped the spatial profile of a reconstruction
 \item Performed time reversal on a moving target
-\item Decreased the time between reconstruction by overlaying sona signals
+\item Decreased the time between reconstructions and increased the power delivered by overlaying sona signals
 \item Proved that NLTR may be generalized to an arbitrary number of nonlinear objects
 \item Developed a method for selective targeting using NLTR
-\item Put forth a design for a dual purpose rectenna
+\item Set forth a design for a dual purpose rectenna
 \end{enumerate}
 
 Mapping the spatial profile of a reconstruction is perhaps our most significant contribution. As is the case with any WPT technology, safety is a principal concern. By understanding the spatial profile of a reconstruction, we are able to accurately address the effects of microwave radiation on individuals and electronics nearby a charging device. We believe that this profile is generalizable from LTR to NLTR, making the spatial profile a powerful tool for future work in both NLTR and rectenna design.
 
 The proof-of-concept work in overlapping sonas demonstrates that a WPT technology based on time reversal would require rapid pulsing of power instead of a continuous amount of power being transferred. This has important implications for the integration of rectennas into a TR WPT system. Having a simple method for controlling the time between reconstructions provides an avenue for optimizing a future rectenna system. This also provides another tunable variable to optimize a WPT system.
 
-We showed in Chapter~\ref{ch:nltr} that the strength of the nonlinear reconstruction is dependent on the strength of the nonlinear sona generated from the nonlinear object. Thus, a more distinct harmonic response in the rectenna is very desirable for both selective targeting as well as simultaneous reconstruction. Careful design of the dual-purpose rectenna will be needed for a successful NLTR WPT system.
+We showed in Chapter~\ref{ch:nltr} that the strength of the nonlinear reconstruction is dependent upon the strength of the nonlinear sona generated from the nonlinear object. Thus, a more distinct harmonic response in the rectenna is very desirable for both selective targeting as well as simultaneous reconstruction. Careful design of the dual-purpose rectenna will be needed for a successful NLTR WPT system.
 
 \section{Evaluating Time Reversal as a Wireless Power Transfer Method}
 
 Throughout this thesis, we have demonstrated many aspects of TR that may be incorporated into a future WPT technology. Our work focused on proof-of-concept experiments that demonstrate basic functionality and feasibility of the proposed technology.  We first identified key characteristics of current WPT methods on the market or soon to enter the market. These characteristics were used to identify the following properties to be ideal for a WPT system and have demonstrated the first three throughout our thesis:
 
 \begin{enumerate}
-\item Ability to function while device is moving
+\item Ability to function while the receiving device is moving
 \item Ability to charge multiple devices
 \item Ability to choose which devices receive power
 \item Ability to deliver up to 1 watt of power to a device
@@ -36,7 +36,7 @@ Throughout this thesis, we have demonstrated many aspects of TR that may be inco
 
 The ability to function while moving was shown in Chapter 3 by utilizing the spatial profile of a time reversed reconstruction. Because the reconstruction voltage changed predictably in space, we were able to deliver a relatively uniform amount of voltage to the receiver antenna as the antenna moved at a constant velocity. By re-collecting the sona signal after a set amount of time, we successfully used time reversal to send power to a moving target.  As discussed in Chapter 2, uBeam is the only company that boasts this feature, providing a clear feature that makes time reversal unique in the realm of WPT technology.
 
-In Chapter~\ref{ch:nltr} we illustrate charging multiple devices using NLTR. While every current WPT technology can charge multiple devices, most are dependent on feedback networks, complex algorithms, and/or constant communication between transmitter and receiver. As we demonstrated, NLTR can target on an arbitrary number of nonlinear elements in the time reversed step. Due to this aspect of NLTR, a time reversal based WPT system could charge 10 devices easily without any change to our algorithm. The generalizability of time reversal to an arbitrary number of receivers clearly illustrates both the simplicity and strength needed to be effective in the market for WPT.
+In Chapter~\ref{ch:nltr} we illustrate charging multiple devices using NLTR. While every current WPT technology can charge multiple devices, most are dependent upon feedback networks, complex algorithms, and/or constant communication between transmitter and receiver. As we demonstrated, NLTR can target on an arbitrary number of nonlinear elements in the time reversed step. Due to this aspect of NLTR, a time reversal based WPT system could charge 10 devices easily without any change to our algorithm. The generalizability of time reversal to an arbitrary number of receivers clearly illustrates both the simplicity and strength needed to be effective in the market for WPT.
 
 We further showed in Chapter 4 that using NLTR, we may select targets to receive power at the exclusion of others. By characterizing the nonlinear response of our model diode, we provided a basic method to produce a reconstruction on a specific diode. We were able to effectively discriminate where the reconstruction occurred under the condition that we wanted to selectively target either a $V_{k}^{high}$ or $V_{k}^{low}$ diode. Our experiments in selective targeting demonstrated one possible method of discriminating between receivers using NLTR. We believe that more efficient and more generalizable algorithms may exist for other types of nonlinear devices.
 
