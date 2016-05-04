@@ -81,10 +81,10 @@ From \cite{Biniyam} we know that exponential amplification can be used to counte
 
 However, it should be understood that this method only compensates for the losses experienced by a time reversed signal. It does not avoid losses, and in fact more energy is lost through this method. As a result, efficiency using this method should decrease. This introduces a tradeoff to using the method that could be significant to designers of a TR WPT system. Quantifying the aspects of this tradeoff in a WPT context so that informed decisions can be made in the design of future systems.
 
-\section{New problems that arise with TR in a WPT context}
+\section{Process Modifications for TR in a WPT context}
 \label{sec:future-wpt}
 
-There are additional challenges involved with a TR WPT sytem that create avenues for research and innovation. Many of these deal with addressing the differing design goals with a TR WPT system - most TR applications care little about efficiency, caring only about the fidelity of the reconstruction on the target. In TR WPT the opposite is true - perfect reconstructions are far less important than the efficiency of transfer. Most TR applications consider stationary - or near stationary - targets. TR WPT system must always consider moving targets, or at least stationary targets within a dynamic environment.
+There are particular aspects of a WPT system that create avenues for research and innovation with the use of TR. Many of these deal with addressing the differing design goals with a TR WPT system - most TR applications care little about efficiency, caring only about the fidelity of the reconstruction on the target. In TR WPT the opposite is true - perfect reconstructions are far less important than the efficiency of transfer. Most TR applications consider stationary - or near stationary - targets. TR WPT system must always consider moving targets, or at least stationary targets within a dynamic environment.
 
 These and other considerations set TR WPT apart from other TR research, and require the development of novel techniques. Below we suggest several TR WPT-specific research topics, experiments that could explore them, and how the results of these experiments can benefit TR WPT.
 
@@ -92,7 +92,7 @@ These and other considerations set TR WPT apart from other TR research, and requ
 
 The demand for optimal efficiency requires TR WPT to consider the characteristics of the environment moreso than ordinary TR applications. It is clear to the team that a TR WPT system will likely need some environmental modifications to achieve an efficiency sufficient to see practical application. These modifications should also be designed to be as cheap and simple to install as possible, to ensure that system price remains practical.
 
-We suggest that the easiest method to improve efficiency of TR wireless power transfer is to introduce a ``sub cavity'' within the transfer environment. This ``sub cavity'' will be defined as a region of the environment that allows extremely efficient TR WPT. The sub cavity becomes much less lossy than the environment as a whole. TR paths will preferentially move through the sub cavity, and can dramatically improve the efficiency of the entire system. A successful sub cavity must have the following characteristics:
+We suggest a method of improving efficiency of TR wireless power transfer by introducing a ``sub cavity'' within the transfer environment. This ``sub cavity'' will be defined as a region of the environment that allows extremely efficient TR WPT. The sub cavity becomes much less lossy than the environment as a whole. TR paths will preferentially move through the sub cavity, and can dramatically improve the efficiency of the entire system. A successful sub cavity must have the following characteristics:
 
 \begin{itemize}
   \item High transfer efficiency/low reflective losses
@@ -130,5 +130,3 @@ This is partly why a large number of reflective surfaces is beneficial in a time
 \end{figure}
 
 We believe that this concept should be tested using simulation methods as a proof-of-concept. Should it work we propose moving forward with some sort of experimental demonstration of information preservation effects. Finally, a model should be created describing the effectiveness of the method. Particular attention should be paid to the size of the design - we expect this method to be difficult to miniturize.
-
-\subsection{Timing Analysis}
