@@ -99,11 +99,38 @@ As their product has not yet hit the market, numbers for uBeam's efficiency are 
 
 \subsubsection{Cota}
 
-Cota uses concentrated microwaves to create ``pockets of energy'' at precise locations. The power-seeking device sends out pulses regularly, which, when picked up by a Cota system, trigger the system to send out a high energy pulse targeted specifically to the device's location.
+Cota\textsuperscript{TM} by Ossia uses phase conjugation of a continuous microwave signal in order to focus the energy at a precise location. While this is a very similar concept to the time reversal process we will describe in the rest of this thesis, here phase conjugation is operated at a single frequency, compared to our time reversal process, which uses a wider bandwidth. The basic idea of phase conjugation is exemplified in Figure~\ref{fig:lit-review-phase-conj}.
 
-The Cota system consists of two parts: a charger and a receiver. The Cota receivers built into devices and batteries regularly send out omnidirectional beacon signals. Once the Cota charger receives these beacons, it returns thousands of targeted signals that build hotspots of power at only the precise locations of the beacons. The charger uses 20,000 antennas to determine the exact direction the signal came from. This pinpoint precision targeting of energy safely and efficiently powers all Cota-equipped devices and batteries within its effective radius, even as they move around the room.
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/phase_conjugation}
+    \caption[Phase Conjugation Example]{An initial incident wave received by a phase conjugate mirror and the corresponding phase conjugate reflected by the mirror. The phase conjugate wave is, unsurprisingly, simple a phase-shifted version of the incident wave. In this example, the phase conjugate wave is offset by $\pi$ from the incident wave.}
+    \label{fig:lit-review-phase-conj}
+\end{figure}
 
-The technology has achieved a 30~ft range and a max power delivery of about 1~W, offering a comfortable operating radius and charging speed at about one-third the charging time via regular USB cable. It also cites the capability to charge as many devices as desired. It does use Bluetooth to link the charger to the receiver(s), which requires that the power-seeking device constantly pulse to request power. This means that charging the device is contingent upon the device already having enough power to send that request.
+The current iteration of the Cota system at the time of writing consists of two components: a base station with a large array of 1,000 to 8,000 transmitting micro-antennas and a receiver device. The receiver device initiates the power transfer process by sending out a low power omni-directional beacon pulse 100 times per second, as shown in Figure~\ref{fig:lit-review-cota-example}(a), which propagates throughout the room, reflecting off walls, and eventually being recorded by the transmitter. The transmitter then calculates the ``complex conjugate'' of each wave recorded and transmits this mirror image of each wave, as shown in Figure~\ref{fig:lit-review-cota-example}(b), which ultimately converge at the receiver to deliver power~\cite{cota-handout}. Since the initial pulse is omni-directional, some waves will of course end up hitting obstacles, such as people. However, the low power of this pulse makes them harmless, and the obstruction of the wave itself prevents this wave from reaching the transmitter, meaning that a higher power reflection will not make it back to the obstruction, and thus the technology naturally avoids obstacles. The transmitter continually a variety of frequencies in attempt to find the best $S_{21}$ parameter between the antenna and beacon, and switches to using this frequency once it is found or changes based on the channel conditions.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/cota_example}
+    \caption[Cota Process]{Description of the basic Cota power transfer protocol, which utilizes ``multi-path'' trajectories to avoid obstructions, as opposed to a ``beam forming'' power transfer system.}
+    \label{fig:lit-review-cota-example}
+\end{figure}
+
+Cota's use of a single frequency simplifies the process because it means they only have to adjust the phase of the oscillator driving each antenna in the array. In addition, it allows them to work peacefully in a small pocket the 2.4~GHz ISM band, without interfering with the majority of the spectrum that is utilized by Wi-Fi devices. In addition, Zeine claims that lower frequencies have longer wavelengths that preclude the formation of ``small'' pockets of energy, while higher frequencies (such as 24~GHz) have much more stringent SAR limits set in place by the FCC.
+
+Although many press releases about Cota claim that it can deiver up to 1 Watt of power at up to 10 meters, Zeine admitted that this was a goal, and not yet an achieved result (they are able to transmit up to 1 Watt of power, but only at unspecified ``shorter'' distances). They also were not able cite specific efficiency numbers, but admitted that they were ``not high''. The beacon currently broadcasts 24~dBm at 100~Hz, and the base station emits 5-10~W of power.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{lit-review/cota_battery}
+    \caption[Cota Battery]{This photo of a Cota ``AA Battery'' was taken at the Ossia/Cota demonstration table at IEEE WPTC 2016. The technical representative stated that the battery constantly tops off power from the base station and stores this in a buffer until it is used by the device.}
+    \label{fig:lit-review-cota-battery}
+\end{figure}
+
+However, Cota has a grand vision for the improvement of these numbers and ultimately the incorporation of their technology into all of our mobile devices and the emerging set of ``Internet of Things'' devices. They already have created phone cases that can be attached to a typical mobile phone allowing existing devices to act as Cota receivers, though they ultimately envision that future devices will have Cota receivers built in. In addition, they have created ``AA Batteries'' (shown in Figure~\ref{fig:lit-review-cota-battery}) that house the entire Cota receiver system, which both exemplifies how small the receiving circuit can be, and also allows Cota to retrofit the vast array of devices that currently rely on batteries without any modifications to the device. Zeine claims that they are currently working with paint and carpet manufacturers to make their products more conductive, which would provide better reflections for power transmission.
+
+It is worth noting that, at the time of writing, Ossia has not yet released any peer-reviewed publications or white papers detailing the Cota technology. The information above was compiled from Ossia's ``Wireless power transfer system patents''~\cite{cota-patent} and conversations with Ossia's CEO, Hatem Zeine, at the 2016 IEEE Wireless Power Transfer Conference in Aveiro, Portugal.
 
 \subsubsection{Wi-Charge}
 
