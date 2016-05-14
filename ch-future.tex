@@ -40,6 +40,7 @@ scenario is the environment; a low-loss scattering environment is necessary for
 time reversal to be effective.
 
 \begin{figure}[t]
+\centering
 \includegraphics[width=\columnwidth]{figs/future/WPTSys}
 \caption[Proposed Time Reversal System]{A notional time reversal WPT system. In the acquistion phase, a new receiver joins the system by broadcasting or emitting a characteristic signal (0). Here, the receiver actively emits a signal, but it is also possible for the transmitter to find a passive target, as shown in~\cite{nltr-wave-chaotic}. In either case, the next sona that the transmitter collects will contain spatial information unique to the receiver's location (1). In the power transfer cycle, the sona is time reversed (2), amplified, and broadcast back into the environment. The amplified signal reconstructs on the receiver (3) and is converted to usable DC power by the rectifier (4). A small fraction of the signal is used to re-broadcast a new characteristic signal (5) into the environment, which will be collected in the next sona (6). The cycle repeats from (2).}
 \label{fig:SysImage}
@@ -48,7 +49,7 @@ time reversal to be effective.
 We have demonstrated the underlying concepts of the WPT system depicted in Fig.~\ref{fig:SysImage}.
 However, much work is necessary to transform this proof-of-concept technology to a functional product that consumers may use.
 Future work discussed here falls into one of two categories. The first category includes established TR techniques that may be extended into the field of TR WPT.
-The second category includes novel designs proposed by the team applicable only to TR WPT. Both will be discussed below. 
+The second category includes novel designs proposed by the team applicable only to TR WPT. Both will be discussed below.
 
 \section{Future work on applying other techniques from TR to WPT}
 \label{sec:future-tr}
@@ -63,7 +64,7 @@ Some modifications on the basic TR methodology that has been developed for these
 
 It has been well proven in the literature that time reversal focusing on an object can be repeated to improve waveform collapse on a target.~\cite{prada_iterative_1991} However, this technique has not yet been applied to TR WPT.
 
-We suspect that applying iterative TR to reduce the effect of reflection orbits which contribute poorly to the final reconstruction, in favor of ones that do. The side lobes in the time domain are representative of energy that may not be able to be rectified unless they are combined into the main peak. We predict that we can maximize our efficiency and reconstruction quality using this method. Additionally, we predict that this method will only be useful for stationary targets. Because iterating the time reversal process takes several more steps, the length of time required to focus on a target is increased considerably. Since the technique for focusing upon a moving receiver proposed earlier relies upon repeating the time reversal process many times, it may not be acceptable for the time required to perform TR to increase several hundred percent. 
+We suspect that applying iterative TR to reduce the effect of reflection orbits which contribute poorly to the final reconstruction, in favor of ones that do. The side lobes in the time domain are representative of energy that may not be able to be rectified unless they are combined into the main peak. We predict that we can maximize our efficiency and reconstruction quality using this method. Additionally, we predict that this method will only be useful for stationary targets. Because iterating the time reversal process takes several more steps, the length of time required to focus on a target is increased considerably. Since the technique for focusing upon a moving receiver proposed earlier relies upon repeating the time reversal process many times, it may not be acceptable for the time required to perform TR to increase several hundred percent.
 
 Both of these characteristics can be easily tested, using algorithms already applied to acoustic TR. An experimental setup very similar to ours could be applied to this research. A faster sona refresh rate would be required from the TR system for this method to be able to outpace the natural ``decay'' of the testing environment. Once an iterative algorithm has been tested and found successful it should be tested in a less homogeneously reflective environment, to determine if it can be used to improve efficiency in lossy environments.
 
@@ -103,6 +104,7 @@ We suggest a method of improving efficiency of TR wireless power transfer by int
 There are many methods that could potentially generate such a cavity - a proposal for such as system can be found in Fig.~\ref{fig:subCav}. This cavity is a thin sheet of material that would be mounted to the ceiling of the room in question. The material in this sheet should have a smaller index of refraction than air; as a result any signal broadcast into can become ``trapped'' in the layer. At any given point along the barrier of the sub cavity only small amounts of signal will return to the main environment. A TR WPT system can selectively choose paths through the sub cavity that will focus on a given receiver with high transfer efficiency. Reflectors can be added to the sub cavity as needed to ensure that its complexity is enough to allow TR to occur.
 
 \begin{figure}[h]
+\centering
 \includegraphics[width=\columnwidth]{future/subCavity}
 \caption[Proposed ``Sub Cavity Design'']{A proposed sub cavity design. A transmitter (1) broadcasts an interrogation pulse into the environment. When the pulse reaches the low index of refraction material of the sub cavity, it refracts, taking on a lower angle (2). The interrogation pulse totally internally reflects within the cavity (3), until returning to the main environment. Some aspects of the signal reach the receiver, allowing a TR link to be established (4). A focal aspect of the geometry above the transmitter (5) is highlighted as a way of improving transmission.}
 \label{fig:subCav}
@@ -116,17 +118,49 @@ Many of the improvements suggested above are focused on increasing the efficienc
 Earlier our concern with losses focused primarily on their impact on efficiency. Information transfer was sufficient to allow TR to occur. However, complete losses remove information from the system, and severely damage the ability for TR to reconstruct on a target. This can be visualized using the idea of loss of outgoing paths. Fig.~\ref{fig:outgo} shows how time reversal can be impacted by environments with complete loss.
 
 \begin{figure}[h]
+\centering
 \includegraphics[width=\columnwidth]{future/outgoing}
 \caption[Example of information loss on time reversal efficacy]{A representation of how complete losses affect time reversal. In this scenario, a transmitter (1) sends a signal in all directions in an environment with only one reflective surface. As can be seen, only a small percentage of the energy successfully reaches the receiver (2). If time reversal from (2) to (1) were to be attempted, a small and spatially unbalanced amount of energy would arrive at (1), resulting in a poor reconstruction.}
 \label{fig:outgo}
 \end{figure}
 
+\newpage
+
 This is partly why a large number of reflective surfaces is beneficial in a time reversal environment. However, we believe that this effect is more advantageous (from an information protection point of view) when it occurs near to the target of the time reversal process. This concept is discussed in Fig.~\ref{fig:infoProtection}. Using an array of transmitters or extending the transmitter itself to increase the number of possible short orbit paths to the receiver should mitigate the effects of information loss.
 
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{future/informationProtection}
-\caption[Proposed TR information protection system]{A proposed method of protecting a TR system from loss of information. The ``target'' of the TR process (1) is surrounded by a surface of semi-reflective material. This surface reflects effectively "splits" the outgoing wave into several smaller pieces (2). The result is that a greater solid angle is preserved coming out of the antenna/reflector system in cases such as the one in Fig.~\ref{fig:outgo}}
+\centering
+\includegraphics[width=0.85\textwidth]{future/informationProtection}
+\caption[Proposed TR information protection system]{A proposed method of protecting a TR system from loss of information. The ``target'' of the TR process (1) is surrounded by a surface of semi-reflective material. This surface reflects effectively ``splits'' the outgoing wave into several smaller pieces (2). The result is that a greater solid angle is preserved coming out of the antenna/reflector system in cases such as the one in Fig.~\ref{fig:outgo}}
 \label{fig:infoProtection}
 \end{figure}
 
 We believe that this concept should be tested using simulation methods as a proof-of-concept. Should it function as expected, we propose moving forward with some sort of experimental demonstration of information preservation effects. Finally, a model should be created describing the effectiveness of the method. Particular attention should be paid to the size of the design - we expect this method to be difficult to miniturize.
+
+\subsection{Timing and Computational Complexity}
+
+In Section~\ref{sec:moving}, we showed that the ability of a time reversal system
+to transmit energy to a moving target is dependent on the spatial profile and
+transmission dead time, $t_{d}$.
+%
+In this work, our equipment limited us to a $t_d$ of 7~seconds, which would be too slow
+to handle most typical movement, such as walking across a room.
+%
+The primary bottlenecks here were the communication between the oscilloscope
+and computer, and the fast Fourier transform (FFT) operations performed in MATLAB
+on the computer.
+%
+A practical system could overcome these limitations by combining the two components
+into a single device, which would remove the communication overhead, and optimizing for
+the FFT computation in hardware.
+%
+Once a sona has been recorded (shown in Fig.~\ref{fig:sona} to be on the order of 10~$\mu$s),
+the theoretical lower bound on processing time would be limited only by the amount of
+time required to compute an FFT.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{future/timing}
+\caption[Timing Analysis of Experimental Setup]{}
+\label{fig:timing}
+\end{figure}
