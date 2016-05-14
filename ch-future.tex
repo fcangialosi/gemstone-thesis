@@ -32,7 +32,7 @@ environment.
 In a practical system, the rectenna will be integrated into the hardware of a
 mobile device, or into an external component that plugs into the battery.
 %
-The transmitter would  be connected to an external power source, but
+The transmitter would be connected to an external power source, but
 could otherwise be located anywhere in the room.
 
 Although not a component of the system, another important consideration in this
@@ -49,7 +49,7 @@ time reversal to be effective.
 We have demonstrated the underlying concepts of the WPT system depicted in Fig.~\ref{fig:SysImage}.
 However, much work is necessary to transform this proof-of-concept technology to a functional product that consumers may use.
 Future work discussed here falls into one of two categories. The first category includes established TR techniques that may be extended into the field of TR WPT.
-The second category includes novel designs proposed by the team applicable only to TR WPT. Both will be discussed below.
+The second category includes novel designs proposed by the team applicable only to TR WPT.
 
 \section{Future work on applying other techniques from TR to WPT}
 \label{sec:future-tr}
@@ -72,9 +72,11 @@ The novelty of such research is primarily in the characteristics measured. The d
 
 \subsection{Multiple Transmitters}
 
-Many TR applications make use of multiple transmitters as a method of improving signal quality. Time reversal with multiple transmitters has the effect of improving the reconstruction strength at a target point, because more paths can be utilized to increase the superposition of the reconstruction pulses. All research done by the team was performed using a single transmitting antenna. The incorporation of multiple antennas would require major modifications to our experimental setup, and was beyond our capabilities at this time.
+All of the work in this thesis was conducted using a single transmitting antenna. The incorporation of multiple antennas would haved required major modifications to our experimental setup, and thus was beyond the scope of our study. However, previous work in time reversal in other fields, such as acoustics, have demonstrated the ability to improve signal quality through the use of multiple transmitters.
 
-While final signal strength of the reconstruction is predicted to increase, how much remains to be determined. Future research should attempt to determine how the use of multiple antennas relates to the efficiency of energy transfer. Particular attention should be paid to how this efficiency changes as sources of loss are introduced into the system.
+In one study, Mathias Fink demonstrated that a single-channel time reversal mirror acts like a spatiotemporal matched filter, where the time reveresal process is a convolution of the injected signal with a time reversed ``image'' of that signal. Using a 96-element antenna array, Fink showed that using multiple channels created a stronger collapse at the reconstruction time and that it tended to cancel the contributions of the temporal side-lobes, ultimately providing a better peak-to-noise ratio. When the number of channels is sufficient, the result is an inverse filter, which should produce the ideal reconstruction~\cite{fink-multi-channel}.
+
+Although a practical wireless power transfer system will likely not be able to reach this theoretical limit, the positive relationship between number of elements and reconstruction strength should hold: namely, that adding $N$ elements to the time reversal mirror should increase the reconstruction strength by \textit{at least} a factor of $N$. In addition, it should reduce the accidental creation of ``hot spots'' at locations other than the intended reconstruction point, which would be a necessary safety concern to address in a practical system.
 
 \subsection{Exponential Amplification}
 
@@ -136,32 +138,3 @@ This is partly why a large number of reflective surfaces is beneficial in a time
 \end{figure}
 
 We believe that this concept should be tested using simulation methods as a proof-of-concept. Should it function as expected, we propose moving forward with some sort of experimental demonstration of information preservation effects. Finally, a model should be created describing the effectiveness of the method. Particular attention should be paid to the size of the design - we expect this method to be difficult to miniturize.
-
-\subsection{Timing and Computational Complexity}
-\label{sec:future-timing}
-
-In Section~\ref{sec:moving}, we showed that the ability of a time reversal system
-to transmit energy to a moving target is dependent on the spatial profile and
-transmission dead time, $t_{d}$.
-%
-In this work, our equipment limited us to a $t_d$ of 7~seconds, which would be too slow
-to handle most typical movement, such as walking across a room.
-%
-The primary bottlenecks here were the communication between the oscilloscope
-and computer, and the fast Fourier transform (FFT) operations performed in MATLAB
-on the computer.
-%
-A practical system could overcome these limitations by combining the two components
-into a single device, which would remove the communication overhead, and optimizing for
-the FFT computation in hardware.
-%
-Once a sona has been recorded (shown in Fig.~\ref{fig:sona} to be on the order of 10~$\mu$s),
-the theoretical lower bound on processing time would be limited only by the amount of
-time required to compute an FFT.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{future/timing}
-\caption[Timing Analysis of Experimental Setup]{}
-\label{fig:timing}
-\end{figure}

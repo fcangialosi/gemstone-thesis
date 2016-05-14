@@ -81,3 +81,32 @@ The results of this experiment are very promising. We hypothesized that the reco
 \end{figure}
 
 It is worth noting that the speed of the receiver is relatively slow at 0.2~$\frac{mm}{s}$. This experiment is intended to be a proof of concept, with generalized equipment that carries significant overhead. The GPIB connections between the signal generators, oscilloscope, and workstation contributed to the long delay between system operations, in addition to the slow processing speed of the equipment itself. We expect that with a dedicated time reversal system, the TR process of reacquiring a new target location could be performed in milliseconds and describe the ramifications for doing so in Section~\ref{sec:future-timing}. This would greatly increase the maximum receiver speed that could be accommodated as the reconstruction could be refocused more often, and thus the average \ptp{} voltage could be raised closer to that maximal value. We conclude that, with further research and engineering work, a TR WPT scheme could feasibly power a moving receiver in realistic scenarios.
+
+\section{Timing and Computational Complexity}
+\label{sec:future-timing}
+
+In Section~\ref{sec:moving}, we showed that the ability of a time reversal system
+to transmit energy to a moving target is dependent on the spatial profile and
+transmission dead time, $t_{d}$.
+%
+In this work, our equipment limited us to a $t_d$ of 7~seconds, which would be too slow
+to handle most typical movement, such as walking across a room.
+%
+The primary bottlenecks here were the communication between the oscilloscope
+and computer, and the fast Fourier transform (FFT) operations performed in MATLAB
+on the computer.
+%
+A practical system could overcome these limitations by combining the two components
+into a single device, which would remove the communication overhead, and optimizing for
+the FFT computation in hardware.
+%
+Once a sona has been recorded (shown in Fig.~\ref{fig:sona} to be on the order of 10~$\mu$s),
+the theoretical lower bound on processing time would be limited only by the amount of
+time required to compute an FFT.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{future/timing}
+\caption[Timing Analysis of Experimental Setup]{}
+\label{fig:timing}
+\end{figure}
