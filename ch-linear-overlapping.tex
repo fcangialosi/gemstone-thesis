@@ -24,7 +24,7 @@ This test sought to evaluate the practicality of overlapping sonas as a method o
 
 A sona was generated with a 3.9 GHz interrogation pulse. To verify that the sona could converge on the target, it was time reversed without any further manipulation, and injected back into the cavity. The reconstruction was recorded and compared to the original interrogation pulse to check for irregularities.
 
-Once the efficacy of the single sona was established, the experiment was modified. Several sonas were superimposed with a constant time shift, resulting in evenly spaced copies of the verified sona across the total broadcast window. Figure~\ref{fig:overlapping-sonas} gives an example of sonas overlapping in this way. The resulting signal was then time reversed and broadcast through the linear system in the same manner as before, which resulted in the reconstructions in Figure~\ref{fig:overlapping-recons}. This test was repeated many times, with the number of sonas superimposed within the 15~$\mu$s broadcast window varying from one to three hundred. This corresponds to repetition rates between 66 kHz and 20 MHz.
+Once the efficacy of the single sona was established, the experiment was modified. Several sonas were superimposed with a constant time shift, resulting in evenly spaced copies of the verified sona across the total broadcast window. Figure~\ref{fig:overlapping-sonas} gives an example of sonas overlapping in this way. The resulting signal was then time reversed and broadcast through the linear system in the same manner as before, which resulted in the reconstructions in Figure~\ref{fig:overlapping-recons}. This test was repeated many times, with the number of sonas superimposed within the 15~$\mu$s broadcast window varying from one to three hundred, which corresponds to repetition rates ranging from 66~kHz to 20~MHz, respectively. The sonas and corresponding reconstructions of two samples from this range, 50 and 300 overlapped sonas, are shown in Figures~\ref{fig:overlapping-50} and~\ref{fig:overlapping-300}, respectively.
 
 \begin{figure}
 \centering
@@ -39,6 +39,36 @@ Once the efficacy of the single sona was established, the experiment was modifie
 \label{fig:overlapping-recons}
 \end{figure}
 
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.05\linewidth]{overlapping/50_sona}
+  \caption{Sonas}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.05\linewidth]{overlapping/50_recon}
+  \caption{Reconstructions}
+\end{subfigure}
+\caption[50 superimposed sonas]{50 sonas superimposed within the 15~$\mu$s broadcast window, corresponding to a repitition rate of 3.33~MHz.}
+\label{fig:overlapping-50}
+
+\vspace*{\floatsep}% http://tex.stackexchange.com/q/26521/5764
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.05\linewidth]{overlapping/300_sona}
+  \caption{Sonas}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.05\linewidth]{overlapping/300_recon}
+  \caption{Reconstructions}
+\end{subfigure}
+\caption[300 superimposed sonas]{300 sonas superimposed within the 15~$\mu$s broadcast window, corresponding to a repitition rate of 20~MHz.}
+\label{fig:overlapping-300}
+\end{figure}
 
 \subsection{Results}
 
