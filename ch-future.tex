@@ -12,7 +12,7 @@ We demonstrate one possible realization of this idea in Figure~\ref{fig:SysImage
 
 The proposed system consists of two basic components.
 %
-The first is a rectenna that serves as the receiver.
+The first is a rectenna embedded in a client device.
 %
 The system as described in Section~\ref{sec:ltr-meth} would require an
 out-of-band feedback channel between the receiver and transmitter. However, we
@@ -21,7 +21,7 @@ receivers entirely in-band.
 %
 Our system in Figure~\ref{fig:SysImage} builds on these findings.
 %
-The second is a transmitter that performs the time reversal process.
+The second system component is a charging station that performs the time reversal process.
 %
 This component is responsible for recording characteristic signals from the
 receiver(s), time reversing the signals, and re-broadcasting them into the
@@ -32,13 +32,13 @@ environment.
 In a practical system, the rectenna will be integrated into the hardware of a
 mobile device, or into an external component that plugs into the battery.
 %
-The transmitter would be connected to an external power source, but
+The charging station would be connected to an external power source, but
 could otherwise be located anywhere in the room. This system will be most effective in a low-loss scattering environment.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figs/future/WPTSys}
-\caption[Proposed Time Reversal System]{A notional time reversal WPT system. In the acquistion phase, a new receiver joins the system by broadcasting or emitting a characteristic signal (0). Here, the receiver actively emits a signal, but it is also possible for the transmitter to find a passive target, as shown in~\cite{nltr-wave-chaotic}. In either case, the next sona that the transmitter collects will contain spatial information unique to the receiver's location (1). In the power transfer cycle, the sona is time reversed (2), amplified, and broadcast back into the environment. The amplified signal reconstructs on the receiver (3) and is converted to usable DC power by the rectifier (4). A small fraction of the signal is used to re-broadcast a new characteristic signal (5) into the environment, which will be collected in the next sona (6). The cycle repeats from (2).}
+\caption[Proposed Time Reversal System]{Proposed time reversal WPT system. The charging station collects a sona that contains  spatial information unique to the receiver's location (1). The sona is time reversed (2), amplified, and broadcast back into the environment. The amplified signal reconstructs on the client device (3) and is converted to usable DC power by the rectifier (4). A small fraction of the signal is used to re-broadcast a new characteristic signal (5) into the environment, which will be collected in the next sona, creating a stable loop (1). This loop can be initiatied by a pulse from the charging station, and requires no input energy from the client device.}
 \label{fig:SysImage}
 \end{figure}
 
