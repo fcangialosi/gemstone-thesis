@@ -88,7 +88,7 @@ These and other considerations set TR WPT apart from other TR research, and requ
 
 \subsection{Sub Cavity}
 
-The demand for optimal efficiency requires TR WPT to consider the characteristics of the environment moreso than ordinary TR applications. It is clear to the team that a TR WPT system will likely need some environmental modifications to achieve an efficiency sufficient to see practical application. These modifications should also be designed to be as cheap and simple to install as possible, to ensure that system price remains practical.
+It is clear to the team that a TR WPT system will likely need some environmental modifications to achieve an efficiency sufficient to see practical application. These modifications should also be designed to be as cheap and simple to install as possible, to ensure that system price remains practical.
 
 We suggest a method of improving efficiency of TR wireless power transfer by introducing a ``sub cavity'' within the transfer environment. This ``sub cavity'' will be defined as a region of the environment that allows extremely efficient TR WPT. The sub cavity becomes much less lossy than the environment as a whole. TR paths will preferentially move through the sub cavity, and can dramatically improve the efficiency of the entire system. A successful sub cavity must have the following characteristics:
 
@@ -98,7 +98,20 @@ We suggest a method of improving efficiency of TR wireless power transfer by int
   \item Presence of one or more paths between the sub cavity and main environment
 \end{itemize}
 
-There are many methods that could potentially generate such a cavity - a proposal for such as system can be found in Figure~\ref{fig:subCav}. This cavity is a thin sheet of material that would be mounted to the ceiling of the room in question. The material in this sheet should have a smaller index of refraction than air; as a result any signal broadcast into can become ``trapped'' in the layer. At any given point along the barrier of the sub cavity only small amounts of signal will return to the main environment. A TR WPT system can selectively choose paths through the sub cavity that will focus on a given receiver with high transfer efficiency. Reflectors can be added to the sub cavity as needed to ensure that its complexity is enough to allow TR to occur.
+These qualities already exist in many environments. Many indoor environments contain metallic objects, either as part of the environment itself, or embedded within the walls of an environment. Most of these objects tend to be within a meter of ground level. Thus, the lowest meter of a room will behave as a sub-cavity in practical applications.
+
+Experiments should be done to represent how much benefit these objects will give to a TR WPT system. First, efficiency should be measured in completely empty rooms composed of typical materials. Then individual items hypothesized to affect (both positively and negatively) TR WPT efficiency should be introduced individually. The position and arrangement of these items should be altered, and their impact on efficiency quantified. Finally, the position and arrangement of groups of items should be altered as well.
+
+We hypothesize:
+\begin{itemize}
+  \item The position of an individual object becomes a negligible influence when it is more than ~0.5 meters from a charging station or client
+  \item Quantity of reflective objects is more important than their size (surface area)
+  \item Large numbers of reflective objects decreases the impact of loss elsewhere in the environment
+\end{itemize}
+
+If this experiment demonstrates an unacceptably low transfer efficiency in an ordinary environment, the creation of an artificial sub cavity may be necessary.
+
+A proposal for an artificial sub cavity can be found in Figure~\ref{fig:subCav}. This cavity is a thin sheet of material that would be mounted to the ceiling of the room in question. The material in this sheet should have a smaller index of refraction than air; as a result any signal broadcast into can become ``trapped'' in the layer. At any given point along the barrier of the sub cavity only small amounts of signal will return to the main environment. A TR WPT system can selectively choose paths through the sub cavity that will focus on a given receiver with high transfer efficiency. Reflectors can be added to the sub cavity as needed to ensure that its complexity is enough to allow TR to occur.
 
 \begin{figure}[h]
 \centering
@@ -107,7 +120,7 @@ There are many methods that could potentially generate such a cavity - a proposa
 \label{fig:subCav}
 \end{figure}
 
-Research would focus on, firstly, proving that this method can work for the purposes of increasing efficiency of transfer. Once this has been established, the geometry of the sub cavity should be optimized to work in a wide range of potential environments. Uniformity of signal coverage is a major concern, and must be tested either experimentally, or through use of simulation software.
+Research would focus on, firstly, proving that sub cavities can work for the purposes of increasing efficiency of transfer. Once this has been established, the geometry of the sub cavity should be optimized to work in a wide range of potential environments. Uniformity of signal coverage is a major concern, and must be tested either experimentally, or through use of simulation software.
 
 \subsection{Protection of Information}
 Many of the improvements suggested above are focused on increasing the efficiency of the final system. Most of these improvements assume that while the system may be lossy, it is enclosed. That is, while signals may be absorbed by the environment, they are not lost completely. However, complete loss can be expected to occur often in practical applications. This can be due either due to holes in the environment (such as windows or doors) or heavily absorptive materials. The use of a selective transmission channel (as proposed above) may mitigate the effects of a channel through which a signal may escape. However, other methods should also be considered.
