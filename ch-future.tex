@@ -1,3 +1,4 @@
+
 \chapter{Future Work}
 \label{ch:future}
 
@@ -51,16 +52,14 @@ However, much work is necessary to transform this proof-of-concept technology to
 Future work discussed here falls into one of two categories. The first category includes established TR techniques that may be extended into the field of TR WPT.
 The second category includes novel designs proposed by the team applicable only to TR WPT.
 
-\section{Furthering the Understanding of TR WPT}
+\section{Future work on applying other techniques from TR to WPT}
 \label{sec:future-tr}
 Imaging of objects and non-invasive surgery are already common applications of TR.
 As a result, many techniques have been developed to improve reconstruction quality on a target.
 We suspect that many of these techniques may have applicability to our proposed system, but did not
 have the opportunity to investigate them in our research.
-
-However, there are unique aspects of a TR WPT system that create avenues for research and innovation. Many of these deal with addressing the differing unique operating principles a TR WPT system. Most TR applications care little about operational environment, focusing only on the direct link between transmitter and receiver. TR WPT on the other hand is based off of a very paricular relationship between the transmitter, receiver, and the environment. Additionally, most TR applications consider stationary - or near stationary - targets. A practical TR WPT system must always consider moving targets, or at least stationary targets within a dynamic environment.
-
-Some challenges in developing TR WPT may be addressed using modifications of techniques developed for other TR applications. We suggest that future research investigate the applicability of techniques such as iterative time reversal and exponential amplification to a practical WPT scheme. Other considerations set TR WPT apart from other TR research, and require the development of novel techniques. Below we suggest several experiments that could explore our knowledge of TR, and how the results of these experiments can benefit TR WPT.
+However, stationary TR methods have different design priorities than our proposed TR WPT system.
+Some modifications on the basic TR methodology that has been developed for these purposes may prove useful for an application to WPT. We suggest that future research be dedicated to investigating the applicability of techniques such as iterative time reversal and super-resolution to a practical WPT scheme.
 
 \subsection{Iterations}
 
@@ -86,6 +85,13 @@ Exponential amplification can be used to counteract decreased reconstruction qua
 
 However, it should be understood that this method only compensates for the losses experienced by a time reversed signal. It does not avoid losses altogether, and in fact more energy is lost through this method. As a result, efficiency using this method should decrease. This introduces a tradeoff to using the method that could be significant to designers of a TR WPT system. It would be useful to quantify the effects of this tradeoff in a WPT context so that informed decisions can be made in the design of future systems.
 
+\section{Process Modifications for TR in a WPT context}
+\label{sec:future-wpt}
+
+There are particular aspects of a WPT system that create avenues for research and innovation with the use of TR. Many of these deal with addressing the differing design goals with a TR WPT system - most TR applications care little about efficiency, caring only about the fidelity of the reconstruction on the target. In TR WPT the opposite is true - perfect reconstructions are far less important than the efficiency of transfer. Most TR applications consider stationary - or near stationary - targets. TR WPT system must always consider moving targets, or at least stationary targets within a dynamic environment.
+
+These and other considerations set TR WPT apart from other TR research, and require the development of novel techniques. Below we suggest several TR WPT-specific research topics, experiments that could explore them, and how the results of these experiments can benefit TR WPT.
+
 \subsection{Sub Cavity}
 
 The demand for optimal efficiency requires TR WPT to consider the characteristics of the environment moreso than ordinary TR applications. It is clear to the team that a TR WPT system will likely need some environmental modifications to achieve an efficiency sufficient to see practical application. These modifications should also be designed to be as cheap and simple to install as possible, to ensure that system price remains practical.
@@ -108,3 +114,28 @@ There are many methods that could potentially generate such a cavity - a proposa
 \end{figure}
 
 Research would focus on, firstly, proving that this method can work for the purposes of increasing efficiency of transfer. Once this has been established, the geometry of the sub cavity should be optimized to work in a wide range of potential environments. Uniformity of signal coverage is a major concern, and must be tested either experimentally, or through use of simulation software.
+
+\subsection{Protection of Information}
+Many of the improvements suggested above are focused on increasing the efficiency of the final system. Most of these improvements assume that while the system may be lossy, it is enclosed. That is, while signals may be absorbed by the environment, they are not lost completely. However, complete loss can be expected to occur often in practical applications. This can be due either due to holes in the environment (such as windows or doors) or heavily absorptive materials. The use of a selective transmission channel (as proposed above) may mitigate the effects of a channel through which a signal may escape. However, other methods should also be considered.
+
+Earlier our concern with losses focused primarily on their impact on efficiency. Information transfer was sufficient to allow TR to occur. However, complete losses remove information from the system, and severely damage the ability for TR to reconstruct on a target. This can be visualized using the idea of loss of outgoing paths. Figure~\ref{fig:outgo} shows how time reversal can be impacted by environments with complete loss.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{future/outgoing}
+\caption[Example of information loss on time reversal efficacy]{A representation of how complete losses affect time reversal. In this scenario, a transmitter (1) sends a signal in all directions in an environment with only one reflective surface. As can be seen, only a small percentage of the energy successfully reaches the receiver (2). If time reversal from (2) to (1) were to be attempted, a small and spatially unbalanced amount of energy would arrive at (1), resulting in a poor reconstruction.}
+\label{fig:outgo}
+\end{figure}
+
+\newpage
+
+This is partly why a large number of reflective surfaces is beneficial in a time reversal environment. However, we believe that this effect is more advantageous (from an information protection point of view) when it occurs near to the target of the time reversal process. This concept is discussed in Figure~\ref{fig:infoProtection}. Using an array of transmitters or extending the transmitter itself to increase the number of possible short orbit paths to the receiver should mitigate the effects of information loss.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{future/informationProtection}
+\caption[Proposed TR information protection system]{A proposed method of protecting a TR system from loss of information. The ``target'' of the TR process (1) is surrounded by a surface of semi-reflective material. This surface reflects effectively ``splits'' the outgoing wave into several smaller pieces (2). The result is that a greater solid angle is preserved coming out of the antenna/reflector system in cases such as the one in Figure~\ref{fig:outgo}}
+\label{fig:infoProtection}
+\end{figure}
+
+We believe that this concept should be tested using simulation methods as a proof-of-concept. Should it function as expected, we propose moving forward with some sort of experimental demonstration of information preservation effects. Finally, a model should be created describing the effectiveness of the method. Particular attention should be paid to the size of the design - we expect this method to be difficult to miniturize.
