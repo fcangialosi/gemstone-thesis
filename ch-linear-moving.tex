@@ -44,7 +44,7 @@ Based on observations from the results in Figure~\ref{fig:spatial-freq-profile},
 
 \begin{equation}
 \label{eq:vx}
-V(x) = a\cdot sinc\left(\frac{x+c}{b}\right) + d
+V(x) = a\cdot |sinc\left(\frac{x+c}{b}\right)| + d
 \end{equation}
 
 where $a$ is the maximum \ptp{} reconstruction amplitude, $b$ is the half-wavelength, $c$ is the location of the antenna along the x-axis, and $d$ is the noise level offset voltage. Since $b$ is proportional to the wavelength (and inversely proportional to frequency), as the carrier frequency is increased,  $\frac{1}{b}$ also increases, causing the ``bubble'' of the sinc function in Figure~\ref{fig:spatial-freq-profile} to get smaller. This relationship is shown explicitly in the inset of Figure~\ref{fig:spatial-freq-profile}. Figure~\ref{fig:spatial-error-fit} shows Equation~\ref{eq:vx} fit to the 5 GHz curve from Figure~\ref{fig:spatial-freq-profile}, including error bars. The fit qualitatively looks good around the main lobe, but quantitatively has a high reduced $\chi^2$ value, primarily due to the rather large background noise level that has hidden the side lobes. Fitting to just the main lobe produces a much better goodness of fit metric. The error bars are primarily systematic, introduced by the oscilloscope internal voltage multiplier used in scaling.
