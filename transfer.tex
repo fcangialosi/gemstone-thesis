@@ -1,0 +1,62 @@
+\section{Transfer Range}
+\label{sec:linear-transfer-range}
+
+Our experiments throughout this chapter thus far have successfully demonstrated wireless power tranfer via time reversal in a relatively small encosure. A natural question one might ask at this point is: what if the enclosure were larger? Although experimentation inside of a larger enclosure was outside of the scope of this work, we can reason about how parameters of time reversal relate to the volume of the enclosure.
+
+As waves propagate throughout the enclosure, they will be subject to some amount of loss each time they reflect off of a surface. Here we make the simplifying assumption that metallic losses are the domininant loss mechanism of our enclosure. Then, we can define the quality factor $Q$ of the enclosure to be:
+
+\begin{equation}
+Q = \frac{V}{S\delta}
+\label{eq:quality-factor}
+\end{equation}
+
+where $V$ is the volume of the enclosure, $S$ is the surface area of the enclosure, and $\delta$ is the skin depth of the metal walls. The skin depth can be further defined to be dependent upon the resistivity of the metal, $p$:
+
+\begin{equation}
+\delta = {\left[\frac{2\rho}{\omega\mu_0}\right]}^{\frac{1}{2}}
+\label{eq:skin-depth}
+\end{equation}
+
+Since surface area scales as $\frac{2}{3}$ the power of volume, we can rewrite~\ref{eq:quality-factor} as:
+
+\begin{equation}
+Q \sim \frac{V^{\frac{1}{3}}}{\delta}
+\label{eq:surface-volume}
+\end{equation}
+
+Now, we can describe how decay of energy in the cavity will scale as a function of $Q$:
+
+\begin{equation}
+U \sim e^{\frac{-\omega t}{Q}}
+\label{eq:u}
+\end{equation}
+
+We can simplify this into more familiar form by writing it has $e^{\frac{-t}{\tau_{decay}}}$, where decay time for energy scales as
+
+\begin{equation}
+\tau_{decay} \sim \frac{Q}{\omega} \sim \frac{V^{\frac{1}{3}}}{\delta\omega} \sim \frac{V^{\frac{1}{3}}}{\omega^{\frac{1}{2}}}
+\label{eq:decay-time}
+\end{equation}
+
+based on Equation~\ref{eq:surface-volume}, showing that as we either increase volume or decrease frequency, energy decay time will increase slowly.
+
+
+In the context of time reverseal, the Heisenberg time ($\tau_{Heisenberg}$) can be defined as the saturation time for sona measurement. Namely, it is the length of time after which collecting a longer sona will no longer result in a greater quality reconstruction. Conversely, collecting a sona significantly shorter than $\tau_{Heisenberg}$ will result in a poor reconstruction. The ability to capture a long-duration sona above the noise floor depends on environmental loss. The greater the loss, the more difficult it is to capture a longer sona signal, which will decay as described in Equation~\ref{eq:u}.
+
+For any three-dimensional enclosure, the Heisenberg time can be quantified as:
+
+\begin{equation}
+\tau_{Heisenberg} = 2 \frac{2 \omega^2 V}{\pi c^3} = 10 \mu s {\left[f(GHz)\right]}^2 V(m^3)
+\label{eq:heisenberg}
+\end{equation}
+
+where $\omega$ is the angular frequency, $V$ is the volume of the enclosure, and $c$ is the speed of light in the enclsoure. Thus, we can see that the Heisenberg time grows quickly with both frequency and enclosure volume, meaning that a larger enclosure volume will make it more challenging to collect a sona that will be of sufficient length for a high quality reconstruction.
+
+
+For the most efficient and best quality reconstruction, we want to be in the limit $\tau_{Heisenberg} > \tau_{decay}$ so that the cavity allows us to fully capture energy from the sona before it has decayed. Thus, we want to maximize decay time without surpassing the Heisenberg time. Given these expressions for $\tau_{Heisenberg}$ and $\tau_{decay}$, we can see that a smaller volume enclosure and lower frequency will increase the decay time, but decrease the Heisenberg time. In our study, we did not calculate these values or attempt to optimize the process based on them, but quantifying these values and taking them into consideration would likely provide a noticable benefit in reconstruction quality and thus in ability to transmit power via TR.
+
+
+Another way of looking at larger environments is to consider those that have openings. Sun Hong et al. found that a reconstruction could still successfully be created in an open semi-reverberant system (e.g. a cavity with large holes or cuts introducing significant loss at specific areas), which is much more representative of realistic environments. At a certain point, a large enough enclosure can be compared to an open system in which some surfaces (primarily those walls that are nearest the transmitter) will provide many usable paths, while others (far walls or cuts in the wall) will not provide any usable paths at all. The success of Hong's experiments suggest that TR should be capable of focusing signals in larger environments, assuming that enough reflective surfaces exist nearby to provide a sufficient number of transmission modes for the sona and reconstruction~\cite{hong_nonlinear_2014}. In Section~\ref{sec:future-sub-cavity}, we further discuss the use of nearby reflective materialis in more lossy scenarios and suggest next steps for evaluating the method.
+
+
+Although energy decay is certainly a necessary downside of any long-range WPT system, one positive aspect is that we expect as the room size is increased, the average energy to hotspots (concentrations of energy outside of the reconstruction point) will decrease, but further work is necessary to quantify to what extent, and whether it depends upon the volume, the number of modes, or something else entirely.
