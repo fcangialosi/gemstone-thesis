@@ -14,7 +14,7 @@ The setting for this experiment differs only slightly from the one described in 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.75\textwidth]{moving/mikro-move-1}
+\includegraphics[width=0.8\textwidth]{moving/mikro-move-1}
     \caption[MikroMove Translation Stage]{The PI MikroMove translation stage (black, right) attached to a sliding window on the Gigabox (left) via a metal arm. The antenna is attached to the sliding window just to the right of the arm. The MikroMove translates the arm up (+) and down (-), which moves the sliding window and ultimately the antenna along the same range of motion. This particular model had a maximum range of motion of 70~mm along a single axis.}
     \label{fig:mikro-move}
 \end{figure}
@@ -93,20 +93,28 @@ In this work, our equipment limited us to a $t_d$ of 7~seconds, which would be t
 to handle most typical movement, such as walking across a room.
 %
 The primary bottlenecks here were the communication between the oscilloscope
-and computer, and the fast Fourier transform (FFT) operations performed in MATLAB
-on the computer.
+and computer, and the matrix operations performed in MATLAB on the computer.
 %
+Figure~\ref{fig:timing-analysis} details the amount of time taken by each step of the
+time reversal process, as viewed from the perspective of the central computer, where
+each bar can be categorized as either a result of communication overhead or software
+operations.
+
+
 A practical system could overcome these limitations by combining the two components
 into a single device, which would remove the communication overhead, and optimizing for
-the FFT computation in hardware.
+the specific matrix computations in hardware.
 %
-Once a sona has been recorded (shown in Figure~\ref{fig:sona} to be on the order of 10~$\mu$s),
+Once a sona has been recorded (shown in Figure~\ref{fig:lit-review-example-sona} to be on the order of 15~$\mu$s),
 the theoretical lower bound on processing time would be limited only by the amount of
-time required to compute an FFT.
+time required to compute the matrix operations.
 
-\begin{figure}[t]
+
+The careful reader may notice that we report a dead time of 7 seconds in the previous section, but that the process appears to take roughly 13 seconds in Figure~\ref{fig:timing-analysis}. This is a result of the fact that we made a few minor optimizations to the process after measuring the timing in this plot, but never re-generated a new plot. Specifically, these optimizations included: setting up the \texttt{AWG} and \texttt{PSG} once at the beginning of the process (as opposed to setting them up within each iteration of the TR process), and removing the 1~second sleep time for each of the switches, as we found that they actually moved fast enough to simply continue the code immediately. Together, these optimizations accounted for roughly 6 seconds of the process, bringing us down to the reported dead time of 7 seconds. However, it is worth repeating that these minor ``optimizations'' (or rather corrections) were done ontop of highly unoptimized general TR code, meaning there is much room for decreasing the time further.
+
+\begin{figure}[b]
 \centering
-\includegraphics[width=\columnwidth]{future/timing}
-\caption[Timing Analysis of Experimental Setup]{}
-\label{fig:timing}
+\includegraphics[width=\textwidth]{future/timing}
+\caption[Timing Analysis of Experimental Setup]{This plot shows wall clock time elapsed for rate limiting steps in the \texttt{MATLAB} code which controlled all of our operations and equipment in the time reversal process (measured using \texttt{MATLAB}'s \texttt{tic} and \texttt{toc} functions). Bars for \texttt{Switch}, \texttt{AWG}, \texttt{PSG}, and \texttt{DSO:Read} are primarily a result of communication between the devices, while \texttt{XCORR}, \texttt{Bandpass Filter}, \texttt{Broadcast}, and the remaining \texttt{DSO} operations are simply software operations taking place in MATLAB. However, it is worth noting that the remaining \texttt{DSO} operations were incorporated to handle a wide variety of experiments and not optimized for this process. Code and hardware optimized specifically for this purpose could make certain assumptions about the recording process and should be able to eliminate these steps altogether. Finally, it is also worth noting that, again due to communication delays, it was sometimes necessary to hardcode a \texttt{sleep} delay in the MATLAB code, further increasing the total time of the process.}
+\label{fig:timing-analysis}
 \end{figure}
